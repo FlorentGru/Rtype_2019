@@ -1,0 +1,8 @@
+[requires]
+boost/1.71.0@conan/stable
+sqlite3/3.29.0@bincrafters/stable
+sfml/2.5.1@bincrafters/stable
+
+[generators]
+cmake
+txt
