@@ -18,8 +18,9 @@ include(CPack)
 include_directories(server/includes client/includes)
 
 add_executable(r-type_server
-    server/sources/main.cpp
-    server/includes/server.hpp
+    server/main.cpp
+    server/server.cpp
+    server/server.hpp
 )
 target_link_libraries(r-type_server ${CONAN_LIBS})
 
