@@ -18,14 +18,16 @@ include(CPack)
 include_directories(server/includes client/includes)
 
 add_executable(r-type_server
-    server/main.cpp
-    server/server.cpp
-    server/server.hpp
-)
+        source/server/main.cpp
+        source/server/server.cpp
+        source/server/server.hpp
+    server/sources/main.cpp
+    server/includes/server.hpp
+        source/network/AUdpSocket.hpp source/network/RawData.hpp)
 target_link_libraries(r-type_server ${CONAN_LIBS})
 
 add_executable(r-type_client
     client/sources/main.cpp
     client/includes/client.hpp
-)
+        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp)
 target_link_libraries(r-type_client ${CONAN_LIBS})
