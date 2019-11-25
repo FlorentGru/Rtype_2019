@@ -15,19 +15,14 @@ include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 include(CPack)
-include_directories(server/includes client/includes)
+include_directories(source/server/ source/client/ source/ecs source/network)
 
-add_executable(r-type_server
-        source/server/main.cpp
-        source/server/server.cpp
-        source/server/server.hpp
-    server/sources/main.cpp
-    server/includes/server.hpp
-        source/network/AUdpSocket.hpp source/network/RawData.hpp)
-target_link_libraries(r-type_server ${CONAN_LIBS})
+add_executable(rtype_server
+        source/network/AUdpSocket.hpp source/network/RawData.hpp source/ecs/System/Events.hpp source/ecs/System/Events.cpp source/ecs/Ecs.cpp source/ecs/AbstractEcs.cpp source/ecs/Ecs.hpp source/server/gameEngine/GameEngine.cpp source/server/gameEngine/GameEngine.hpp)
+target_link_libraries(rtype_server ${CONAN_LIBS})
+set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
 
-add_executable(r-type_client
-    client/sources/main.cpp
-    client/includes/client.hpp
-        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp)
-target_link_libraries(r-type_client ${CONAN_LIBS})
+add_executable(rtype_client
+        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/ecs/System/Events.hpp source/ecs/System/Events.cpp source/ecs/Ecs.cpp source/ecs/Ecs.hpp source/ecs/AbstractEcs.cpp source/ecs/AbstractEcs.hpp)
+target_link_libraries(rtype_client ${CONAN_LIBS})
+set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)
