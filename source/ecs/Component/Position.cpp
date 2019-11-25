@@ -4,7 +4,7 @@
 
 #include "Position.hpp"
 
-type_index Position::getId()
+std::type_index Position::getId()
 {
     return (std::type_index(typeid(Position)));
 }

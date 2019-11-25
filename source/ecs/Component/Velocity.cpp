@@ -4,7 +4,7 @@
 
 #include "Velocity.hpp"
 
-type_index Velocity::getId()
+std::type_index Velocity::getId()
 {
     return (std::type_index(typeid(Velocity)));
 }

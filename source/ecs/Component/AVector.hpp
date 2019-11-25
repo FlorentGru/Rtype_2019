@@ -15,8 +15,6 @@ class AVector : public IComponent
 
     double _x;
 
-    virtual type_index getId() = 0;
-
     void setX(double);
     void setY(double);
     void setZ(double);

@@ -4,7 +4,7 @@
 
 #include "Timer.hpp"
 
-type_index Timer::getId()
+std::type_index Timer::getId()
 {
     return (std::type_index(typeid(Timer)));
 }

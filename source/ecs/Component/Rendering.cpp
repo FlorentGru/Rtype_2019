@@ -4,7 +4,7 @@
 
 #include "Rendering.hpp"
 
-type_index Rendering::getId()
+std::type_index Rendering::getId()
 {
     return (std::type_index(typeid(Rendering)));
 }

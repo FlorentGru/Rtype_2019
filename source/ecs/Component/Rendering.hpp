@@ -20,7 +20,7 @@ public:
     void setSoundEffect(std::string);
     void setTexture(std::string);
 
-    type_index getId();
+    std::type_index getId();
 };
 
 #endif //CPP_RTYPE_2019_RENDERING_HPP

@@ -4,7 +4,7 @@
 
 #include "Acceleration.hpp"
 
-type_index Acceleration::getId()
+std::type_index Acceleration::getId()
 {
     return (std::type_index(typeid(Acceleration)));
 }

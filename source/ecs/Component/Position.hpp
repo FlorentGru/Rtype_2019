@@ -9,7 +9,7 @@
 
 class Position : public AVector
 {
-    type_index getId();
+    std::type_index getId();
 };
 
 #endif //CPP_RTYPE_2019_POSITION_HPP

@@ -20,7 +20,7 @@ public:
     void setTimeLeft(float);
     void setTime(float);
 
-    type_index getId();
+    std::type_index getId();
 };
 
 #endif //CPP_RTYPE_2019_TIMER_HPP
