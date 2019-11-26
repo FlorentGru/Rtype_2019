@@ -35,5 +35,5 @@ add_executable(r-type_client
   source/client/background/background.cpp
   source/client/client.cpp
   source/client/client.hpp
-        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp)
+        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp)
 target_link_libraries(r-type_client ${CONAN_LIBS})
