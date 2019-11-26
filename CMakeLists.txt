@@ -36,7 +36,10 @@ add_executable(rtype_server
         source/ecs/Component/Velocity.cpp
         source/ecs/Entity/Player.cpp
         source/ecs/System/Events.cpp
+        source/ecs/ServerEcs.cpp
+        source/ecs/ClientEcs.cpp
         )
+
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
 
@@ -52,6 +55,9 @@ add_executable(rtype_client
         source/ecs/Component/Velocity.cpp
         source/ecs/Entity/Player.cpp
         source/ecs/System/Events.cpp
+        source/ecs/ServerEcs.cpp
+        source/ecs/ClientEcs.cpp
         )
+
 target_link_libraries(rtype_client ${CONAN_LIBS})
 set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)

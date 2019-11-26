@@ -5,7 +5,7 @@
 #ifndef RTYPE_GAMEENGINE_HPP
 #define RTYPE_GAMEENGINE_HPP
 
-#include "Ecs.hpp"
+#include "ServerEcs.hpp"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ class GameEngine
 public:
     vector<shared_ptr<IRenderEntity>> run(Events events);
 private:
-    Ecs ecs;
+    ServerEcs ecs;
 };
 
 
