@@ -9,6 +9,7 @@
 
 class Position : public AVector
 {
+public:
     Position(double x, double y, double z);
 
     std::type_index getId() override;

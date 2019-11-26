@@ -9,8 +9,9 @@
 
 class Acceleration : public AVector
 {
+public:
     Acceleration(double x, double y, double z);
-    std::type_index getId();
+    std::type_index getId() override;
 };
 
 #endif //CPP_RTYPE_2019_ACCELERATION_HPP

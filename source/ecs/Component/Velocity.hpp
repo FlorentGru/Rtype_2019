@@ -9,8 +9,9 @@
 
 class Velocity : public AVector
 {
+public:
     Velocity(double x, double y, double z);
-    std::type_index getId();
+    std::type_index getId() override;
 };
 
 

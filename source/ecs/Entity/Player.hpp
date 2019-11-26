@@ -5,23 +5,27 @@
 #ifndef CPP_RTYPE_2019_PLAYER_HPP
 #define CPP_RTYPE_2019_PLAYER_HPP
 
-#include "ICollideEntity.hpp"
+#include <memory>
+#include "IMovingEntity.hpp"
 
-class Player : public ICollideEntity
+class Player : public IMovingEntity
 {
+private:
+    std::vector<std::shared_ptr<IComponent>> _component;
+    int _pv;
 public:
+    Player(int pv, double x, double y, double z);
     //herited function:
     //IEntity
-    std::vector<IComponent> getComponents();
-    std::type_index getType();
+    std::vector<std::shared_ptr<IComponent>> getComponents() override;
+    std::type_index getType() override;
 
-    //ICollideEntity
-    Collider getCollider();
-    void move(double x, double y);
+    //IMovingEntity
+    void move(double x, double y) override;
 
     //personnal function
-    fireEntity fire();
-    bool hitBy(ICollideEntity);
+    //fireEntity fire();
+    //bool hitBy(IMovingEntity);
 };
 
 #endif //CPP_RTYPE_2019_PLAYER_HPP

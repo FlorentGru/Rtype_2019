@@ -5,7 +5,7 @@
 #ifndef CPP_RTYPE_2019_FIRE_HPP
 #define CPP_RTYPE_2019_FIRE_HPP
 
-#include "ICollideEntity.hpp"
+#include "IMovingEntity.hpp"
 
 class Fire : public ICollideEntity
 {
