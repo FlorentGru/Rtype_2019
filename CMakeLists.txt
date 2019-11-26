@@ -68,7 +68,7 @@ add_executable(rtype_client
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp
-        source/ecs/System/IRenderSystem.hpp)
+        source/ecs/System/IRenderSystem.hpp source/ecs/System/IEventsSystem.hpp)
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
 set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)
