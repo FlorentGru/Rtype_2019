@@ -4,9 +4,16 @@
 
 #include "AVector.hpp"
 
+AVector::AVector(double x, double y, double z = 0)
+{
+    _x = x;
+    _y = y;
+    _z = z;
+}
+
 double AVector::getX()
 {
-    return  _x;
+    return _x;
 }
 
 double AVector::getY()

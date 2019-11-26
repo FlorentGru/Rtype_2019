@@ -9,7 +9,9 @@
 
 class Position : public AVector
 {
-    std::type_index getId();
+    Position(double x, double y, double z);
+
+    std::type_index getId() override;
 };
 
 #endif //CPP_RTYPE_2019_POSITION_HPP

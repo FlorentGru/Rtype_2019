@@ -4,6 +4,9 @@
 
 #include "Position.hpp"
 
+Position::Position(double x, double y, double z = 0): AVector(x, y, z)
+{}
+
 std::type_index Position::getId()
 {
     return (std::type_index(typeid(Position)));

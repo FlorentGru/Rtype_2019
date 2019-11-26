@@ -9,6 +9,7 @@
 
 class Acceleration : public AVector
 {
+    Acceleration(double x, double y, double z);
     std::type_index getId();
 };
 

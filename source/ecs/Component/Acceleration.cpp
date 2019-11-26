@@ -4,6 +4,9 @@
 
 #include "Acceleration.hpp"
 
+Acceleration::Acceleration(double x, double y, double z = 0): AVector(x, y, z)
+{}
+
 std::type_index Acceleration::getId()
 {
     return (std::type_index(typeid(Acceleration)));
