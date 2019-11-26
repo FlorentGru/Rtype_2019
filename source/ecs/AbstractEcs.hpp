@@ -22,14 +22,14 @@ public:
     const vector<shared_ptr<IRenderEntity>> &getRenderEntities();
 
     bool addEntity(shared_ptr<IEntity> entity);
-    bool addEntities(vector<shared_ptr<IEntity>> entities);
+    bool addEntities(const vector<shared_ptr<IEntity>> &entities);
 
     bool removeAllEntities();
 
     bool addSystem(shared_ptr<ISystem> system);
 
     bool destroy();
-private:
+protected:
     vector<shared_ptr<IEntity>> entities;
     vector<shared_ptr<ISystem>> systems;
 };

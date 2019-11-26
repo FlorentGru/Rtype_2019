@@ -13,7 +13,7 @@ bool AbstractEcs::addEntity(shared_ptr<IEntity> entity) {
     return true;
 }
 
-bool AbstractEcs::addEntities(vector<shared_ptr<IEntity>> entities) {
+bool AbstractEcs::addEntities(const vector<shared_ptr<IEntity>> &entities) {
 
     for (auto &entity : entities) {
         this->entities.emplace_back(entity);
@@ -26,10 +26,10 @@ bool AbstractEcs::removeAllEntities() {
     return true;
 }
 
-/*bool AbstractEcs::addSystem(shared_ptr<ISystem> system) {
-    this->systems.
-    return false;
-}*/
+bool AbstractEcs::addSystem(shared_ptr<ISystem> system) {
+    this->systems.emplace_back(system);
+    return true;
+}
 
 bool AbstractEcs::destroy() {
     return false;

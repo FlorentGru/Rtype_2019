@@ -6,12 +6,13 @@
 #define CPP_RTYPE_2019_ISYSTEM_HPP
 
 #include <vector>
-#include "IEntity.hpp"
+#include "Entity/IEntity.hpp"
+#include "System/Events.hpp"
 
 class ISystem {
 
 public:
-    virtual run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) = 0;
+    virtual bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) = 0;
 };
 
 #endif //CPP_RTYPE_2019_ISYSTEM_HPP
