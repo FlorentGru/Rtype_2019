@@ -17,6 +17,7 @@ conan_basic_setup()
 include(CPack)
 include_directories(source/server
         source/client
+        source/ecs
         source/ecs/System
         source/network
         source/ecs/Component
@@ -25,8 +26,9 @@ include_directories(source/server
 
 add_executable(rtype_server
         source/ecs/System/Events.cpp
-        source/ecs/Ecs.cpp
         source/ecs/AbstractEcs.cpp
+        source/ecs/ClientEcs.cpp
+        source/ecs/ServerEcs.cpp
         source/server/gameEngine/GameEngine.cpp
         source/ecs/Component/Acceleration.cpp
         source/ecs/Component/AVector.cpp
@@ -43,9 +45,17 @@ add_executable(rtype_server
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
 
+include_directories(source/server
+        source/client
+        source/ecs
+        source/ecs/System
+        source/network
+        source/ecs/Component
+        source/ecs/Entity
+        )
+
 add_executable(rtype_client
         source/ecs/System/Events.cpp
-        source/ecs/Ecs.cpp
         source/ecs/AbstractEcs.cpp
         source/ecs/Component/Acceleration.cpp
         source/ecs/Component/AVector.cpp
@@ -58,7 +68,7 @@ add_executable(rtype_client
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp
-        )
+        source/ecs/System/IRenderSystem.hpp)
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
 set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)

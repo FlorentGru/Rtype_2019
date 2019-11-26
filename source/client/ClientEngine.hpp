@@ -5,15 +5,25 @@
 #ifndef RTYPE_CLIENTENGINE_HPP
 #define RTYPE_CLIENTENGINE_HPP
 
+#include "ClientEcs.hpp"
+
+namespace Client {
+    enum Scene {
+        MENU,
+        GAME
+    };
+}
 
 class ClientEngine
 {
 public:
-//    const Events &getEvents();
-//    bool draw(vector<shared_ptr<IRenderEntity>> entities);
-//    bool menu();
+    const Events &getEvents();
+    bool draw(vector<shared_ptr<IRenderEntity>> entities);
+
+    bool setScene(Client::Scene scene);
 private:
-//    ClientEcs ecs;
+    ClientEcs ecs;
+    Client::Scene scene;
 };
 
 
