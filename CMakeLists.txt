@@ -15,19 +15,25 @@ include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 include(CPack)
-include_directories(server/includes client/includes)
+include_directories(server/includes source/client source/client/window source/client/background)
 
 add_executable(r-type_server
         source/server/main.cpp
         source/server/server.cpp
         source/server/server.hpp
-    server/sources/main.cpp
-    server/includes/server.hpp
         source/network/AUdpSocket.hpp source/network/RawData.hpp)
 target_link_libraries(r-type_server ${CONAN_LIBS})
 
 add_executable(r-type_client
-    client/sources/main.cpp
-    client/includes/client.hpp
+  source/client/main.cpp
+  source/client/window/window.cpp
+  source/client/window/window.hpp
+  source/client/window/initWindow.hpp
+  source/client/window/initWindow.cpp
+  source/client/window/AWindow.hpp
+  source/client/background/background.hpp
+  source/client/background/background.cpp
+  source/client/client.cpp
+  source/client/client.hpp
         source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp)
 target_link_libraries(r-type_client ${CONAN_LIBS})

@@ -10,5 +10,8 @@
 int main(void)
 {
     std::cout << "client" << std::endl;
+    client cli;
+    cli.start();
+
     return (0);
 }
