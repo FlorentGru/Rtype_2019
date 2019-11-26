@@ -5,22 +5,24 @@
 #ifndef CPP_RTYPE_2019_TIMER_HPP
 #define CPP_RTYPE_2019_TIMER_HPP
 
+#include <map>
+#include <ctime>
 #include "IComponent.hpp"
 
 class Timer : public IComponent
 {
 private:
-    float _time;
-    float _timeLeft;
+    std::map<std::string, std::clock_t> _clock;
 
 public:
-    float getTime();
-    float getTimeLeft();
+    Timer();
+    ~Timer();
 
-    void setTimeLeft(float);
-    void setTime(float);
+    void create_clock(const std::string &);
 
-    type_index getId();
+    bool restart(const std::string &, double);
+
+    std::type_index getId() override;
 };
 
 #endif //CPP_RTYPE_2019_TIMER_HPP

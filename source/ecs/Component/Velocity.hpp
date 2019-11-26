@@ -9,7 +9,8 @@
 
 class Velocity : public AVector
 {
-    type_index getId();
+    Velocity(double x, double y, double z);
+    std::type_index getId();
 };
 
 

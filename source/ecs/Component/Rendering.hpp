@@ -14,13 +14,15 @@ private:
     std::string _texture;
 
 public:
+    Rendering(const std::string &texture, const std::string &soundEffect);
+
     std::string getSoundEffect();
     std::string getTexture();
 
-    void setSoundEffect(std::string);
-    void setTexture(std::string);
+    void setSoundEffect(const std::string &);
+    void setTexture(const std::string &);
 
-    type_index getId();
+    std::type_index getId() override;
 };
 
 #endif //CPP_RTYPE_2019_RENDERING_HPP

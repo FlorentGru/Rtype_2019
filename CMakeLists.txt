@@ -15,25 +15,50 @@ include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 include(CPack)
-include_directories(server/includes source/client source/client/window source/client/background)
+include_directories(source/server
+        source/client
+        source/ecs/System
+        source/network
+        source/ecs/Component
+        source/ecs/Entity
+        )
 
-add_executable(r-type_server
-        source/server/main.cpp
-        source/server/server.cpp
-        source/server/server.hpp
-        source/network/AUdpSocket.hpp source/network/RawData.hpp)
-target_link_libraries(r-type_server ${CONAN_LIBS})
+add_executable(rtype_server
+        source/ecs/System/Events.cpp
+        source/ecs/Ecs.cpp
+        source/ecs/AbstractEcs.cpp
+        source/server/gameEngine/GameEngine.cpp
+        source/ecs/Component/Acceleration.cpp
+        source/ecs/Component/AVector.cpp
+        source/ecs/Component/Position.cpp
+        source/ecs/Component/Rendering.cpp
+        source/ecs/Component/Timer.cpp
+        source/ecs/Component/Velocity.cpp
+        source/ecs/Entity/Player.cpp
+        source/ecs/System/Events.cpp
+        source/ecs/ServerEcs.cpp
+        source/ecs/ClientEcs.cpp
+        )
 
-add_executable(r-type_client
-  source/client/main.cpp
-  source/client/window/window.cpp
-  source/client/window/window.hpp
-  source/client/window/initWindow.hpp
-  source/client/window/initWindow.cpp
-  source/client/window/AWindow.hpp
-  source/client/background/background.hpp
-  source/client/background/background.cpp
-  source/client/client.cpp
-  source/client/client.hpp
-        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp)
-target_link_libraries(r-type_client ${CONAN_LIBS})
+target_link_libraries(rtype_server ${CONAN_LIBS})
+set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
+
+add_executable(rtype_client
+        source/ecs/System/Events.cpp
+        source/ecs/Ecs.cpp
+        source/ecs/AbstractEcs.cpp
+        source/ecs/Component/Acceleration.cpp
+        source/ecs/Component/AVector.cpp
+        source/ecs/Component/Position.cpp
+        source/ecs/Component/Rendering.cpp
+        source/ecs/Component/Timer.cpp
+        source/ecs/Component/Velocity.cpp
+        source/ecs/Entity/Player.cpp
+        source/ecs/System/Events.cpp
+        source/ecs/ServerEcs.cpp
+        source/ecs/ClientEcs.cpp
+        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp
+        )
+
+target_link_libraries(rtype_client ${CONAN_LIBS})
+set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)
