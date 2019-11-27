@@ -12,52 +12,56 @@ using namespace Protocol;
 
 Packet::Packet()
 {
-}
-
-Packet::CommandPacket &Packet::createEmptyPacket()
-{
-    _data.data.tag = CMD::NONE;
-    _data.data.res = true;
-    return(_data);
+    setCommand();
+    setEntity();
+    setEvents();
 }
 
 Packet::CommandPacket &Packet::handshake(bool fromServ, bool fromClient)
 {
-    _data.data.tag = CMD::HANDSHAKE;
-    _data.data.res = true;
-    _data.data._handshake.client = fromClient;
-    _data.data._handshake.serv = fromServ;
-    _data.data._handshake.magicNumber = 125728;
-    return(_data);
+    setCommand();
+
+    _command.data.tag = CMD::HANDSHAKE;
+    _command.data.res = true;
+    _command.data._handshake.client = fromClient;
+    _command.data._handshake.serv = fromServ;
+    _command.data._handshake.magicNumber = 125728;
+    return(_command);
 }
 
 Packet::CommandPacket &Packet::disconnection()
 {
-    _data.data.tag = CMD::DISCONNECTION;
-    _data.data.res = true;
-    return(_data);
+    setCommand();
+
+    _command.data.tag = CMD::DISCONNECTION;
+    _command.data.res = true;
+    return(_command);
 }
 
 Packet::CommandPacket &Packet::error(const Protocol::CMD cmd, const std::string &msg)
 {
-    _data.data.tag = cmd;
-    _data.data.res = true;
-    memset(_data.data._error.msg, 0, Protocol::PRO_SIZE::MAX_MSG_ERROR);
+    setCommand();
+
+    _command.data.tag = cmd;
+    _command.data.res = true;
+    memset(_command.data._error.msg, 0, Protocol::PRO_SIZE::MAX_MSG_ERROR);
     for (size_t i = 0; i < Protocol::PRO_SIZE::MAX_MSG_ERROR; i++)
-        _data.data._error.msg[i] = msg[i];
-    return(_data);
+        _command.data._error.msg[i] = msg[i];
+    return(_command);
 }
 
 Packet::CommandPacket &Packet::getCommand()
 {
-    return(_data);
+    return(_command);
 }
 
 void Packet::set(const char *pck, std::size_t size)
 {
-    memset(_data.rawData, 0, 64);
+    setCommand();
+
+    memset(_command.rawData, 0, 64);
     for (size_t i = 0; i < size; i++)
-        _data.rawData[i] = pck[i];
+        _command.rawData[i] = pck[i];
 }
 
 bool Packet::isValid(CMD tag)
@@ -65,4 +69,19 @@ bool Packet::isValid(CMD tag)
     if (tag == CMD::NONE)
         return(false);
     return(true);
+}
+
+void Packet::setCommand()
+{
+    memset(this->_command.rawData, 0, MAX_COMMAND_LENGTH);
+}
+
+void Packet::setEvents()
+{
+    memset(this->_events.rawData, 0, MAX_EVENT_LENGTH);
+}
+
+void Packet::setEntity()
+{
+    memset(this->_entity.rawData, 0, MAX_ENTITY_LENGTH);
 }

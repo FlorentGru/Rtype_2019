@@ -17,6 +17,7 @@
 // #endif
 
 #include "iostream"
+#include "Events.hpp"
 
 namespace Protocol
 {
@@ -27,8 +28,8 @@ namespace Protocol
     enum PRO_SIZE : int {
         MAX_MSG_ERROR = 50,
         MAX_COMMAND_LENGTH = 64,
-        MAX_EVENT_LENGTH = 512,
-        MAX_ENTITY_LENGTH = 166,
+        MAX_EVENT_LENGTH = 128,
+        MAX_ENTITY_LENGTH = 256,
         MAGIC_NBR = 42
     };
 
@@ -52,7 +53,38 @@ namespace Protocol
             char rawData[MAX_EVENT_LENGTH];
             struct data {
                 CMD tag;
-                bool success;
+                bool res;
+
+                bool enter;
+                bool leftArrow;
+                bool rightArrow;
+                bool upArrow;
+                bool downArrow;
+                bool aKey;
+                bool bKey;
+                bool cKey;
+                bool dKey;
+                bool eKey;
+                bool fKey;
+                bool gKey;
+                bool hKey;
+                bool iKey;
+                bool jKey;
+                bool kKey;
+                bool lKey;
+                bool mKey;
+                bool oKey;
+                bool pKey;
+                bool qKey;
+                bool rKey;
+                bool sKey;
+                bool tKey;
+                bool uKey;
+                bool vKey;
+                bool wKey;
+                bool xKey;
+                bool yKey;
+                bool zKey;
             };
         };
 
@@ -60,7 +92,7 @@ namespace Protocol
             char rawData[MAX_ENTITY_LENGTH];
             struct data {
                 CMD tag;
-                bool success;
+                bool res;
                 int entityNbr;
                 Entity entities[10];
             };
@@ -70,14 +102,14 @@ namespace Protocol
             char rawData[MAX_COMMAND_LENGTH];
             struct {
                 CMD tag;
-                bool success;
+                bool res;
                 union
                 {
                     struct
                     {
                         int magicNumber;
                         bool client;
-                        bool server;
+                        bool serv;
                     } _handshake;
                     struct
                     {
@@ -88,14 +120,22 @@ namespace Protocol
         };
 
     private:
-        CommandPacket _data;
+        CommandPacket _command;
+        EventsPacket _events;
+        EntityPacket _entity;
 
+        void setCommand();
+        void setEvents();
+        void setEntity();
 
     public:
         Packet();
         ~Packet() {};
 
-        CommandPacket &createEmptyPacket();
+//        EventsPacket &events(const Events &events);
+
+//        vector<EntityPacket> entity(const vector<SerializedEntity> &entities);
+
         CommandPacket &handshake(bool fromServ, bool fromClient);
         CommandPacket &disconnection();
         CommandPacket &error(Protocol::CMD cmd, const std::string &msg);
