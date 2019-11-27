@@ -5,12 +5,9 @@
 ** server/server.hpp
 */
 
-#ifndef _SERVER_HPP_
-#define _SERVER_HPP_
+#ifndef _NETWORKSERVER_HPP_
+#define _NETWORKSERVER_HPP_
 
-#include <ctime>
-#include <iostream>
-#include <string>
 #include <boost/array.hpp>
 #include <boost/bind.hpp>
 #include <boost/shared_ptr.hpp>
@@ -18,18 +15,21 @@
 
 using boost::asio::ip::udp;
 
-class server
+class NetworkServer
 {
     public:
-        server(boost::asio::io_context& ioContext);
+        NetworkServer(boost::asio::io_context& ioContext, short port);
+        bool doReceive();
+        std::string getMessage();
 
     private: 
-        void doReceive();
         void handleReceive(const boost::system::error_code& error, size_t bytes_transferred);
 
+        boost::asio::io_context& ioContext_;
         udp::socket socket_;
         udp::endpoint remoteEndpoint_;
-        boost::array<char, 1024> recv_buffer;
+        boost::array<char, 64> recv_buffer;
+        std::string res;
 };
 
 #endif
