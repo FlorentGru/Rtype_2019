@@ -28,11 +28,11 @@ void Client::send(const std::string &msg)
 	if (msg.compare("handshake") == 0)
 		packet_.handshake(false, true);
 	else if (msg.compare("disconnection") == 0)
-		packet_.deconnection();
+        packet_.disconnection();
 	else
 		packet_.error(Protocol::CMD::NONE, "Error : Unknown data");
-    socket_.async_send_to(boost::asio::buffer(packet_.get().rawData, 64), endpoint_,
-        boost::bind(&Client::handleSend, this, packet_.get().rawData,
+    socket_.async_send_to(boost::asio::buffer(packet_.getCommand().rawData, 64), endpoint_,
+                          boost::bind(&Client::handleSend, this, packet_.getCommand().rawData,
         boost::asio::placeholders::error,
         boost::asio::placeholders::bytes_transferred));
 }
@@ -46,10 +46,10 @@ void Client::handleSend(std::string message, const boost::system::error_code& er
 	if (msg.compare("handshake") == 0)
 		packet_.handshake(false, true);
 	else if (msg.compare("disconnection") == 0)
-		packet_.deconnection();
+		packet_.disconnection();
 	else
 		packet_.error(Protocol::CMD::NONE, "Error : Unknown data");
-	socket_.send_to(boost::asio::buffer(packet_.get().rawData, 64), endpoint_);
+	socket_.send_to(boost::asio::buffer(packet_.getCommand().rawData, 64), endpoint_);
 }*/
 
 void Client::receive()
@@ -67,11 +67,11 @@ void Client::handle_receive_from(const boost::system::error_code& error, size_t 
 	std::string _buffer;
 	std::copy(recv_buf.begin(), recv_buf.begin()+bytes_recvd, std::back_inserter(_buffer));
 	packet_.set(_buffer.c_str(), bytes_recvd);
-	if (packet_.get().data.tag == Protocol::CMD::HANDSHAKE)
-        std::cout << "Received :'" << packet_.get().data._handshake.magicNumber << "'" << std::endl;
-	if (packet_.get().data.tag == Protocol::CMD::NONE)
-        std::cout << "Received :'" << packet_.get().data._error.msg << "'" << std::endl;
-	if (packet_.get().data.tag == Protocol::CMD::DISCONNECTION) {
+	if (packet_.getCommand().data.tag == Protocol::CMD::HANDSHAKE)
+        std::cout << "Received :'" << packet_.getCommand().data._handshake.magicNumber << "'" << std::endl;
+	if (packet_.getCommand().data.tag == Protocol::CMD::NONE)
+        std::cout << "Received :'" << packet_.getCommand().data._error.msg << "'" << std::endl;
+	if (packet_.getCommand().data.tag == Protocol::CMD::DISCONNECTION) {
         std::cout << "Disconnection" << std::endl;
 		socket_.close();
 	}

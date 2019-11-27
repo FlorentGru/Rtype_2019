@@ -26,7 +26,9 @@ namespace Protocol
 
     enum PRO_SIZE : int {
         MAX_MSG_ERROR = 50,
-        MAX_LENGTH = 64,
+        MAX_COMMAND_LENGTH = 64,
+        MAX_EVENT_LENGTH = 512,
+        MAX_ENTITY_LENGTH = 166,
         MAGIC_NBR = 42
     };
 
@@ -39,18 +41,43 @@ namespace Protocol
     class Packet
     {
     public:
-        union packetData {
-            char rawData[Protocol::MAX_LENGTH];
+        struct Entity {
+            int id;
+            int type;
+            float posX;
+            float posY;
+        };
+
+        union EventsPacket {
+            char rawData[MAX_EVENT_LENGTH];
+            struct data {
+                CMD tag;
+                bool success;
+            };
+        };
+
+        union EntityPacket {
+            char rawData[MAX_ENTITY_LENGTH];
+            struct data {
+                CMD tag;
+                bool success;
+                int entityNbr;
+                Entity entities[10];
+            };
+        };
+
+        union CommandPacket {
+            char rawData[MAX_COMMAND_LENGTH];
             struct {
                 CMD tag;
-                bool res;
+                bool success;
                 union
                 {
                     struct
                     {
                         int magicNumber;
                         bool client;
-                        bool serv;
+                        bool server;
                     } _handshake;
                     struct
                     {
@@ -61,17 +88,18 @@ namespace Protocol
         };
 
     private:
-        packetData _data;
+        CommandPacket _data;
+
 
     public:
         Packet();
         ~Packet() {};
 
-        packetData &createEmptyPacket();
-        packetData &handshake(bool fromServ, bool fromClient);
-        packetData &deconnection();
-        packetData &error(const Protocol::CMD cmd, const std::string &msg);
-        packetData &get();
+        CommandPacket &createEmptyPacket();
+        CommandPacket &handshake(bool fromServ, bool fromClient);
+        CommandPacket &disconnection();
+        CommandPacket &error(Protocol::CMD cmd, const std::string &msg);
+        CommandPacket &getCommand();
         void set(const char *, std::size_t size);
         bool isValid(CMD tag);
     };

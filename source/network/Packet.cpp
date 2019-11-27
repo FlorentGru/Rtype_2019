@@ -14,14 +14,14 @@ Packet::Packet()
 {
 }
 
-Packet::packetData &Packet::createEmptyPacket()
+Packet::CommandPacket &Packet::createEmptyPacket()
 {
     _data.data.tag = CMD::NONE;
     _data.data.res = true;
     return(_data);
 }
 
-Packet::packetData &Packet::handshake(bool fromServ, bool fromClient)
+Packet::CommandPacket &Packet::handshake(bool fromServ, bool fromClient)
 {
     _data.data.tag = CMD::HANDSHAKE;
     _data.data.res = true;
@@ -31,14 +31,14 @@ Packet::packetData &Packet::handshake(bool fromServ, bool fromClient)
     return(_data);
 }
 
-Packet::packetData &Packet::deconnection()
+Packet::CommandPacket &Packet::disconnection()
 {
     _data.data.tag = CMD::DISCONNECTION;
     _data.data.res = true;
     return(_data);
 }
 
-Packet::packetData &Packet::error(const Protocol::CMD cmd, const std::string &msg)
+Packet::CommandPacket &Packet::error(const Protocol::CMD cmd, const std::string &msg)
 {
     _data.data.tag = cmd;
     _data.data.res = true;
@@ -48,7 +48,7 @@ Packet::packetData &Packet::error(const Protocol::CMD cmd, const std::string &ms
     return(_data);
 }
 
-Packet::packetData &Packet::get()
+Packet::CommandPacket &Packet::getCommand()
 {
     return(_data);
 }
