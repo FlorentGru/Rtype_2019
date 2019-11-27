@@ -14,6 +14,7 @@ Server::Server(boost::asio::io_context &io_context, short port) : ioContext_(io_
 {
 //    thr = new boost::thread(boost::bind(&NetworkServer::doReceive, &session_));
     doReceive();
+    ioContext_.run();
 }
 
 Server::~Server()
@@ -58,5 +59,4 @@ void Server::doSend()
 
 void Server::handleSend(std::string message, const boost::system::error_code& error, size_t bytes_transferred)
 {
-    std::cout << "sent" << std::endl;
 }

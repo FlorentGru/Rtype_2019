@@ -37,7 +37,10 @@ add_executable(r-type_client
     source/client/main.cpp
     source/network/Packet.hpp
     source/network/Packet.cpp
-    source/client/client.cpp
-    source/client/client.hpp
+    source/client/Client.cpp
+    source/client/Client.hpp
+    source/client/ClientDataManagement.hpp
+    source/client/IClientDataManagement.hpp
+    source/client/ClientDataManagement.cpp
 )
 target_link_libraries(r-type_client ${CONAN_LIBS})

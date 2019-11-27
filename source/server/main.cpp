@@ -14,7 +14,6 @@ int main(int ac, char *av[])
         boost::asio::io_context ioContext;
 //        std::unique_ptr<AServer> s(new server(io_context, std::stoi(argv[1])));
         Server server(ioContext, std::stoi(av[1]));
-        ioContext.run();
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
         return (84);
