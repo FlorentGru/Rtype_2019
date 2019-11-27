@@ -140,7 +140,11 @@ namespace Protocol
         CommandPacket &disconnection();
         CommandPacket &error(Protocol::CMD cmd, const std::string &msg);
         CommandPacket &getCommand();
-        void set(const char *, std::size_t size);
+
+        void setCommand(const char *, std::size_t size);
+        void setEvents(const char *, std::size_t size);
+        void setEntity(const char *, std::size_t size);
+
         bool isValid(CMD tag);
     };
 };

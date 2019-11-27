@@ -55,15 +55,6 @@ Packet::CommandPacket &Packet::getCommand()
     return(_command);
 }
 
-void Packet::set(const char *pck, std::size_t size)
-{
-    setCommand();
-
-    memset(_command.rawData, 0, 64);
-    for (size_t i = 0; i < size; i++)
-        _command.rawData[i] = pck[i];
-}
-
 bool Packet::isValid(CMD tag)
 {
     if (tag == CMD::NONE)
@@ -84,4 +75,31 @@ void Packet::setEvents()
 void Packet::setEntity()
 {
     memset(this->_entity.rawData, 0, MAX_ENTITY_LENGTH);
+}
+
+void Packet::setCommand(const char *pck, std::size_t size)
+{
+    setCommand();
+
+    for (size_t i = 0; i < size; i++) {
+        _command.rawData[i] = pck[i];
+    }
+}
+
+void Packet::setEvents(const char *pck, std::size_t size)
+{
+    setEvents();
+
+    for (size_t i = 0; i < size; i++) {
+        _events.rawData[i] = pck[i];
+    }
+}
+
+void Packet::setEntity(const char *pck, std::size_t size)
+{
+    setEntity();
+
+    for (size_t i = 0; i < size; i++) {
+        _entity.rawData[i] = pck[i];
+    }
 }
