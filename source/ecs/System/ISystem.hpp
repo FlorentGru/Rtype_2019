@@ -6,8 +6,8 @@
 #define CPP_RTYPE_2019_ISYSTEM_HPP
 
 #include <vector>
-#include "Entity/IEntity.hpp"
-#include "System/Events.hpp"
+#include "IEntity.hpp"
+#include "Events.hpp"
 
 class ISystem {
 

@@ -4,7 +4,7 @@
 
 #include "Acceleration.hpp"
 
-Acceleration::Acceleration(double x, double y, double z = 0): AVector(x, y, z)
+Acceleration::Acceleration(double x, double y, double z = 0): Vector(x, y, z)
 {}
 
 std::type_index Acceleration::getId()

@@ -15,17 +15,11 @@ private:
     int _pv;
 public:
     Player(int pv, double x, double y, double z);
-    //herited function:
-    //IEntity
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     std::type_index getType() override;
 
-    //IMovingEntity
     void move(double x, double y) override;
 
-    //personnal function
-    //fireEntity fire();
-    //bool hitBy(IMovingEntity);
 };
 
 #endif //CPP_RTYPE_2019_PLAYER_HPP

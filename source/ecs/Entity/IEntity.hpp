@@ -10,6 +10,7 @@
 
 class IEntity
 {
+public:
     virtual std::vector<std::shared_ptr<IComponent>> getComponents() = 0;
 
     virtual std::type_index getType() = 0;

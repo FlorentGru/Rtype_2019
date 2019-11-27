@@ -25,4 +25,4 @@ public:
     std::type_index getId() override;
 };
 
-#endif //CPP_RTYPE_2019_RENDERING_HPP
+#endif //CPP_RTYPE_2019_RENDERING_HPP   

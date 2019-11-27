@@ -7,17 +7,22 @@
 
 #include <memory>
 #include "ISystem.hpp"
+#include "Fire.hpp"
+#include "Player.hpp"
 
 class UpdateEntitySystem : public ISystem {
 public:
-    void run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events);
+    UpdateEntitySystem() = default;
+    bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
+    bool _isSucceed = true;
+
     void createFire();
 
     void moveLeft(std::shared_ptr<IEntity>);
 
-    void manageShip();
+    void manageShip(std::shared_ptr<IEntity> player);
 };
 
 #endif //CPP_RTYPE_2019_UPDATEENTITYSYSTEM_HPP
