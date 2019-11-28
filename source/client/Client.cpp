@@ -9,8 +9,8 @@
 
 using boost::asio::ip::udp;
 
-Client::Client(boost::asio::io_context& io_context, const std::string& host, const std::string& port
-) : io_context_(io_context), socket_(io_context, udp::endpoint(udp::v4(), 0))
+Client::Client(const std::string& host, const std::string& port
+) : io_context_(), socket_(io_context_, udp::endpoint(udp::v4(), 0))
 {
 	udp::resolver resolver(io_context_);
 	udp::resolver::query query(udp::v4(), host, port);

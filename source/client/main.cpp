@@ -12,8 +12,7 @@ int main(int ac, char *av[])
     if (ac != 3)
         return(84);
     try {
-        boost::asio::io_context io_context;
-        Client client(io_context, av[1], av[2]);
+        Client client(av[1], av[2]);
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
         return (84);

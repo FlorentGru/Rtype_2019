@@ -20,7 +20,7 @@ using boost::asio::ip::udp;
 class Server
 {
 public:
-    Server(boost::asio::io_context &ioContext, short port);
+    Server(short port);
     ~Server();
 
 private:
@@ -29,7 +29,7 @@ private:
     void doSend();
     void handleSend();
 
-    boost::asio::io_context& ioContext_;
+    boost::asio::io_context ioContext_;
     udp::socket socket_;
     udp::endpoint remoteEndpoint_;
     boost::array<char, 64> recv_buffer;

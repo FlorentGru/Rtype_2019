@@ -10,9 +10,8 @@
 
 using boost::asio::ip::udp;
 
-Server::Server(boost::asio::io_context &io_context, short port) : ioContext_(io_context), socket_(io_context, udp::endpoint(udp::v4(), port))
+Server::Server(short port) : ioContext_(), socket_(ioContext_, udp::endpoint(udp::v4(), port))
 {
-//    thr = new boost::thread(boost::bind(&NetworkServer::doReceive, &session_));
     doReceive();
     ioContext_.run();
 }

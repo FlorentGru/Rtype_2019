@@ -20,7 +20,7 @@ using boost::asio::ip::udp;
 class Client
 {
 public:
-	Client(boost::asio::io_context& io_context, const std::string& host, const std::string& port);
+	Client(const std::string& host, const std::string& port);
 	~Client();
 	void send();
 	void handleSend();
@@ -30,7 +30,7 @@ public:
 
 private:
 	boost::array<char, 64> recv_buf;
-	boost::asio::io_context& io_context_;
+	boost::asio::io_context io_context_;
 	udp::socket socket_;
 	udp::endpoint endpoint_;
 	udp::endpoint sender_endpoint;

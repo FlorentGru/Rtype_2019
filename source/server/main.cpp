@@ -13,8 +13,7 @@ int main(int ac, char *av[])
         return (84);
     try
     {
-        boost::asio::io_context ioContext;
-        Server server(ioContext, std::stoi(av[1]));
+        Server server(std::stoi(av[1]));
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
         return (84);
