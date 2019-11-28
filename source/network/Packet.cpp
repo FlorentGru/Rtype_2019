@@ -55,6 +55,16 @@ Packet::CommandPacket &Packet::getCommand()
     return(_command);
 }
 
+CMD Packet::getType(const char *pck, std::size_t size)
+{
+    BasePacket packet;
+
+    memset(packet.rawData, 0, MIN_LENGTH);
+    memcpy(packet.rawData, pck, size);
+
+    return (packet.data.tag);
+}
+
 bool Packet::isValid(CMD tag)
 {
     if (tag == CMD::NONE)
@@ -81,25 +91,19 @@ void Packet::setCommand(const char *pck, std::size_t size)
 {
     setCommand();
 
-    for (size_t i = 0; i < size; i++) {
-        _command.rawData[i] = pck[i];
-    }
+    memcpy(_command.rawData, pck, size);
 }
 
 void Packet::setEvents(const char *pck, std::size_t size)
 {
     setEvents();
 
-    for (size_t i = 0; i < size; i++) {
-        _events.rawData[i] = pck[i];
-    }
+    memcpy(_events.rawData, pck, size);
 }
 
 void Packet::setEntity(const char *pck, std::size_t size)
 {
     setEntity();
 
-    for (size_t i = 0; i < size; i++) {
-        _entity.rawData[i] = pck[i];
-    }
+    memcpy(_entity.rawData, pck, size);
 }

@@ -30,13 +30,16 @@ namespace Protocol
         MAX_COMMAND_LENGTH = 64,
         MAX_EVENT_LENGTH = 128,
         MAX_ENTITY_LENGTH = 256,
+        MIN_LENGTH = 2,
         MAGIC_NBR = 42
     };
 
     enum CMD : unsigned char {
         NONE = 0,
         HANDSHAKE,
-        DISCONNECTION
+        DISCONNECTION,
+        EVENTS,
+        ENTITY
     };
 
     class Packet
@@ -47,6 +50,14 @@ namespace Protocol
             int type;
             float posX;
             float posY;
+        };
+
+        union BasePacket {
+            char rawData[MIN_LENGTH];
+            struct {
+                CMD tag;
+                bool res;
+            } data;
         };
 
         union EventsPacket {
@@ -145,6 +156,7 @@ namespace Protocol
         void setEvents(const char *, std::size_t size);
         void setEntity(const char *, std::size_t size);
 
+        CMD getType(const char *, std::size_t size);
         bool isValid(CMD tag);
     };
 };
