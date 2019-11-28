@@ -1,0 +1,172 @@
+Network Working Group                                   R-Type
+Category: Informations                           November 2019
+
+
+
+            Instructions for R-TYPE Protocol
+            --------------------------------
+
+
+
+Status of this Memo
+
+    This memo provides information for the r-type communication
+    between the server and the players.
+
+
+
+Table of Contents
+
+    1.  Introduction.........................................2
+    2.  Format...............................................2
+    3.  Protocol.............................................2
+    3a.  Enumerations........................................2
+    3b.  Structures informations.............................3
+    3c.  Packets.............................................3
+
+
+
+
+R-Type                  Informations                  [Page 1]
+
+R-Type         Instructions for R-TYPE Protocol      Nov. 2019
+
+
+1. Introduction
+
+The R-Type project is a program working with a server able to 
+handle several client and several game at the same time.
+The connection between the server and the clients is done with
+an udp protocol.
+The udp protocol provides a procedure for application programs
+to send user'data and game's data to a client.
+
+2. Format
+
+    0       7 8     15 16
+    +--------+--------+
+    |  CMD   |   Res  |
+    |  code  |        |
+    +--------+--------+
+    |
+    |    data bytes..
+    +-----------------
+
+
+3. Protocol
+
+  The program handle different type of packet of different size.
+  CMD code is an ID for the query.
+  Res is a boolean that indicate if it works
+
+  3a. Enumerations :
+
+    To manage packets, the program must use two enumerations
+    The first one is used to set the size of the packets
+    and the second one is used to set its request type
+
+    PRO_SIZE :
+    --------
+      MAX_MSG_ERROR = 50,
+      MAX_COMMAND_LENGTH = 64,
+      MAX_EVENT_LENGTH = 128,
+      MAX_ENTITY_LENGTH = 256,
+      MIN_LENGTH = 2,
+      MAGIC_NBR = 42
+
+    CMD :
+    ---
+      NONE = 0,
+      HANDSHAKE,
+      DISCONNECTION,
+      EVENTS,
+      ENTITY
+
+  3b. Structures informations :
+
+    One packet is using an Entity structure that permit to
+    manage the entities to display on the client screen.
+
+    struct Entity
+      integer id (4 bytes)
+      integer type (4 bytes)
+      floating_number posX (4 bytes)
+      floating_number posY (4 bytes)
+
+
+
+
+R-Type                  Informations                  [Page 2]
+
+R-Type         Instructions for R-TYPE Protocol      Nov. 2019
+
+
+  3c. Packets :
+
+    The Data is an union of several struct able
+    to take different commands type:
+
+    Handshake:
+    ----------
+      integer magic number = MAGIC_NBR
+      boolean client (1 byte)
+      boolean server (1 byte)
+
+      The handshake must be used to authenticate the connection between
+      the server and a client.
+      This packet is of size [MAX_COMMAND_LENGTH].
+
+    Error:
+    ------
+      string msg[MAX_MSG_ERROR]
+
+      The error command must be used when a client request
+      is invalid/unknown.
+      This packet is of size [MAX_COMMAND_LENGTH].
+
+    Events:
+    -------
+      boolean enter (1 byte)
+      boolean leftArrow (1 byte)
+      boolean rightArrow (1 byte)
+      boolean upArrow (1 byte)
+      boolean downArrow (1 byte)
+      boolean aKey (1 byte)
+      boolean bKey (1 byte)
+      boolean cKey (1 byte)
+      boolean dKey (1 byte)
+      boolean eKey (1 byte)
+      boolean fKey (1 byte)
+      boolean gKey (1 byte)
+      boolean hKey (1 byte)
+      boolean iKey (1 byte)
+      boolean jKey (1 byte)
+      boolean kKey (1 byte)
+      boolean lKey (1 byte)
+      boolean mKey (1 byte)
+      boolean oKey (1 byte)
+      boolean pKey (1 byte)
+      boolean qKey (1 byte)
+      boolean rKey (1 byte)
+      boolean sKey (1 byte)
+      boolean tKey (1 byte)
+      boolean uKey (1 byte)
+      boolean vKey (1 byte)
+      boolean wKey (1 byte)
+      boolean xKey (1 byte)
+      boolean yKey (1 byte)
+      boolean zKey (1 byte)
+
+      This packet must handle events sent from the client to return
+      the news informations to display on his screen.
+      This packet is of size [MAX_EVENT_LENGTH].
+
+    Entity:
+    -------
+      integer entityNbr (4 bytes)
+      Entity list entities (up to 10)
+
+      The entity packet must have 10 entities maximum
+      This packet is of size [MAX_ENTITY_LENGTH].
+
+R-Type                  Informations                  [Page 3]
