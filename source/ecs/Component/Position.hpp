@@ -5,10 +5,11 @@
 #ifndef CPP_RTYPE_2019_POSITION_HPP
 #define CPP_RTYPE_2019_POSITION_HPP
 
-#include "AVector.hpp"
+#include "Vector.hpp"
 
-class Position : public AVector
+class Position : public Vector
 {
+public:
     Position(double x, double y, double z);
 
     std::type_index getId() override;

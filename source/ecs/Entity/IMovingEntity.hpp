@@ -7,10 +7,8 @@
 
 #include "IEntity.hpp"
 
-class ICollideEntity : public IEntity
+class IMovingEntity : public IEntity
 {
-    virtual Collider getCollider() = 0;
-
     virtual void move(double x, double y) = 0;
 };
 

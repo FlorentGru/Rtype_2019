@@ -10,6 +10,7 @@
 
 class IComponent
 {
+public:
     virtual std::type_index getId() = 0;
 };
 

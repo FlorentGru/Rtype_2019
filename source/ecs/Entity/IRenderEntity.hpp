@@ -9,7 +9,9 @@
 
 class IRenderEntity : public IEntity
 {
-    virtual RenderComponent getRenderComponent() = 0;
+    virtual std::string getTexture() = 0;
+
+    virtual std::vector<float> getPosition() = 0;
 };
 
 #endif //CPP_RTYPE_2019_IRENDERENTITY_HPP

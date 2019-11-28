@@ -4,7 +4,7 @@
 
 #include "Velocity.hpp"
 
-Velocity::Velocity(double x, double y, double z = 0): AVector(x, y, z)
+Velocity::Velocity(double x, double y, double z = 0): Vector(x, y, z)
 {}
 
 std::type_index Velocity::getId()
