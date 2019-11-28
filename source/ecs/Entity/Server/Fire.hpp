@@ -24,6 +24,7 @@ public:
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;
+    SerializedEntity serialize() override;
 };
 
 

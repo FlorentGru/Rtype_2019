@@ -41,7 +41,7 @@ add_executable(rtype_server
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
         source/ecs/Entity/Server/Fire.cpp
-        )
+        source/ecs/Entity/SerializedEntity.cpp source/ecs/Entity/SerializedEntity.hpp)
 
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)

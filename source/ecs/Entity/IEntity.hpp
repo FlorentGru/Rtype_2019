@@ -9,6 +9,7 @@
 #include <memory>
 #include "IComponent.hpp"
 
+
 class IEntity
 {
 public:
@@ -18,6 +19,7 @@ public:
         ENEMY,
         DESTRUCTIBLE
     };
+
     virtual std::vector<std::shared_ptr<IComponent>> getComponents() = 0;
 
     virtual Type getType() = 0;

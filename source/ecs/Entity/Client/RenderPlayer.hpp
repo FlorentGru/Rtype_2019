@@ -7,7 +7,7 @@
 
 #include <memory>
 #include "Vector.hpp"
-#include "client/IRenderEntity.hpp"
+#include "IRenderEntity.hpp"
 
 class RenderPlayer : public IRenderEntity
 {
@@ -16,7 +16,7 @@ private:
     size_t _pv;
     int _id;
 public:
-    RenderPlayer(size_t pv, int id, double x, double y, double z);
+    RenderPlayer(size_t pv, int id, double x, double y, double z = 0);
 
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
 

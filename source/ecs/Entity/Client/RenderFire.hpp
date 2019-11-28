@@ -6,10 +6,24 @@
 #define RTYPE_RENDERFIRE_HPP
 
 
-class RenderFire
+#include <vector>
+#include "IRenderEntity.hpp"
+
+class RenderFire : public  IRenderEntity
 {
+private:
+    std::vector<std::shared_ptr<IComponent>> _component;
+    int _id;
+public:
+    RenderFire(int id, double x, double y, double z = 0);
 
+    std::vector<std::shared_ptr<IComponent>> getComponents() override;
+
+    Type getType() override;
+    int getId() override;
+
+    std::string getTexture() override;
+    std::shared_ptr<Position> getPosition() override;
 };
-
 
 #endif //RTYPE_RENDERFIRE_HPP

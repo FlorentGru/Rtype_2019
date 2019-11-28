@@ -6,7 +6,7 @@
 #include "Rendering.hpp"
 #include "Position.hpp"
 
-RenderPlayer::RenderPlayer(size_t pv, int id, double x, double y, double z = 0)
+RenderPlayer::RenderPlayer(size_t pv, int id, double x, double y, double z)
 {
     Rendering rendering("player.png", "", pv);
     Position position(x, y, z);

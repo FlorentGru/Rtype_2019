@@ -52,3 +52,18 @@ int Fire::getId()
 {
     return _id;
 }
+
+SerializedEntity Fire::serialize()
+{
+    int i = 0;
+    float x = 0;
+    float y = 0;
+    float z = 0;
+
+    for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    x = std::dynamic_pointer_cast<Position>(_component[i])->getX();
+    y = std::dynamic_pointer_cast<Position>(_component[i])->getY();
+    z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
+    SerializedEntity res(IEntity::FIRE, _id, x, y, z);
+    return res;
+}

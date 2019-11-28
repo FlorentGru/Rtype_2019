@@ -5,7 +5,7 @@
 #ifndef CPP_RTYPE_2019_PLAYER_HPP
 #define CPP_RTYPE_2019_PLAYER_HPP
 
-#include "server/IMovingEntity.hpp"
+#include "IMovingEntity.hpp"
 
 class Player : public IMovingEntity
 {
@@ -20,6 +20,7 @@ public:
     Type getType() override;
     int getId() override;
     void move(double x, double y, double z) override;
+    SerializedEntity serialize() override;
 
 };
 
