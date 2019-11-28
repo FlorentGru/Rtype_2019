@@ -10,6 +10,7 @@
 
 ClientData::ClientData()
 {
+    disconnection = false;
 }
 
 void ClientData::createRequest(std::string request)
@@ -29,6 +30,7 @@ void ClientData::manageReceivedData(std::string data, size_t size)
     if (packet_.getCommand().data.tag == Protocol::CMD::HANDSHAKE) {
         std::cout << "Received :'" << packet_.getCommand().data._handshake.magicNumber << "'" << std::endl;
     } else if (packet_.getCommand().data.tag == Protocol::CMD::DISCONNECTION) {
+        disconnection = true;
         std::cout << "Disconnection" << std::endl;
     } else if (packet_.getCommand().data.tag == Protocol::CMD::NONE) {
         std::cout << "Received :'" << packet_.getCommand().data._error.msg << "'" << std::endl;
@@ -38,4 +40,9 @@ void ClientData::manageReceivedData(std::string data, size_t size)
 char *ClientData::getPacketData()
 {
     return(this->packet_.getCommand().rawData);
+}
+
+bool ClientData::inDisconnection()
+{
+    return (disconnection);
 }

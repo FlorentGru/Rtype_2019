@@ -17,6 +17,7 @@ public:
     void createRequest(std::string) override;
     char *getPacketData() override;
     void manageReceivedData(std::string request, size_t size) override;
+    bool inDisconnection() override;
 private:
 };
 

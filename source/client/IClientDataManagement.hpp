@@ -17,8 +17,10 @@ public:
     virtual char *getPacketData() = 0;
     virtual void createRequest(std::string) = 0;
     virtual void manageReceivedData(std::string request, size_t size) = 0;
+    virtual bool inDisconnection() = 0;
 protected:
     Protocol::Packet packet_;
+    bool disconnection;
 };
 
 #endif

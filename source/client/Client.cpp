@@ -58,6 +58,16 @@ void Client::handle_receive_from(const boost::system::error_code& error, size_t 
 	std::copy(recv_buf.begin(), recv_buf.begin()+bytes_recvd, std::back_inserter(_buffer));
     this->data_->manageReceivedData(_buffer, bytes_recvd);
 
+/*	if (std::dynamic_point_cast<ClientData>(this->data_)->inDisconnection() == true) {
+		socket_.close();
+		return;
+	}*/
+
+	if (this->data_->inDisconnection() == true) {
+		socket_.close();
+		return;
+	}
+
 	if (!error || error == boost::asio::error::message_size)
         receive();
 }
