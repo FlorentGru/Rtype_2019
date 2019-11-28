@@ -17,6 +17,7 @@
 // #endif
 
 #include "iostream"
+#include "RawData.hpp"
 //#include "Events.hpp"
 
 namespace Protocol
@@ -42,7 +43,7 @@ namespace Protocol
         ENTITY
     };
 
-    class Packet
+    class PacketManager
     {
     public:
         struct Entity {
@@ -140,24 +141,28 @@ namespace Protocol
         void setEntity();
 
     public:
-        Packet();
-        ~Packet() {};
+        PacketManager();
+        ~PacketManager() {};
 
 //        EventsPacket &events(const Events &events);
 
 //        vector<EntityPacket> entity(const vector<SerializedEntity> &entities);
 
-        CommandPacket &handshake(bool fromServ, bool fromClient);
-        CommandPacket &disconnection();
-        CommandPacket &error(Protocol::CMD cmd, const std::string &msg);
-        CommandPacket &getCommand();
+        RawData handshake(bool fromServ, bool fromClient);
+        RawData disconnection();
+        RawData error(Protocol::CMD cmd, const std::string &msg);
+        RawData getCommand();
 
         void setCommand(const char *, std::size_t size);
         void setEvents(const char *, std::size_t size);
         void setEntity(const char *, std::size_t size);
 
         CMD getType(const char *, std::size_t size);
-        bool isValid(CMD tag);
+        bool isSuccess(const char *, std::size_t size);
+        bool isValid(const char *, std::size_t, CMD tag);
+
+        bool isValidHandshake(const char *, std::size_t, bool serv, bool client);
+        bool isValidDisconnection(const char *, std::size_t);
     };
 };
 

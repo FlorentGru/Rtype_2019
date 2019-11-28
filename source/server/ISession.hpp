@@ -8,7 +8,7 @@
 #ifndef _ISESSION_HPP_
 #define _ISESSION_HPP_
 
-#include "Packet.hpp"
+#include "PacketManager.hpp"
 
 class ISession
 {
@@ -17,7 +17,7 @@ public:
     virtual char *getPacketData() = 0;
     virtual void taskManager(std::string) = 0;
 protected:
-    Protocol::Packet packet_;
+    Protocol::PacketManager packet_;
 };
 
 #endif
