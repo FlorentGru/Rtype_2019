@@ -3,3 +3,9 @@
 //
 
 #include "ClientEngine.hpp"
+
+bool ClientEngine::draw(vector<shared_ptr<IRenderEntity>> entities)
+{
+    
+    entities[0]->getTexture();
+}

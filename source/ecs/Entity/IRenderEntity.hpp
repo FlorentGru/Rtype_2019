@@ -9,6 +9,7 @@
 
 class IRenderEntity : public IEntity
 {
+public:
     virtual std::string getTexture() = 0;
 
     virtual std::vector<float> getPosition() = 0;

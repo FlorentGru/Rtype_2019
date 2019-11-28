@@ -20,6 +20,8 @@ class background
         int create_sprite();
         sf::Sprite getBackgroundSpace() const;
         sf::Sprite getFront() const;
+        sf::Sprite getBackgroundSpaceParal() const;
+        sf::Sprite getFrontParal() const;
 
     private:
         sf::Vector2f vec_backgroundSpace;

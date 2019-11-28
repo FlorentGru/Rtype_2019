@@ -15,7 +15,7 @@ class AWindow
     public:
         virtual ~AWindow() = default;
 
-        virtual bool initScreen(unsigned int _width, unsigned int _height, std::string name) = 0;
+        virtual bool initScreen(unsigned int width, unsigned int height, std::string name) = 0;
         virtual bool close() = 0;
 
     private:

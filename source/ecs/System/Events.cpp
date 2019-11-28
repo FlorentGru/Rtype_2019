@@ -140,6 +140,14 @@ void Events::setMKey(bool mKey) {
     Events::mKey = mKey;
 }
 
+void Events::setNKey(bool nKey) {
+    Events::nKey = nKey;
+}
+
+bool Events::isNKey() const {
+    return nKey;
+}
+
 bool Events::isOKey() const {
     return oKey;
 }
