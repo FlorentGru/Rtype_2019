@@ -11,9 +11,15 @@
 class IEntity
 {
 public:
+    enum Type {
+        PLAYER,
+        FIRE,
+        ENEMY,
+        DESTRUCTIBLE
+    };
     virtual std::vector<std::shared_ptr<IComponent>> getComponents() = 0;
 
-    virtual std::type_index getType() = 0;
+    virtual Type getType() = 0;
 };
 
 #endif //CPP_RTYPE_2019_IENTITY_HPP

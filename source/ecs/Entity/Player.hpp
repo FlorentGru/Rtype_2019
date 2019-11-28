@@ -12,11 +12,12 @@ class Player : public IMovingEntity
 {
 private:
     std::vector<std::shared_ptr<IComponent>> _component;
-    int _pv;
+    size_t _pv;
+
 public:
-    Player(int pv, double x, double y, double z);
+    Player(size_t pv, double x, double y, double z);
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
-    std::type_index getType() override;
+    Type getType() override;
 
     void move(double x, double y) override;
 

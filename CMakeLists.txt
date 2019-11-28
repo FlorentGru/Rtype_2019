@@ -38,7 +38,7 @@ add_executable(rtype_server
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        )
+        source/ecs/Entity/Fire.cpp source/ecs/Entity/Fire.hpp)
 
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
@@ -57,7 +57,7 @@ add_executable(rtype_client
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        )
+        source/ecs/Entity/Fire.cpp source/ecs/Entity/Fire.hpp source/ecs/Entity/RenderPlayer.cpp source/ecs/Entity/RenderPlayer.hpp)
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
 set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)

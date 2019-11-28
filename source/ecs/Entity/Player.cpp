@@ -7,14 +7,12 @@
 #include "Rendering.hpp"
 #include "Timer.hpp"
 
-Player::Player(int pv, double x, double y, double z = 0)
+Player::Player(size_t pv, double x, double y, double z = 0)
 {
-    Rendering rendering("player.png", "");
     Timer timer;
-    Position position(x, y , z);
+    Position position(x, y, z);
     timer.create_clock("moveClock");
     _component.clear();
-    _component.push_back(std::make_shared<Rendering>(rendering));
     _component.push_back(std::make_shared<Timer>(timer));
     _component.push_back(std::make_shared<Position>(position));
     _pv = pv;
@@ -25,9 +23,9 @@ std::vector<std::shared_ptr<IComponent>> Player::getComponents()
     return _component;
 }
 
-std::type_index Player::getType()
+IEntity::Type Player::getType()
 {
-    return (std::type_index(typeid(Player)));
+    return (IEntity::PLAYER);
 }
 
 void Player::move(double x, double y) {

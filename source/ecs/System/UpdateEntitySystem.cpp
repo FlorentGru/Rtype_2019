@@ -7,18 +7,18 @@
 
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
-    for (size_t i = 0; i < entities.size(); ++i) {
-        if (entities[i]->getType() != std::type_index(typeid(Player)))
-            moveLeft(entities[i]);
+    for (auto & entity : entities) {
+        if (entity->getType() != IEntity::PLAYER)
+            moveLeft(entity);
         else
-            manageShip(entities[i]);
+            manageShip(entity);
     }
     return _isSucceed;
 }
 
 void UpdateEntitySystem::createFire()
 {
-    Fire();
+
 }
 
 void UpdateEntitySystem::moveLeft(std::shared_ptr<IEntity>)
