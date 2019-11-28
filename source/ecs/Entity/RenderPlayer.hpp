@@ -6,6 +6,7 @@
 #define RTYPE_RENDERPLAYER_HPP
 
 #include <memory>
+#include <Vector.hpp>
 #include "IRenderEntity.hpp"
 
 class RenderPlayer : public IRenderEntity
@@ -21,7 +22,7 @@ public:
     Type getType() override;
 
     std::string getTexture() override;
-    std::vector<float> getPosition() override;
+    std::shared_ptr<Position> getPosition() override;
     size_t getPv();
 };
 
