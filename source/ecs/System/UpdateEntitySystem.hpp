@@ -7,7 +7,7 @@
 
 #include <memory>
 #include "ISystem.hpp"
-#include "Player.hpp"
+#include "server/Player.hpp"
 
 class UpdateEntitySystem : public ISystem {
 public:

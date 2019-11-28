@@ -9,7 +9,7 @@
 
 class IMovingEntity : public IEntity
 {
-    virtual void move(double x, double y) = 0;
+    virtual void move(double x, double y, double z) = 0;
 };
 
 #endif //CPP_RTYPE_2019_ICOLLIDEENTITY_HPP

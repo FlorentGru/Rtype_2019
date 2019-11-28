@@ -5,9 +5,8 @@
 #include "RenderPlayer.hpp"
 #include "Rendering.hpp"
 #include "Position.hpp"
-#include "Vector.hpp"
 
-RenderPlayer::RenderPlayer(int pv, double x, double y, double z = 0)
+RenderPlayer::RenderPlayer(size_t pv, int id, double x, double y, double z = 0)
 {
     Rendering rendering("player.png", "", pv);
     Position position(x, y, z);
@@ -15,6 +14,7 @@ RenderPlayer::RenderPlayer(int pv, double x, double y, double z = 0)
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));
     _component.push_back(std::make_shared<Position>(position));
+    _id = id;
 }
 
 IEntity::Type RenderPlayer::getType()
@@ -46,4 +46,9 @@ std::shared_ptr<Position> RenderPlayer::getPosition()
 size_t RenderPlayer::getPv()
 {
     return _pv;
+}
+
+int RenderPlayer::getId()
+{
+    return _id;
 }

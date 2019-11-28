@@ -21,6 +21,8 @@ include_directories(source/server
         source/network
         source/ecs/Component
         source/ecs/Entity
+        source/ecs/Entity/Client
+        source/ecs/Entity/Server
         )
 
 add_executable(rtype_server
@@ -33,12 +35,13 @@ add_executable(rtype_server
         source/ecs/Component/Rendering.cpp
         source/ecs/Component/Timer.cpp
         source/ecs/Component/Velocity.cpp
-        source/ecs/Entity/Player.cpp
+        source/ecs/Entity/Server/Player.cpp
         source/ecs/System/Events.cpp
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/ecs/Entity/Fire.cpp source/ecs/Entity/Fire.hpp)
+        source/ecs/Entity/Server/Fire.cpp
+        )
 
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
@@ -52,12 +55,13 @@ add_executable(rtype_client
         source/ecs/Component/Rendering.cpp
         source/ecs/Component/Timer.cpp
         source/ecs/Component/Velocity.cpp
-        source/ecs/Entity/Player.cpp
         source/ecs/System/Events.cpp
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/ecs/Entity/Fire.cpp source/ecs/Entity/Fire.hpp source/ecs/Entity/RenderPlayer.cpp source/ecs/Entity/RenderPlayer.hpp)
+        source/ecs/Entity/Client/RenderPlayer.cpp
+        source/ecs/Entity/Client/RenderFire.cpp
+        )
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
 set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)

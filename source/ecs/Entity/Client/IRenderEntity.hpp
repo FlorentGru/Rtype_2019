@@ -10,6 +10,7 @@
 
 class IRenderEntity : public IEntity
 {
+public:
     virtual std::string getTexture() = 0;
 
     virtual std::shared_ptr<Position> getPosition() = 0;

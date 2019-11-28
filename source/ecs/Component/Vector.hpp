@@ -15,7 +15,7 @@ private:
     double _x;
 
 public:
-    Vector(double x, double y, double z);
+    Vector(double x, double y, double z = 0);
 
     void setX(double);
     void setY(double);

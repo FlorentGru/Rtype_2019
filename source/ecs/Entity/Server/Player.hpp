@@ -5,21 +5,21 @@
 #ifndef CPP_RTYPE_2019_PLAYER_HPP
 #define CPP_RTYPE_2019_PLAYER_HPP
 
-#include <memory>
-#include "IMovingEntity.hpp"
+#include "server/IMovingEntity.hpp"
 
 class Player : public IMovingEntity
 {
 private:
     std::vector<std::shared_ptr<IComponent>> _component;
     size_t _pv;
+    int _id;
 
 public:
-    Player(size_t pv, double x, double y, double z);
+    Player(size_t pv, int id, double x, double y, double z);
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
-
-    void move(double x, double y) override;
+    int getId() override;
+    void move(double x, double y, double z) override;
 
 };
 

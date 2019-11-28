@@ -8,10 +8,12 @@
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
     for (auto & entity : entities) {
-        if (entity->getType() != IEntity::PLAYER)
-            moveLeft(entity);
-        else
+        if (entity->getType() == IEntity::PLAYER)
             manageShip(entity);
+        else if (entity->getType() == IEntity::FIRE)
+            createFire();
+        else
+            moveLeft(entity);
     }
     return _isSucceed;
 }

@@ -6,20 +6,22 @@
 #define RTYPE_RENDERPLAYER_HPP
 
 #include <memory>
-#include <Vector.hpp>
-#include "IRenderEntity.hpp"
+#include "Vector.hpp"
+#include "client/IRenderEntity.hpp"
 
 class RenderPlayer : public IRenderEntity
 {
 private:
     std::vector<std::shared_ptr<IComponent>> _component;
     size_t _pv;
+    int _id;
 public:
-    RenderPlayer(int pv, double x, double y, double z);
+    RenderPlayer(size_t pv, int id, double x, double y, double z);
 
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
 
     Type getType() override;
+    int getId() override;
 
     std::string getTexture() override;
     std::shared_ptr<Position> getPosition() override;
