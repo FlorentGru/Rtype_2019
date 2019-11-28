@@ -25,7 +25,7 @@ Packet::CommandPacket &Packet::handshake(bool fromServ, bool fromClient)
     _command.data.res = true;
     _command.data._handshake.client = fromClient;
     _command.data._handshake.serv = fromServ;
-    _command.data._handshake.magicNumber = 125728;
+    _command.data._handshake.magicNumber = PRO_SIZE::MAGIC_NBR;
     return(_command);
 }
 

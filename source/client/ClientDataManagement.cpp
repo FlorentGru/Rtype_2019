@@ -23,7 +23,7 @@ void ClientData::createRequest(std::string request)
 		packet_.error(Protocol::CMD::NONE, "Error : Unknown data");
 }
 
-void ClientData::manageReceivedData(std::string data, size_t size)
+void ClientData::manageReceivedData(std::string data)
 {
     packet_.setCommand(data.c_str(), 64);
 

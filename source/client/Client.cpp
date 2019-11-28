@@ -33,12 +33,10 @@ Client::~Client()
 void Client::send()
 {
     socket_.async_send_to(boost::asio::buffer(this->data_->getPacketData(), 64), endpoint_,
-        boost::bind(&Client::handleSend, this, this->data_->getPacketData(),
-        boost::asio::placeholders::error,
-        boost::asio::placeholders::bytes_transferred));
+        boost::bind(&Client::handleSend, this));
 }
 
-void Client::handleSend(std::string message, const boost::system::error_code& error, size_t bytes_transferred)
+void Client::handleSend()
 {
 }
 
@@ -56,12 +54,7 @@ void Client::handle_receive_from(const boost::system::error_code& error, size_t 
 	std::string _buffer;
 
 	std::copy(recv_buf.begin(), recv_buf.begin()+bytes_recvd, std::back_inserter(_buffer));
-    this->data_->manageReceivedData(_buffer, bytes_recvd);
-
-/*	if (std::dynamic_point_cast<ClientData>(this->data_)->inDisconnection() == true) {
-		socket_.close();
-		return;
-	}*/
+    this->data_->manageReceivedData(_buffer);
 
 	if (this->data_->inDisconnection() == true) {
 		socket_.close();

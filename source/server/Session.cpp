@@ -13,7 +13,7 @@ Session::Session(std::string pseudo)
     pseudo_ = pseudo;
 }
 
-void Session::taskManager(std::string data, size_t size)
+void Session::taskManager(std::string data)
 {
     packet_.setCommand(data.c_str(), 64);
 

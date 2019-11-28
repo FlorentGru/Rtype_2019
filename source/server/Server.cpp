@@ -42,7 +42,7 @@ void Server::handleReceive(const boost::system::error_code& error, size_t bytes_
     }
 
     std::copy(recv_buffer.begin(), recv_buffer.begin()+bytes_transferred, std::back_inserter(_buffer));
-    this->clientList[remoteEndpoint_.address()]->taskManager(_buffer, bytes_transferred);
+    this->clientList[remoteEndpoint_.address()]->taskManager(_buffer);
 
     doSend();
     if (!error || error == boost::asio::error::message_size)
@@ -52,11 +52,9 @@ void Server::handleReceive(const boost::system::error_code& error, size_t bytes_
 void Server::doSend()
 {
     socket_.async_send_to(boost::asio::buffer(this->clientList[remoteEndpoint_.address()]->getPacketData(), 64), remoteEndpoint_,
-        boost::bind(&Server::handleSend, this, this->clientList[remoteEndpoint_.address()]->getPacketData(),
-        boost::asio::placeholders::error,
-        boost::asio::placeholders::bytes_transferred));
+        boost::bind(&Server::handleSend, this));
 }
 
-void Server::handleSend(std::string message, const boost::system::error_code& error, size_t bytes_transferred)
+void Server::handleSend()
 {
 }

@@ -15,7 +15,7 @@ class Session : public ISession
 public:
     Session(std::string pseudo);
     char *getPacketData() override;
-    void taskManager(std::string, size_t) override;
+    void taskManager(std::string) override;
 private:
     std::string pseudo_;
 };

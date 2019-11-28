@@ -16,7 +16,7 @@ public:
     IClientData() {};
     virtual char *getPacketData() = 0;
     virtual void createRequest(std::string) = 0;
-    virtual void manageReceivedData(std::string request, size_t size) = 0;
+    virtual void manageReceivedData(std::string request) = 0;
     virtual bool inDisconnection() = 0;
 protected:
     Protocol::Packet packet_;

@@ -23,7 +23,7 @@ public:
 	Client(boost::asio::io_context& io_context, const std::string& host, const std::string& port);
 	~Client();
 	void send();
-	void handleSend(std::string message, const boost::system::error_code& error, size_t bytes_transferred);
+	void handleSend();
 	void receive();
 	void handle_receive_from(const boost::system::error_code& error, size_t bytes_recvd);
 	void inLoop();
@@ -36,7 +36,6 @@ private:
 	udp::endpoint sender_endpoint;
 
 	std::shared_ptr<IClientData> data_;
-//    Protocol::Packet packet_;
 };
 
 #endif

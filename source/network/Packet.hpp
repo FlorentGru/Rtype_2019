@@ -62,7 +62,7 @@ namespace Protocol
 
         union EventsPacket {
             char rawData[MAX_EVENT_LENGTH];
-            struct data {
+            struct {
                 CMD tag;
                 bool res;
 
@@ -96,17 +96,17 @@ namespace Protocol
                 bool xKey;
                 bool yKey;
                 bool zKey;
-            };
+            } data;
         };
 
         union EntityPacket {
             char rawData[MAX_ENTITY_LENGTH];
-            struct data {
+            struct {
                 CMD tag;
                 bool res;
                 int entityNbr;
                 Entity entities[10];
-            };
+            } data;
         };
 
         union CommandPacket {

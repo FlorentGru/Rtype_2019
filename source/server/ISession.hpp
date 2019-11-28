@@ -15,7 +15,7 @@ class ISession
 public:
     ISession() {};
     virtual char *getPacketData() = 0;
-    virtual void taskManager(std::string, size_t) = 0;
+    virtual void taskManager(std::string) = 0;
 protected:
     Protocol::Packet packet_;
 };

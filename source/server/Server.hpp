@@ -27,16 +27,14 @@ private:
     void doReceive();
     void handleReceive(const boost::system::error_code& error, size_t bytes_transferred);
     void doSend();
-    void handleSend(std::string message, const boost::system::error_code& error, size_t bytes_transferred);
+    void handleSend();
 
     boost::asio::io_context& ioContext_;
     udp::socket socket_;
     udp::endpoint remoteEndpoint_;
     boost::array<char, 64> recv_buffer;
-//    boost::thread* thr;
 
     std::map<boost::asio::ip::address, std::shared_ptr<ISession>> clientList;
-    //Protocol::Packet packet_;
 };
 
 #endif
