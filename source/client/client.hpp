@@ -1,40 +1,19 @@
-/*
-** EPITECH PROJECT, 2019
-** CPP_rtype_2019
-** File description:
-** client/client.hpp
-*/
+//
+// Created by tfian on 28/11/2019.
+//
 
-#ifndef _CLIENT_HPP_
-#define _CLIENT_HPP_
+#ifndef RTYPE_CLIENT_HPP
+#define RTYPE_CLIENT_HPP
 
-#include <iostream>
-#include "background.hpp"
-#include "window.hpp"
-#include "Events.hpp"
-#include "player.hpp"
+#include "ClientNetwork.hpp"
 
-class client : public AWindow
+class Client
 {
-    public:
-        int start();
-        bool initScreen(unsigned int width, unsigned int height, std::string name) override;
-        bool close() override;
-        void getInput();
-
-
-    private:
-        background back;
-        Player player;
-        Events event_input;
-        sf::RenderWindow window;
-        unsigned int _width;
-        unsigned int _height;
-        std::string _name;
-        unsigned int _frame;
-        sf::Clock clock;
-	    sf::Time time;
-	    float seconds;
+public:
+    bool run(const std::string &host, const std::string &port);
+private:
+    ClientNetwork network;
 };
 
-#endif
+
+#endif //RTYPE_CLIENT_HPP
