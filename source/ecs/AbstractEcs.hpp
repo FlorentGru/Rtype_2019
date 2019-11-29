@@ -8,7 +8,7 @@
 #include <vector>
 #include <memory>
 
-#include "Entity/IRenderEntity.hpp"
+#include "client/IRenderEntity.hpp"
 #include "System/ISystem.hpp"
 #include "System/Events.hpp"
 

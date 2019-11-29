@@ -5,13 +5,15 @@
 ** server/main.cpp
 */
 
-#include "client.hpp"
+#include "Client.hpp"
 
-int main(void)
+int main(int ac, char *av[])
 {
-    std::cout << "client" << std::endl;
-    client cli;
-    cli.start();
+    if (ac != 3)
+        return(84);
 
+    Client client;
+
+    client.run(av[1], av[2]);
     return (0);
 }

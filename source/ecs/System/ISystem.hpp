@@ -6,6 +6,7 @@
 #define CPP_RTYPE_2019_ISYSTEM_HPP
 
 #include <vector>
+#include <Server/IMovingEntity.hpp>
 #include "IEntity.hpp"
 #include "Events.hpp"
 

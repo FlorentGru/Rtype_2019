@@ -10,7 +10,7 @@
 class Position : public Vector
 {
 public:
-    Position(double x, double y, double z);
+    Position(double x, double y, double z = 0);
 
     std::type_index getId() override;
 };

@@ -8,20 +8,32 @@
 #include <memory>
 #include "ISystem.hpp"
 #include "Player.hpp"
+#include "Fire.hpp"
 
 class UpdateEntitySystem : public ISystem {
 public:
-    UpdateEntitySystem() = default;
+    UpdateEntitySystem();
     bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
+
+    enum Direction {
+        UP,
+        DOWN,
+        RIGHT,
+        LEFT
+    };
+
     bool _isSucceed = true;
 
-    void createFire();
+    Fire createFire(std::shared_ptr<Player> &player, bool isPlayer);
 
-    void moveLeft(std::shared_ptr<IEntity>);
+    void move(std::shared_ptr<IMovingEntity>, Direction direction);
 
-    void manageShip(std::shared_ptr<IEntity> player);
+    void manageShip(std::shared_ptr<Player> &player, Events event);
+
+    size_t _windowLength;
+    size_t _windowHeight;
 };
 
 #endif //CPP_RTYPE_2019_UPDATEENTITYSYSTEM_HPP

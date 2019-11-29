@@ -6,12 +6,14 @@
 #include "Rendering.hpp"
 #include "Position.hpp"
 
-RenderPlayer::RenderPlayer(int pv, double x, double y, double z = 0)
+RenderPlayer::RenderPlayer(size_t pv, int id, std::shared_ptr<Position> position)
 {
     Rendering rendering("player.png", "", pv);
-    Position position(x, y, z);
     _pv = pv;
     _component.clear();
+    _component.push_back(std::make_shared<Rendering>(rendering));
+    _component.push_back(std::make_shared<Position>(position));
+    _id = id;
 }
 
 IEntity::Type RenderPlayer::getType()
@@ -32,20 +34,20 @@ std::string RenderPlayer::getTexture()
     return (std::dynamic_pointer_cast<Rendering>(_component[i])->getTexture());
 }
 
-std::vector<float> RenderPlayer::getPosition()
+std::shared_ptr<Position> RenderPlayer::getPosition()
 {
     int i = 0;
-    std::vector<float> res;
 
-    res.clear();
     for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
-    res.push_back(std::dynamic_pointer_cast<Position>(_component[i])->getX());
-    res.push_back(std::dynamic_pointer_cast<Position>(_component[i])->getY());
-    res.push_back(std::dynamic_pointer_cast<Position>(_component[i])->getZ());
-    return res;
+    return (std::dynamic_pointer_cast<Position>(_component[i]));
 }
 
 size_t RenderPlayer::getPv()
 {
     return _pv;
+}
+
+int RenderPlayer::getId()
+{
+    return _id;
 }
