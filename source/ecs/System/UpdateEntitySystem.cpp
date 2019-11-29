@@ -10,8 +10,6 @@ UpdateEntitySystem::UpdateEntitySystem()
     _windowHeight = 960;
 }
 
-
-
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
     std::vector<std::shared_ptr<IMovingEntity>> moving;
@@ -27,6 +25,11 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
                 entities.push_back(std::make_shared<Fire>(fire));
             }
         }
+        else if (mover->getType() == IEntity::FIRE)
+            if (std::dynamic_pointer_cast<Fire>(mover)->isPlayer())
+                move(mover, UpdateEntitySystem::RIGHT);
+            else
+                move(mover, UpdateEntitySystem::LEFT);
         else
             move(mover, UpdateEntitySystem::LEFT);
     }
@@ -35,10 +38,8 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
 
 Fire UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer)
 {
-    int i = 0;
 
-    for (; player->getComponents()[i]->getId() == std::type_index(typeid(Position)); ++i);
-    Fire fire(player->getId(), std::dynamic_pointer_cast<Position>(player->getComponents()[i]), isPlayer);
+    Fire fire(player->getId(), player->getPosition(), isPlayer);
     return fire;
 }
 

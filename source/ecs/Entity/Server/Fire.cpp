@@ -74,3 +74,8 @@ std::shared_ptr<Position> Fire::getPosition()
     for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
     return (std::dynamic_pointer_cast<Position>(_component[i]));
 }
+
+bool Fire::isPlayer() const
+{
+    return _isPlayer;
+}

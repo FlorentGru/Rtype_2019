@@ -22,6 +22,7 @@ public:
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;
+    bool isPlayer() const;
     SerializedEntity serialize() override;
 };
 
