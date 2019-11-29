@@ -5,11 +5,10 @@
 #include "Rendering.hpp"
 #include "RenderFire.hpp"
 
-RenderFire::RenderFire(int id, double x, double y, double z)
+RenderFire::RenderFire(int id, std::shared_ptr<Position> position)
 {
     _id = id;
-    Rendering rendering("fire.png", "pew.mp3", 0);
-    Position position(x, y, z);
+    Rendering rendering("fire.png", "piew_piew.mp3", 0);
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));
     _component.push_back(std::make_shared<Position>(position));

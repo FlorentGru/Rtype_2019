@@ -5,10 +5,9 @@
 #include "Fire.hpp"
 #include "Timer.hpp"
 
-Fire::Fire(int id, double x, double y, bool isPlayer = false, double z = 0)
+Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
 {
     _id = id;
-    Position position(x, y, z);
     Timer timer;
     _isPlayer = isPlayer;
     _component.clear();
@@ -66,4 +65,12 @@ SerializedEntity Fire::serialize()
     z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
     SerializedEntity res(IEntity::FIRE, _id, x, y, z);
     return res;
+}
+
+std::shared_ptr<Position> Fire::getPosition()
+{
+    int i = 0;
+
+    for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    return (std::dynamic_pointer_cast<Position>(_component[i]));
 }

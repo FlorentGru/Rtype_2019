@@ -8,6 +8,7 @@
 #include <vector>
 #include <memory>
 #include "IComponent.hpp"
+#include "Position.hpp"
 
 
 class IEntity
@@ -19,6 +20,8 @@ public:
         ENEMY,
         DESTRUCTIBLE
     };
+
+    virtual std::shared_ptr<Position> getPosition() = 0;
 
     virtual std::vector<std::shared_ptr<IComponent>> getComponents() = 0;
 

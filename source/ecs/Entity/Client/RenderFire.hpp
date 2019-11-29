@@ -15,7 +15,7 @@ private:
     std::vector<std::shared_ptr<IComponent>> _component;
     int _id;
 public:
-    RenderFire(int id, double x, double y, double z = 0);
+    RenderFire(int id, std::shared_ptr<Position> position);
 
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
 

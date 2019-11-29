@@ -6,10 +6,9 @@
 #include "Rendering.hpp"
 #include "Position.hpp"
 
-RenderPlayer::RenderPlayer(size_t pv, int id, double x, double y, double z)
+RenderPlayer::RenderPlayer(size_t pv, int id, std::shared_ptr<Position> position)
 {
     Rendering rendering("player.png", "", pv);
-    Position position(x, y, z);
     _pv = pv;
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));

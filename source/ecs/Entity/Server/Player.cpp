@@ -7,10 +7,9 @@
 #include "Rendering.hpp"
 #include "Timer.hpp"
 
-Player::Player(size_t pv, int id, double x, double y, double z = 0)
+Player::Player(size_t pv, int id, std::shared_ptr<Position> position)
 {
     Timer timer;
-    Position position(x, y, z);
     timer.create_clock("moveClock");
     _component.clear();
     _component.push_back(std::make_shared<Timer>(timer));
@@ -60,4 +59,12 @@ SerializedEntity Player::serialize()
     z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
     SerializedEntity res(IEntity::PLAYER, _id, x, y, z);
     return res;
+}
+
+std::shared_ptr<Position> Player::getPosition()
+{
+    int i = 0;
+
+    for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    return (std::dynamic_pointer_cast<Position>(_component[i]));
 }

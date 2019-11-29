@@ -16,7 +16,7 @@ private:
     size_t _pv;
     int _id;
 public:
-    RenderPlayer(size_t pv, int id, double x, double y, double z = 0);
+    RenderPlayer(size_t pv, int id, std::shared_ptr<Position> position);
 
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
 

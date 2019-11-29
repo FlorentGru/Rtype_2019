@@ -15,13 +15,13 @@ private:
     int _id;
 
 public:
-    Player(size_t pv, int id, double x, double y, double z);
+    Player(size_t pv, int id,std::shared_ptr<Position> position);
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;
     void move(double x, double y, double z) override;
     SerializedEntity serialize() override;
-
+    std::shared_ptr<Position> getPosition() override;
 };
 
 #endif //CPP_RTYPE_2019_PLAYER_HPP

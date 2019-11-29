@@ -4,31 +4,65 @@
 
 #include "UpdateEntitySystem.hpp"
 
+UpdateEntitySystem::UpdateEntitySystem()
+{
+    _windowLength = 1980;
+    _windowHeight = 960;
+}
+
+
 
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
-    for (auto & entity : entities) {
-        if (entity->getType() == IEntity::PLAYER)
-            manageShip(entity);
-        else if (entity->getType() == IEntity::FIRE)
-            createFire();
+    std::vector<std::shared_ptr<IMovingEntity>> moving;
+    moving.clear();
+    for (auto & entity : entities)
+        moving.push_back(std::dynamic_pointer_cast<IMovingEntity>(entity));
+    for (auto & mover : moving) {
+        if (mover->getType() == IEntity::PLAYER) {
+            std::shared_ptr<Player> player = std::dynamic_pointer_cast<Player>(mover);
+            manageShip(player, events);
+            if (events.isEnter()) {
+                Fire fire = createFire(player, true);
+                entities.push_back(std::make_shared<Fire>(fire));
+            }
+        }
         else
-            moveLeft(entity);
+            move(mover, UpdateEntitySystem::LEFT);
     }
     return _isSucceed;
 }
 
-void UpdateEntitySystem::createFire()
+Fire UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer)
 {
+    int i = 0;
+
+    for (; player->getComponents()[i]->getId() == std::type_index(typeid(Position)); ++i);
+    Fire fire(player->getId(), std::dynamic_pointer_cast<Position>(player->getComponents()[i]), isPlayer);
+    return fire;
+}
+
+void UpdateEntitySystem::move(std::shared_ptr<IMovingEntity> entity, Direction direction)
+{
+    if (direction == LEFT && entity->getPosition()->getX() > 0)
+        entity->move(entity->getPosition()->getX() - 1, entity->getPosition()->getY(), entity->getPosition()->getZ());
+    if (direction == RIGHT && entity->getPosition()->getX() < _windowLength)
+        entity->move(entity->getPosition()->getX() + 1, entity->getPosition()->getY(), entity->getPosition()->getZ());
+    if (direction == UP && entity->getPosition()->getY() > 0)
+        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() - 1, entity->getPosition()->getZ());
+    if (direction == DOWN && entity->getPosition()->getY() < _windowHeight)
+        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() + 1, entity->getPosition()->getZ());
 
 }
 
-void UpdateEntitySystem::moveLeft(std::shared_ptr<IEntity>)
+void UpdateEntitySystem::manageShip(std::shared_ptr<Player> &player, Events events)
 {
-
-}
-
-void UpdateEntitySystem::manageShip(std::shared_ptr<IEntity> player)
-{
-
+    if (events.isZKey())
+        move(std::dynamic_pointer_cast<IMovingEntity>(player), UP);
+    if (events.isSKey())
+        move(std::dynamic_pointer_cast<IMovingEntity>(player), DOWN);
+    if (events.isQKey())
+        move(std::dynamic_pointer_cast<IMovingEntity>(player), LEFT);
+    if (events.isDKey())
+        move(std::dynamic_pointer_cast<IMovingEntity>(player), RIGHT);
 }
