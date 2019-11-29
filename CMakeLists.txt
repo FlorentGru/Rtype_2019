@@ -15,6 +15,7 @@ include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 include(CPack)
+
 include_directories(source/server
         source/client
         source/ecs/System
@@ -26,9 +27,13 @@ include_directories(source/server
         )
 
 add_executable(rtype_server
+        source/server/main.cpp
+        source/server/gameEngine/GameEngine.cpp
+        source/server/Server.cpp
+        source/server/ServerNetwork.cpp
+        source/server/Session.cpp
         source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
-        source/server/gameEngine/GameEngine.cpp
         source/ecs/Component/Acceleration.cpp
         source/ecs/Component/Vector.cpp
         source/ecs/Component/Position.cpp
@@ -42,12 +47,16 @@ add_executable(rtype_server
         source/ecs/System/UpdateEntitySystem.cpp
         source/ecs/Entity/Server/Fire.cpp
         source/ecs/Entity/SerializedEntity.cpp
+        source/network/PacketManager.cpp
+        source/network/RawData.cpp
+        source/network/BoostUdpServer.cpp
         )
 
 target_link_libraries(rtype_server ${CONAN_LIBS})
 set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(rtype_client
+        source/client/main.cpp
         source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
         source/ecs/Component/Acceleration.cpp
@@ -63,7 +72,12 @@ add_executable(rtype_client
         source/ecs/Entity/Client/RenderPlayer.cpp
         source/ecs/Entity/Client/RenderFire.cpp
         source/ecs/Entity/SerializedEntity.cpp
-
+        source/network/PacketManager.cpp
+        source/client/ClientData.cpp
+        source/client/ClientNetwork.cpp
+        source/network/BoostUdpClient.cpp
+        source/client/Client.cpp
+        source/network/RawData.cpp
         )
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
