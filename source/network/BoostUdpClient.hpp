@@ -43,5 +43,4 @@ private:
     udp::endpoint sender_endpoint;
 };
 
-
 #endif //RTYPE_BOOSTUDPCLIENT_HPP

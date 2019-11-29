@@ -8,16 +8,20 @@
 #ifndef _SESSION_HPP_
 #define _SESSION_HPP_
 
+#include <vector>
 #include "ISession.hpp"
 
 class Session : public ISession
 {
 public:
     Session(std::string pseudo);
-    char *getPacketData() override;
-    void taskManager(std::string) override;
+    std::vector<RawData> getPacketData() override;
+    bool addEventPacket(RawData entity) override;
 private:
+    Protocol::PacketManager packetManager;
+
     std::string pseudo_;
+    std::vector<RawData> packets;
 };
 
 #endif

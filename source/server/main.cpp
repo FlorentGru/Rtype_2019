@@ -13,7 +13,8 @@ int main(int ac, char *av[])
         return (84);
     try
     {
-        Server server(std::stoi(av[1]));
+        Server server = Server(std::stoi(av[1]));
+        server.run();
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
         return (84);

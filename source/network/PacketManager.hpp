@@ -37,6 +37,7 @@ namespace Protocol
 
     enum CMD : unsigned char {
         NONE = 0,
+        ERROR,
         HANDSHAKE,
         DISCONNECTION,
         EVENTS,
@@ -151,7 +152,12 @@ namespace Protocol
         RawData handshake(bool fromServ, bool fromClient);
         RawData disconnection();
         RawData error(Protocol::CMD cmd, const std::string &msg);
-        RawData getCommand();
+
+        RawData getCommand() const;
+
+        RawData getEvents() const;
+
+        RawData getEntity() const;
 
         void setCommand(const char *, std::size_t size);
         void setEvents(const char *, std::size_t size);

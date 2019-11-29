@@ -10,6 +10,19 @@
 
 using boost::asio::ip::udp;
 
+Server::Server(short port) : network(port)
+{
+}
+
+bool Server::run()
+{
+    if (!this->network.connect()) {
+        return false;
+    }
+
+    return true;
+}
+/*
 Server::Server(short port) : ioContext_(), socket_(ioContext_, udp::endpoint(udp::v4(), port))
 {
     doReceive();
@@ -56,4 +69,4 @@ void Server::doSend()
 
 void Server::handleSend()
 {
-}
+}*/

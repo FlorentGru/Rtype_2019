@@ -13,24 +13,16 @@ Session::Session(std::string pseudo)
     pseudo_ = pseudo;
 }
 
-void Session::taskManager(std::string data)
+bool Session::addEventPacket(RawData entity)
 {
-    packet_.setCommand(data.c_str(), 64);
-
-    if (packet_.getCommand().data.tag == Protocol::CMD::HANDSHAKE) {
-        std::cout << "Received :'" << packet_.getCommand().data._handshake.magicNumber << "'" << std::endl;
-        packet_.handshake(true, false);
-    } else if (packet_.getCommand().data.tag == Protocol::CMD::DISCONNECTION) {
-        std::cout << "Disconnection" << std::endl;
-        packet_.disconnection();
-    } else if (packet_.getCommand().data.tag == Protocol::CMD::NONE) {
-        std::cout << "Received :'" << packet_.getCommand().data._error.msg << "'" << std::endl;
-        packet_.error(Protocol::CMD::NONE, "Error : Received unknown request");
-    } else
-        std::cout << "weird package" << std::endl;
+    this->packets.emplace_back(entity);
 }
 
-char *Session::getPacketData()
+std::vector<RawData> Session::getPacketData()
 {
-    return(this->packet_.getCommand().rawData);
+    std::vector<RawData> copy = packets;
+
+    packets.clear();
+
+    return(copy);
 }

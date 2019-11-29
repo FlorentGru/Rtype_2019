@@ -144,3 +144,15 @@ bool PacketManager::isValidDisconnection(const char *data, std::size_t size)
 
     return _command.data.res;
 }
+
+RawData PacketManager::getCommand() const {
+    return RawData(_command.data, Protocol::MAX_COMMAND_LENGTH);
+}
+
+RawData PacketManager::getEvents() const {
+    return RawData(_events.data, Protocol::MAX_EVENT_LENGTH);
+}
+
+RawData PacketManager::getEntity() const {
+    return RawData(_entity.data, Protocol::MAX_ENTITY_LENGTH);
+}

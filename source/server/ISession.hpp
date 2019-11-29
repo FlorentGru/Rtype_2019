@@ -14,10 +14,8 @@ class ISession
 {
 public:
     ISession() {};
-    virtual char *getPacketData() = 0;
-    virtual void taskManager(std::string) = 0;
-protected:
-    Protocol::PacketManager packet_;
+    virtual std::vector<RawData> getPacketData() = 0;
+    virtual bool addEventPacket(RawData entity) = 0;
 };
 
 #endif
