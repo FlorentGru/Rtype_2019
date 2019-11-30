@@ -3,6 +3,7 @@
 //
 
 #include "UpdateEntitySystem.hpp"
+#include "Events.hpp"
 
 UpdateEntitySystem::UpdateEntitySystem()
 {

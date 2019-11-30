@@ -9,6 +9,7 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
 {
     _id = id;
     Timer timer;
+    Hitbox hitbox(100, 50);
     _isPlayer = isPlayer;
     _component.clear();
     _component.push_back(position);
@@ -22,6 +23,8 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
         Velocity velocity(-1, 0);
         _component.push_back(std::make_shared<Velocity>(velocity));
     }
+    _component.push_back(std::make_shared<Hitbox>(hitbox));
+
 }
 
 void Fire::move(double x, double y, double z)
@@ -78,4 +81,22 @@ std::shared_ptr<Position> Fire::getPosition()
 bool Fire::isPlayer() const
 {
     return _isPlayer;
+}
+
+std::shared_ptr<Hitbox> Fire::getHitbox() const
+{
+    int i = 0;
+
+    for (; _component[i]->getId() == std::type_index(typeid(Hitbox)); ++i);
+    return (std::dynamic_pointer_cast<Hitbox>(_component[i]));
+}
+
+int Fire::getPv() const
+{
+    return _pv;
+}
+
+void Fire::setPv(int pv)
+{
+    _pv = pv;
 }
