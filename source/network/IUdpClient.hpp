@@ -16,6 +16,8 @@ public:
 
     virtual bool sendData(const char *data, size_t size) = 0;
 
+    virtual bool sendAndReceiveNext(const char *data, size_t size) = 0;
+
     virtual std::vector<RawData> receiveAll() = 0;
 
     virtual RawData receiveNext() = 0;

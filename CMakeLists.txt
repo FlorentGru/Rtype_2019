@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(rtype LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 if (UNIX)
-    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code")
+    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code -g")
 endif (UNIX)
 
 include(CTest)
@@ -29,9 +29,8 @@ include_directories(source/server
         source/ecs/Entity/Server
         )
 
-add_executable(rtype_server
+add_executable(r-type_server
         source/server/main.cpp
-        source/server/gameEngine/GameEngine.cpp
         source/server/Server.cpp
         source/server/ServerNetwork.cpp
         source/server/Session.cpp
@@ -59,10 +58,10 @@ add_executable(rtype_server
         source/network/BoostUdpServer.cpp
         )
 
-target_link_libraries(rtype_server ${CONAN_LIBS})
-set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(r-type_server ${CONAN_LIBS})
+set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
 
-add_executable(rtype_client
+add_executable(r-type_client
         source/client/main.cpp
         source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
@@ -79,15 +78,10 @@ add_executable(rtype_client
         source/ecs/System/UpdateEntitySystem.cpp
         source/client/ClientEngine.cpp
         source/client/ClientMain.cpp
-        source/client/background/background.cpp
-        source/client/window/initWindow.cpp
-        source/client/window/window.cpp
-        source/client/player.cpp
         source/ecs/Entity/Client/RenderPlayer.cpp
         source/ecs/Entity/Client/RenderFire.cpp
         source/ecs/Entity/SerializedEntity.cpp
         source/network/PacketManager.cpp
-        source/client/ClientData.cpp
         source/client/ClientNetwork.cpp
         source/network/BoostUdpClient.cpp
         source/client/Client.cpp

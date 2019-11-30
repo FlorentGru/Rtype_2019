@@ -7,15 +7,15 @@
 
 RawData::RawData()
 {
-    memset(this->data, 0, Protocol::MAX_ENTITY_LENGTH);
+    memset(this->data, 0, LENGTH);
     this->size = 0;
 }
 
-RawData::RawData(const char *_data, size_t size)
+RawData::RawData(const char *_data, size_t size_)
 {
-    memset(this->data, 0, Protocol::MAX_ENTITY_LENGTH);
-    if (size <= Protocol::MAX_ENTITY_LENGTH) {
-        memcpy(this->data, _data, size);
-        this->size = size;
+    memset(this->data, 0, LENGTH);
+    if (size_ <= LENGTH) {
+        memcpy(this->data, _data, size_);
+        this->size = size_;
     }
 }

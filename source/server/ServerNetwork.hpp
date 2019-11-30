@@ -9,6 +9,8 @@
 #define _NETWORKSERVER_HPP_
 
 #include "BoostUdpServer.hpp"
+#include "SerializedEntity.hpp"
+#include "Events.hpp"
 
 using boost::asio::ip::udp;
 
@@ -18,8 +20,8 @@ public:
     ServerNetwork(short port);
     bool connect();
 
-    bool sendEntitiesToPlayer(const std::string &userId);
-    void getEvents(const std::string &userId);
+    bool sendEntitiesToPlayer(const std::string &userId, std::vector<SerializedEntity> entities);
+    Events getEvents(const std::string &userId);
 
 private:
     std::shared_ptr<IUdpServer> udpServer;

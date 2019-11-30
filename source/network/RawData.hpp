@@ -5,14 +5,16 @@
 #ifndef RTYPE_RAWDATA_HPP
 #define RTYPE_RAWDATA_HPP
 
-#include "PacketManager.hpp"
+#include <iostream>
+
+#define LENGTH 256
 
 struct RawData {
     RawData();
     RawData(const char *, size_t size);
 
     size_t size;
-    char data[Protocol::MAX_ENTITY_LENGTH];
+    char data[LENGTH];
 };
 
 

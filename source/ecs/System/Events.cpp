@@ -8,136 +8,136 @@ bool Events::Events::isLeftArrow() const {
     return leftArrow;
 }
 
-void Events::Events::setLeftArrow(bool leftArrow) {
-    Events::leftArrow = leftArrow;
+void Events::Events::setLeftArrow(bool leftArrow_) {
+    Events::leftArrow = leftArrow_;
 }
 
 bool Events::Events::isRightArrow() const {
     return rightArrow;
 }
 
-void Events::Events::setRightArrow(bool rightArrow) {
-    Events::rightArrow = rightArrow;
+void Events::Events::setRightArrow(bool rightArrow_) {
+    Events::rightArrow = rightArrow_;
 }
 
 bool Events::Events::isUpArrow() const {
     return upArrow;
 }
 
-void Events::Events::setUpArrow(bool upArrow) {
-    Events::upArrow = upArrow;
+void Events::Events::setUpArrow(bool upArrow_) {
+    Events::upArrow = upArrow_;
 }
 
 bool Events::Events::isDownArrow() const {
     return downArrow;
 }
 
-void Events::Events::setDownArrow(bool downArrow) {
-    Events::downArrow = downArrow;
+void Events::Events::setDownArrow(bool downArrow_) {
+    Events::downArrow = downArrow_;
 }
 
 bool Events::Events::isAKey() const {
     return aKey;
 }
 
-void Events::Events::setAKey(bool aKey) {
-    Events::aKey = aKey;
+void Events::Events::setAKey(bool aKey_) {
+    Events::aKey = aKey_;
 }
 
 bool Events::Events::isBKey() const {
     return bKey;
 }
 
-void Events::Events::setBKey(bool bKey) {
-    Events::bKey = bKey;
+void Events::Events::setBKey(bool bKey_) {
+    Events::bKey = bKey_;
 }
 
 bool Events::Events::isCKey() const {
     return cKey;
 }
 
-void Events::Events::setCKey(bool cKey) {
-    Events::cKey = cKey;
+void Events::Events::setCKey(bool cKey_) {
+    Events::cKey = cKey_;
 }
 
 bool Events::isDKey() const {
     return dKey;
 }
 
-void Events::setDKey(bool dKey) {
-    Events::dKey = dKey;
+void Events::setDKey(bool dKey_) {
+    Events::dKey = dKey_;
 }
 
 bool Events::isEKey() const {
     return eKey;
 }
 
-void Events::setEKey(bool eKey) {
-    Events::eKey = eKey;
+void Events::setEKey(bool eKey_) {
+    Events::eKey = eKey_;
 }
 
 bool Events::isFKey() const {
     return fKey;
 }
 
-void Events::setFKey(bool fKey) {
-    Events::fKey = fKey;
+void Events::setFKey(bool fKey_) {
+    Events::fKey = fKey_;
 }
 
 bool Events::isGKey() const {
     return gKey;
 }
 
-void Events::setGKey(bool gKey) {
-    Events::gKey = gKey;
+void Events::setGKey(bool gKey_) {
+    Events::gKey = gKey_;
 }
 
 bool Events::isHKey() const {
     return hKey;
 }
 
-void Events::setHKey(bool hKey) {
-    Events::hKey = hKey;
+void Events::setHKey(bool hKey_) {
+    Events::hKey = hKey_;
 }
 
 bool Events::isIKey() const {
     return iKey;
 }
 
-void Events::setIKey(bool iKey) {
-    Events::iKey = iKey;
+void Events::setIKey(bool iKey_) {
+    Events::iKey = iKey_;
 }
 
 bool Events::isJKey() const {
     return jKey;
 }
 
-void Events::setJKey(bool jKey) {
-    Events::jKey = jKey;
+void Events::setJKey(bool jKey_) {
+    Events::jKey = jKey_;
 }
 
 bool Events::isKKey() const {
     return kKey;
 }
 
-void Events::setKKey(bool kKey) {
-    Events::kKey = kKey;
+void Events::setKKey(bool kKey_) {
+    Events::kKey = kKey_;
 }
 
 bool Events::isLKey() const {
     return lKey;
 }
 
-void Events::setLKey(bool lKey) {
-    Events::lKey = lKey;
+void Events::setLKey(bool lKey_) {
+    Events::lKey = lKey_;
 }
 
 bool Events::isMKey() const {
     return mKey;
 }
 
-void Events::setMKey(bool mKey) {
-    Events::mKey = mKey;
+void Events::setMKey(bool mKey_) {
+    Events::mKey = mKey_;
 }
 
 void Events::setNKey(bool nKey) {
@@ -152,102 +152,102 @@ bool Events::isOKey() const {
     return oKey;
 }
 
-void Events::setOKey(bool oKey) {
-    Events::oKey = oKey;
+void Events::setOKey(bool oKey_) {
+    Events::oKey = oKey_;
 }
 
 bool Events::isPKey() const {
     return pKey;
 }
 
-void Events::setPKey(bool pKey) {
-    Events::pKey = pKey;
+void Events::setPKey(bool pKey_) {
+    Events::pKey = pKey_;
 }
 
 bool Events::isQKey() const {
     return qKey;
 }
 
-void Events::setQKey(bool qKey) {
-    Events::qKey = qKey;
+void Events::setQKey(bool qKey_) {
+    Events::qKey = qKey_;
 }
 
 bool Events::isRKey() const {
     return rKey;
 }
 
-void Events::setRKey(bool rKey) {
-    Events::rKey = rKey;
+void Events::setRKey(bool rKey_) {
+    Events::rKey = rKey_;
 }
 
 bool Events::isSKey() const {
     return sKey;
 }
 
-void Events::setSKey(bool sKey) {
-    Events::sKey = sKey;
+void Events::setSKey(bool sKey_) {
+    Events::sKey = sKey_;
 }
 
 bool Events::isTKey() const {
     return tKey;
 }
 
-void Events::setTKey(bool tKey) {
-    Events::tKey = tKey;
+void Events::setTKey(bool tKey_) {
+    Events::tKey = tKey_;
 }
 
 bool Events::isUKey() const {
     return uKey;
 }
 
-void Events::setUKey(bool uKey) {
-    Events::uKey = uKey;
+void Events::setUKey(bool uKey_) {
+    Events::uKey = uKey_;
 }
 
 bool Events::isVKey() const {
     return vKey;
 }
 
-void Events::setVKey(bool vKey) {
-    Events::vKey = vKey;
+void Events::setVKey(bool vKey_) {
+    Events::vKey = vKey_;
 }
 
 bool Events::isWKey() const {
     return wKey;
 }
 
-void Events::setWKey(bool wKey) {
-    Events::wKey = wKey;
+void Events::setWKey(bool wKey_) {
+    Events::wKey = wKey_;
 }
 
 bool Events::isXKey() const {
     return xKey;
 }
 
-void Events::setXKey(bool xKey) {
-    Events::xKey = xKey;
+void Events::setXKey(bool xKey_) {
+    Events::xKey = xKey_;
 }
 
 bool Events::isYKey() const {
     return yKey;
 }
 
-void Events::setYKey(bool yKey) {
-    Events::yKey = yKey;
+void Events::setYKey(bool yKey_) {
+    Events::yKey = yKey_;
 }
 
 bool Events::isZKey() const {
     return zKey;
 }
 
-void Events::setZKey(bool zKey) {
-    Events::zKey = zKey;
+void Events::setZKey(bool zKey_) {
+    Events::zKey = zKey_;
 }
 
 bool Events::isEnter() const {
     return enter;
 }
 
-void Events::setEnter(bool enter) {
-    Events::enter = enter;
+void Events::setEnter(bool enter_) {
+    Events::enter = enter_;
 }

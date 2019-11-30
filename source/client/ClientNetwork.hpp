@@ -7,7 +7,9 @@
 
 #include <memory>
 #include "IUdpClient.hpp"
-#include "ClientData.hpp"
+#include "SerializedEntity.hpp"
+#include "Events.hpp"
+#include "PacketManager.hpp"
 
 class ClientNetwork
 {
@@ -15,12 +17,13 @@ public:
     ClientNetwork();
     bool connect(const std::string &host, const std::string &port);
 
-    bool sendEvents();
-    void getEntities();
+    bool sendEvents(const Events &events);
+    std::vector<SerializedEntity> getEntities();
 //    std::vector<SerialisedEntity> getEntities();
 private:
-    std::shared_ptr<IUdpClient> udpClient;
+    SerializedEntity entityPacketToSerialized(const Protocol::PacketManager::Entity &packet);
 
+    std::shared_ptr<IUdpClient> udpClient;
     Protocol::PacketManager packetManager;
 };
 

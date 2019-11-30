@@ -12,11 +12,11 @@
 class IUdpServer
 {
 public:
-    virtual bool openServer() = 0;
+    virtual void openServer() = 0;
 
     virtual bool send(const char *data, size_t size) = 0;
 
-    virtual void sendAsync(const char *data, size_t size) = 0;
+    virtual void sendAsync(const char *data, size_t size, std::string) = 0;
 
     virtual std::vector<RawData> receiveUserPackets(std::string userAddress) = 0;
 };

@@ -12,7 +12,7 @@ RenderPlayer::RenderPlayer(size_t pv, int id, std::shared_ptr<Position> position
     _pv = pv;
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));
-    _component.push_back(std::make_shared<Position>(position));
+    _component.push_back(position);
     _id = id;
 }
 

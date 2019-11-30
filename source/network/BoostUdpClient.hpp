@@ -24,6 +24,8 @@ public:
 
     bool sendData(const char *data, size_t size) override ;
 
+    bool sendAndReceiveNext(const char *data, size_t size) override ;
+
     std::vector<RawData> receiveAll() override ;
 
     RawData receiveNext() override ;
@@ -32,6 +34,7 @@ public:
 private:
     void doReceive();
     void handle_receive_from(const boost::system::error_code& error, size_t bytes_recvd);
+    void handle_send();
 
     boost::array<char, Protocol::MAX_ENTITY_LENGTH> recv_buf;
     std::vector<RawData> packets;

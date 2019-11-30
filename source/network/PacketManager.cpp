@@ -17,6 +17,37 @@ PacketManager::PacketManager()
     setEvents();
 }
 
+
+std::vector<RawData> PacketManager::entity(const std::vector<SerializedEntity> &entities)
+{
+    std::vector<RawData> result;
+
+    int numberEntities = entities.size();
+
+    int numberRawData = (numberEntities / 10) + 1;
+    int numbers = numberEntities % 10;
+    int size = 10;
+    int count = 0;
+
+    for (int i = 0; i != numberRawData; i++) {
+        if (i == (numberRawData - 1))
+            size = numbers;
+        setEntity();
+        _entity.data.tag = CMD::ENTITY;
+        _entity.data.res = true;
+        _entity.data.entityNbr = size;
+        for (int j = 0; j != size; j++) {
+            _entity.data.entities[j].id = entities.at(count).getId();
+            _entity.data.entities[j].type = entities.at(count).getType();
+            _entity.data.entities[j].posX = entities.at(count).getX();
+            _entity.data.entities[j].posY = entities.at(count).getY();
+            count += 1;
+        }
+        result.emplace_back(RawData(_entity.rawData, Protocol::MAX_ENTITY_LENGTH));
+    }
+    return(result);
+}
+
 RawData PacketManager::handshake(bool fromServ, bool fromClient)
 {
     setCommand();
@@ -45,13 +76,9 @@ RawData PacketManager::error(const Protocol::CMD cmd, const std::string &msg)
     _command.data.tag = cmd;
     _command.data.res = true;
     memset(_command.data._error.msg, 0, Protocol::PRO_SIZE::MAX_MSG_ERROR);
-    for (size_t i = 0; i < Protocol::PRO_SIZE::MAX_MSG_ERROR; i++)
-        _command.data._error.msg[i] = msg[i];
-    return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
-}
-
-RawData PacketManager::getCommand()
-{
+    if (msg.size() < Protocol::MAX_MSG_ERROR) {
+        memcpy(_command.data._error.msg, msg.c_str(), msg.size());
+    }
     return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
 }
 
@@ -60,7 +87,7 @@ CMD PacketManager::getType(const char *pck, std::size_t size)
     BasePacket packet;
 
     memset(packet.rawData, 0, MIN_LENGTH);
-    memcpy(packet.rawData, pck, size);
+    memcpy(packet.rawData, pck, MIN_LENGTH);
 
     return (packet.data.tag);
 }
@@ -70,7 +97,7 @@ bool PacketManager::isSuccess(const char *pck, std::size_t size)
     BasePacket packet;
 
     memset(packet.rawData, 0, MIN_LENGTH);
-    memcpy(packet.rawData, pck, size);
+    memcpy(packet.rawData, pck, MIN_LENGTH);
 
     return packet.data.res;
 }
@@ -79,7 +106,13 @@ bool PacketManager::isValid(const char *data, std::size_t size, CMD tag)
 {
     CMD type = getType(data, size);
 
-    if (type != tag || !isSuccess(data, size)) {
+    if (!isSuccess(data, size)) {
+        std::cout << "success" << std::endl;
+        return false;
+    }
+
+    if (type != tag) {
+        std::cout << "CMD" << std::endl;
         return false;
     }
 
@@ -145,14 +178,68 @@ bool PacketManager::isValidDisconnection(const char *data, std::size_t size)
     return _command.data.res;
 }
 
+bool PacketManager::isValidEvents(const char *data, std::size_t size)
+{
+    if (!isValid(data, size, Protocol::EVENTS)) {
+        return false;
+    }
+    if (size != MAX_EVENT_LENGTH)
+        return false;
+
+    setEvents(data, size);
+
+    return _events.data.res;
+}
+
+
 RawData PacketManager::getCommand() const {
-    return RawData(_command.data, Protocol::MAX_COMMAND_LENGTH);
+    return RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH);
 }
 
 RawData PacketManager::getEvents() const {
-    return RawData(_events.data, Protocol::MAX_EVENT_LENGTH);
+    return RawData(_events.rawData, Protocol::MAX_EVENT_LENGTH);
 }
 
 RawData PacketManager::getEntity() const {
-    return RawData(_entity.data, Protocol::MAX_ENTITY_LENGTH);
+    return RawData(_entity.rawData, Protocol::MAX_ENTITY_LENGTH);
+}
+
+RawData PacketManager::events(const Events &events) {
+    setEvents();
+
+    _events.data.tag = Protocol::EVENTS;
+    _events.data.res = true;
+
+    _events.data.aKey = events.isAKey();
+    _events.data.zKey = events.isZKey();
+    _events.data.qKey = events.isQKey();
+    _events.data.sKey = events.isSKey();
+    _events.data.dKey = events.isDKey();
+    _events.data.eKey = events.isEKey();
+    _events.data.enter = events.isEnter();
+    return (RawData(_events.rawData, MAX_EVENT_LENGTH));
+}
+
+const PacketManager::EntityPacket &PacketManager::getEntityPacket() const {
+    return this->_entity;
+}
+
+const PacketManager::CommandPacket &PacketManager::getCommandPacket() const {
+    return this->_command;
+}
+
+const PacketManager::EventsPacket &PacketManager::getEventPacket() const {
+    return this->_events;
+}
+
+bool PacketManager::isValidEntity(const char *data, std::size_t size) {
+    if (!isValid(data, size, Protocol::ENTITY)) {
+        return false;
+    }
+
+    setEntity(data, size);
+    if (_entity.data.entityNbr > 10 || _entity.data.entityNbr < 0) {
+        return false;
+    }
+    return true;
 }

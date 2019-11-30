@@ -11,17 +11,24 @@ Vector::Vector(double x, double y, double z)
     _z = z;
 }
 
-double Vector::getX()
+Vector::Vector()
+{
+    _x = 0;
+    _y = 0;
+    _z = 0;
+}
+
+double Vector::getX() const
 {
     return _x;
 }
 
-double Vector::getY()
+double Vector::getY() const
 {
     return _y;
 }
 
-double Vector::getZ()
+double Vector::getZ() const
 {
     return _z;
 }

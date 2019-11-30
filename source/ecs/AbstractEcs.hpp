@@ -8,9 +8,9 @@
 #include <vector>
 #include <memory>
 
-#include "client/IRenderEntity.hpp"
-#include "System/ISystem.hpp"
-#include "System/Events.hpp"
+#include "IRenderEntity.hpp"
+#include "ISystem.hpp"
+#include "Events.hpp"
 
 using namespace std;
 

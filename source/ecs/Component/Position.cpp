@@ -11,3 +11,8 @@ std::type_index Position::getId()
 {
     return (std::type_index(typeid(Position)));
 }
+
+Position::Position(const Position &position) : Vector(position.getX(), position.getY(), position.getZ())
+{
+
+}
