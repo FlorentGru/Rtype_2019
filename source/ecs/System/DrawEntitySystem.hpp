@@ -13,7 +13,9 @@
 #include "RenderPlayer.hpp"
 #include "RenderFire.hpp"
 #include "IRenderSystem.hpp"
+#include "Timer.hpp"
 #include <SFML/Graphics.hpp>
+
 
 class DrawEntitySystem : public IRenderSystem
 {
@@ -40,6 +42,7 @@ class DrawEntitySystem : public IRenderSystem
         std::map<std::string, sf::Texture> _backText;
 	    std::map<std::string, sf::Sprite> _backSprite;
         std::map<std::string, sf::Vector2f> _backVector;
+        Timer _timer;
 };
 
 #endif //DRAWENTITYSYSTEM_HPP

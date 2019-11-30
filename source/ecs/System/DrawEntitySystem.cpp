@@ -9,7 +9,10 @@
 
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
 {
-    CreateWindow();
+    if (!_window.isOpen()) {
+        CreateWindow();
+        _isSucceed = false;
+    }
     initBackground();
     if (!_isSucceed)
         return _isSucceed;
@@ -28,6 +31,7 @@ DrawEntitySystem::DrawEntitySystem()
     sf::Vector2u windowSize(1280, 920);
     _windowSize = windowSize;
     frame = 32;
+    _timer.create_clock("background");
 }
 
 void DrawEntitySystem::CreateWindow()
@@ -77,9 +81,10 @@ void DrawEntitySystem::move(sf::Vector2f &front, float speed)
 
 void DrawEntitySystem::setBackground()
 {
-    move(_backVector["front"], 5);
-	move(_backVector["back"], 3);
-
+    if (_timer.restart("background", 0.2)) {
+        move(_backVector["front"], 5);
+        move(_backVector["back"], 3);
+    }
     _backSprite["back1"].setPosition(_backVector["back"].x, _backVector["back"].y);
     _backSprite["back2"].setPosition(_backVector["back"].x + _windowSize.x, _backVector["back"].y);
     _backSprite["front1"].setPosition(_backVector["front"].x , _backVector["front"].y);
