@@ -47,7 +47,6 @@ add_executable(rtype_server
         source/ecs/Component/Timer.cpp
         source/ecs/Component/Velocity.cpp
         source/ecs/Entity/Server/Player.cpp
-        source/ecs/System/Events.cpp
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
@@ -94,6 +93,7 @@ add_executable(rtype_client
         source/network/BoostUdpClient.cpp
         source/client/Client.cpp
         source/network/RawData.cpp
+        source/ecs/System/DrawEntitySystem.cpp
         )
 
 target_link_libraries(rtype_client ${CONAN_LIBS})
