@@ -9,14 +9,22 @@
 
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
 {
+    CreateWindow();
+    initBackground();
+    if (!_isSucceed)
+        return _isSucceed;
+    _window.clear();
+    setBackground();
     for(auto &entity: entities)
         draw(std::dynamic_pointer_cast<IRenderEntity> (entity));
-    return (_isSuceed);
+    _window.display();
+    getEvents(events);
+    return (_isSucceed);
 }
 
 DrawEntitySystem::DrawEntitySystem()
 {
-    _isSuceed = true;
+    _isSucceed = true;
     sf::Vector2u windowSize(1280, 920);
     _windowSize = windowSize;
     frame = 32;
@@ -24,38 +32,42 @@ DrawEntitySystem::DrawEntitySystem()
 
 void DrawEntitySystem::CreateWindow()
 {
-    window.create(sf::VideoMode(_windowSize.x, _windowSize.y, frame), "R-Type");
+    _window.create(sf::VideoMode(_windowSize.x, _windowSize.y, frame), "R-Type");
 }
 
 void DrawEntitySystem::initBackground()
 {
     
     sf::Texture text;
-    sf::Sprite sprit;
+    sf::Sprite sprite;
     sf::Vector2f back(0, 0);
     sf::Vector2f front(0, 0);
     
-    if (!text.loadFromFile("../../Resources/backgroundSpace.png"))
-        _isSuceed = false;
+    if (!text.loadFromFile("../../Resources/backgroundSpace.png")) {
+        _isSucceed = false;
+        return;
+    }
     _backText.emplace("back", text);
-    if (!text.loadFromFile("../../Resources/front.png"))
-        _isSuceed = false;
+    if (!text.loadFromFile("../../Resources/front.png")) {
+        _isSucceed = false;
+        return;
+    }
     _backText.emplace("front", text);
 
-    sprit.setTexture(_backText["back"]);
-    _backSprite.emplace("back1", sprit);
-    sprit.setTexture(_backText["back"]);
-    _backSprite.emplace("back2", sprit);
-    sprit.setTexture(_backText["front"]);
-    _backSprite.emplace("front1", sprit);
-    sprit.setTexture(_backText["front"]);
-    _backSprite.emplace("front2", sprit);
+    sprite.setTexture(_backText["back"]);
+    _backSprite.emplace("back1", sprite);
+    sprite.setTexture(_backText["back"]);
+    _backSprite.emplace("back2", sprite);
+    sprite.setTexture(_backText["front"]);
+    _backSprite.emplace("front1", sprite);
+    sprite.setTexture(_backText["front"]);
+    _backSprite.emplace("front2", sprite);
 
     _backVector.emplace("back", back);
     _backVector.emplace("front", front);
 }
 
-void DrawEntitySystem::move(sf::Vector2f &front, int speed)
+void DrawEntitySystem::move(sf::Vector2f &front, float speed)
 {
 	if ((front.x - speed) > (-1279))
 		front.x = front.x - speed;
@@ -69,10 +81,13 @@ void DrawEntitySystem::setBackground()
 	move(_backVector["back"], 3);
 
     _backSprite["back1"].setPosition(_backVector["back"].x, _backVector["back"].y);
-    _backSprite["back2"].setPosition(_backVector["back"].x + 1280, _backVector["back"].y);
+    _backSprite["back2"].setPosition(_backVector["back"].x + _windowSize.x, _backVector["back"].y);
     _backSprite["front1"].setPosition(_backVector["front"].x , _backVector["front"].y);
-    _backSprite["front2"].setPosition(_backVector["front"].x + 1280, _backVector["front"].y);
-
+    _backSprite["front2"].setPosition(_backVector["front"].x + _windowSize.x, _backVector["front"].y);
+    _window.draw(_backSprite["back1"]);
+    _window.draw(_backSprite["back2"]);
+    _window.draw(_backSprite["front1"]);
+    _window.draw(_backSprite["front2"]);
 }
 
 bool DrawEntitySystem::draw(std::shared_ptr<IRenderEntity> renderEntity)
@@ -85,6 +100,7 @@ bool DrawEntitySystem::draw(std::shared_ptr<IRenderEntity> renderEntity)
         drawEnemy(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
     if (renderEntity->getType() == IEntity::DESTRUCTIBLE)
         drawDestructible(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
+
 }
 
 void    DrawEntitySystem::drawPlayer(std::shared_ptr<RenderPlayer> renderPlayer)
@@ -93,10 +109,11 @@ void    DrawEntitySystem::drawPlayer(std::shared_ptr<RenderPlayer> renderPlayer)
     sf::Sprite playerS;
 
     if (!playerT.loadFromFile(renderPlayer->getTexture()))
-        _isSuceed = false;
+        _isSucceed = false;
     else {
         playerS.setTexture(playerT);
         playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        _window.draw(playerS);
     }
 }
 
@@ -106,10 +123,11 @@ void    DrawEntitySystem::drawFire(std::shared_ptr<RenderFire> renderFire)
     sf::Sprite fireS;
 
     if (!fireT.loadFromFile(renderFire->getTexture()))
-        _isSuceed = false;
+        _isSucceed = false;
     else {
         fireS.setTexture(fireT);
         fireS.setPosition(renderFire->getPosition()->getX(), renderFire->getPosition()->getY());
+        _window.draw(fireS);
     }
 }
 
@@ -119,10 +137,11 @@ void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderPlayer> renderPlayer)
     sf::Sprite playerS;
 
     if (!playerT.loadFromFile(renderPlayer->getTexture()))
-        _isSuceed = false;
+        _isSucceed = false;
     else {
         playerS.setTexture(playerT);
         playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        _window.draw(playerS);
     }
 
 }
@@ -133,10 +152,11 @@ void    DrawEntitySystem::drawDestructible(std::shared_ptr<RenderPlayer> renderP
     sf::Sprite playerS;
 
     if (!playerT.loadFromFile(renderPlayer->getTexture()))
-        _isSuceed = false;
+        _isSucceed = false;
     else {
         playerS.setTexture(playerT);
         playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        _window.draw(playerS);
     }
 }
 
@@ -144,9 +164,9 @@ bool DrawEntitySystem::getEvents(Events &events)
 {
     sf::Event event;
 
-    while (window.pollEvent(event)) {
+    while (_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
-            window.close();
+            _window.close();
         if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
             switch (event.key.code) {
             case sf::Keyboard::A:

@@ -30,11 +30,11 @@ class DrawEntitySystem : public IRenderSystem
         void drawEnemy(std::shared_ptr<RenderPlayer>);
         void drawDestructible(std::shared_ptr<RenderPlayer>);
         void initBackground();
-        void move(sf::Vector2f &font, int speed);
+        void move(sf::Vector2f &font, float speed);
         bool getEvents(Events &events);
 
-        bool _isSuceed;
-        sf::RenderWindow window;
+        bool _isSucceed;
+        sf::RenderWindow _window;
         sf::Vector2u _windowSize;
         int frame;
         std::map<std::string, sf::Texture> _backText;
