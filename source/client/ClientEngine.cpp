@@ -6,6 +6,5 @@
 
 bool ClientEngine::draw(vector<shared_ptr<IRenderEntity>> entities)
 {
-    
-    entities[0]->getTexture();
+        des.run(entities, getEvents());
 }

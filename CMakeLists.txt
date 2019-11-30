@@ -50,7 +50,6 @@ add_executable(rtype_server
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/server/server.cpp
         source/server/gameEngine/GameEngine.cpp
         source/server/main.cpp
         source/ecs/Entity/Server/Fire.cpp
@@ -92,6 +91,7 @@ add_executable(rtype_client
         source/client/ClientNetwork.cpp
         source/network/BoostUdpClient.cpp
         source/client/Client.cpp
+        source/client/Menu.cpp
         source/network/RawData.cpp
         source/ecs/System/DrawEntitySystem.cpp
         )

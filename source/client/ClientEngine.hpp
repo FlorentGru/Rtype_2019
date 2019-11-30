@@ -6,6 +6,7 @@
 #define RTYPE_CLIENTENGINE_HPP
 
 #include "ClientEcs.hpp"
+#include "DrawEntitySystem.hpp"
 
 namespace Client {
     enum Scene {
@@ -17,11 +18,13 @@ namespace Client {
 class ClientEngine
 {
 public:
+    ClientEngine();
     const Events &getEvents();
     bool draw(vector<shared_ptr<IRenderEntity>> entities);
 
     bool setScene(Client::Scene scene);
 private:
+    DrawEntitySystem des;
     ClientEcs ecs;
     Client::Scene scene;
 };
