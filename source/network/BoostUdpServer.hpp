@@ -22,21 +22,23 @@ class BoostUdpServer : public IUdpServer
 public:
     BoostUdpServer(short port);
 
-    bool openServer() override;
+    void openServer() override;
 
     bool send(const char *data, size_t size) override ;
 
-    void sendAsync(const char *data, size_t size) override;
+    void sendAsync(const char *data, size_t size, std::string) override;
 
     std::vector<RawData> receiveUserPackets(std::string userAddress) override ;
 
 private:
     Protocol::PacketManager packetManager;
-    std::map<std::string, std::shared_ptr<ISession>> clientList;
+    std::map<udp::endpoint, std::shared_ptr<ISession>> clientList;
+    std::map<std::string, udp::endpoint> usersEndpoint;
 
     void doReceive();
     void handleReceive(const boost::system::error_code& error, size_t bytes_recvd);
     void handleSend();
+    void removeClient(udp::endpoint);
 
     boost::asio::io_context ioContext_;
     udp::socket socket_;

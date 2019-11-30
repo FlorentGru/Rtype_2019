@@ -9,12 +9,12 @@ BoostUdpServer::BoostUdpServer(short port) : ioContext_(), socket_(ioContext_, u
 {
 }
 
-bool BoostUdpServer::openServer()
+void BoostUdpServer::openServer()
 {
     doReceive();
-    boost::thread t(boost::bind(&Server::run, this));
+//    boost::thread t(boost::bind(&Server::run, this));
     ioContext_.run();
-    t.join();
+//    t.join();
 }
 
 void BoostUdpServer::doReceive()
@@ -23,6 +23,16 @@ void BoostUdpServer::doReceive()
            boost::bind(&BoostUdpServer::handleReceive, this,
            boost::asio::placeholders::error,
            boost::asio::placeholders::bytes_transferred));
+}
+
+void BoostUdpServer::removeClient(udp::endpoint remoteEndpoint)
+{
+    for (auto it = this->usersEndpoint.begin(); it != this->usersEndpoint.end(); it++) {
+        if (it->second == remoteEndpoint) {
+            this->usersEndpoint.erase(it->first);
+            return;
+        }
+    }
 }
 
 void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_t bytes_recvd)
@@ -37,15 +47,16 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
     Protocol::CMD packetType = packetManager.getType(data.data, data.size);
 
     if (packetType == Protocol::HANDSHAKE) {
-        if (packetManager.isValidHandshake(data.data, data.size)) {
+        if (packetManager.isValidHandshake(data.data, data.size, false, true)) {
             packetManager.setCommand(data.data, data.size);
-            std::cout << "Received :'" << packetManager.getCommand().data._handshake.magicNumber << "'" << std::endl;
+            std::cout << "Received : magic number" << std::endl;
             data = packetManager.handshake(true, false);
             send(data.data, data.size);
-            if (this->clientList.find(remoteEndpoint_.address().to_string()) == this->clientList.end()) {
+            if (this->clientList.find(remoteEndpoint_) == this->clientList.end()) {
                 std::cout << "new" << std::endl;
                 std::shared_ptr<ISession> session(new Session("Robert"));
-                this->clientList.emplace(remoteEndpoint_.address().to_string(), session);
+                this->clientList.emplace(remoteEndpoint_, session);
+                this->usersEndpoint.emplace("Player " + std::to_string(this->clientList.size()), remoteEndpoint_);
             }
         } else {
             data = packetManager.error(Protocol::ERROR, "Invalid Handshake");
@@ -57,7 +68,8 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
             data = packetManager.disconnection();
             std::cout << "Disconnect client" << std::endl;send(data.data, data.size);
             send(data.data, data.size);
-            this->clientList.erase(remoteEndpoint_.address().to_string());
+            this->clientList.erase(remoteEndpoint_);
+            removeClient(remoteEndpoint_);
         } else {
             data = packetManager.error(Protocol::ERROR, "Invalid Disconnection");
             send(data.data, data.size);
@@ -68,9 +80,9 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
         data = packetManager.error(Protocol::ERROR, "Invalid Packet");
         send(data.data, data.size);
     } else if (packetType == Protocol::EVENTS) {
-        if (this->clientList.find(remoteEndpoint_.address().to_string()) == this->clientList.end()) {
+        if (this->clientList.find(remoteEndpoint_) == this->clientList.end()) {
             packetManager.setEvents(data.data, data.size);
-            this->clientList[remoteEndpoint_.address().to_string()]->addEventPacket(packetManager.getEvents());
+            this->clientList[remoteEndpoint_]->addEventPacket(packetManager.getEvents());
         } else {
             data = packetManager.error(Protocol::ERROR, "User not connected");
             send(data.data, data.size);
@@ -89,9 +101,9 @@ bool BoostUdpServer::send(const char *data, size_t size)
     return socket_.send_to(boost::asio::buffer(data, size), remoteEndpoint_) == size;
 }
 
-void BoostUdpServer::sendAsync(const char *data, size_t size)
+void BoostUdpServer::sendAsync(const char *data, size_t size, std::string userId)
 {
-    socket_.async_send_to(boost::asio::buffer(data, size), remoteEndpoint_,
+    socket_.async_send_to(boost::asio::buffer(data, size), this->usersEndpoint.find(userId)->second,
           boost::bind(&BoostUdpServer::handleSend, this));
 }
 
@@ -101,5 +113,5 @@ void BoostUdpServer::handleSend()
 
 std::vector<RawData> BoostUdpServer::receiveUserPackets(std::string userAddress)
 {
-    return this->clientList[userAddress]->getPacketData();
+    return this->clientList[this->usersEndpoint.find(userAddress)->second]->getPacketData();
 }

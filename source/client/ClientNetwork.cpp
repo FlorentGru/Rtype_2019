@@ -2,9 +2,7 @@
 // Created by tfian on 28/11/2019.
 //
 
-#include <PacketManager.hpp>
 #include "ClientNetwork.hpp"
-#include "SerializedEntity.hpp"
 
 bool ClientNetwork::connect(const std::string &host, const std::string &port) {
     if (!this->udpClient->doConnect(host, port)) {

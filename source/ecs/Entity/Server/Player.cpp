@@ -13,7 +13,7 @@ Player::Player(size_t pv, int id, std::shared_ptr<Position> position)
     timer.create_clock("moveClock");
     _component.clear();
     _component.push_back(std::make_shared<Timer>(timer));
-    _component.push_back(std::make_shared<Position>(position));
+    _component.push_back(position);
     _pv = pv;
     _id = id;
 }

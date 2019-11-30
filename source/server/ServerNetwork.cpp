@@ -18,10 +18,7 @@ ServerNetwork::ServerNetwork(short port)
 }
 
 bool ServerNetwork::connect(){
-    if (!this->udpServer->openServer()) {
-        return false;
-    }
-
+    this->udpServer->openServer();
     return true;
 }
 
@@ -30,7 +27,7 @@ bool ServerNetwork::sendEntitiesToPlayer(const std::string &userId, std::vector<
     std::vector<RawData> data = this->packetManager.entity(entities);
 
     for (auto &packet : data) {
-        this->udpServer->sendAsync(packet.data, packet.size);
+        this->udpServer->sendAsync(packet.data, packet.size, userId);
     }
     return true;
 }

@@ -26,9 +26,8 @@ include_directories(source/server
         source/ecs/Entity/Server
         )
 
-add_executable(rtype_server
+add_executable(r-type_server
         source/server/main.cpp
-        source/server/gameEngine/GameEngine.cpp
         source/server/Server.cpp
         source/server/ServerNetwork.cpp
         source/server/Session.cpp
@@ -52,10 +51,10 @@ add_executable(rtype_server
         source/network/BoostUdpServer.cpp
         )
 
-target_link_libraries(rtype_server ${CONAN_LIBS})
-set_target_properties(rtype_server PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(r-type_server ${CONAN_LIBS})
+set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
 
-add_executable(rtype_client
+add_executable(r-type_client
         source/client/main.cpp
         source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
@@ -68,19 +67,17 @@ add_executable(rtype_client
         source/ecs/System/Events.cpp
         source/ecs/ServerEcs.cpp
         source/ecs/ClientEcs.cpp
-        source/ecs/System/UpdateEntitySystem.cpp
         source/ecs/Entity/Client/RenderPlayer.cpp
         source/ecs/Entity/Client/RenderFire.cpp
         source/ecs/Entity/SerializedEntity.cpp
         source/network/PacketManager.cpp
-        source/client/ClientData.cpp
         source/client/ClientNetwork.cpp
         source/network/BoostUdpClient.cpp
         source/client/Client.cpp
         source/network/RawData.cpp
         )
 
-target_link_libraries(rtype_client ${CONAN_LIBS})
-set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(r-type_client ${CONAN_LIBS})
+set_target_properties(r-type_client PROPERTIES LINKER_LANGUAGE CXX)
 
 

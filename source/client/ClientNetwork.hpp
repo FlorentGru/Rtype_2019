@@ -7,13 +7,14 @@
 
 #include <memory>
 #include "IUdpClient.hpp"
-#include "ClientData.hpp"
 #include "SerializedEntity.hpp"
+#include "Events.hpp"
+#include "PacketManager.hpp"
 
 class ClientNetwork
 {
 public:
-    ClientNetwork();
+    ClientNetwork() = default;
     bool connect(const std::string &host, const std::string &port);
 
     bool sendEvents(const Events &events);

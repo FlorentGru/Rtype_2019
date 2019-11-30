@@ -16,6 +16,7 @@ Session::Session(std::string pseudo)
 bool Session::addEventPacket(RawData entity)
 {
     this->packets.emplace_back(entity);
+    return true;
 }
 
 std::vector<RawData> Session::getPacketData()

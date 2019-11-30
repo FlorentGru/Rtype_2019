@@ -13,9 +13,9 @@ bool AbstractEcs::addEntity(shared_ptr<IEntity> entity) {
     return true;
 }
 
-bool AbstractEcs::addEntities(const vector<shared_ptr<IEntity>> &entities) {
+bool AbstractEcs::addEntities(const vector<shared_ptr<IEntity>> &entities_) {
 
-    for (auto &entity : entities) {
+    for (auto &entity : entities_) {
         this->entities.emplace_back(entity);
     }
     return true;

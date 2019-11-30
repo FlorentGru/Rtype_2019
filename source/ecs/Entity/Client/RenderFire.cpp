@@ -11,7 +11,7 @@ RenderFire::RenderFire(int id, std::shared_ptr<Position> position)
     Rendering rendering("fire.png", "piew_piew.mp3", 0);
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));
-    _component.push_back(std::make_shared<Position>(position));
+    _component.push_back(position);
 }
 
 IEntity::Type RenderFire::getType()

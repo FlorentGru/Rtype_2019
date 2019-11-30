@@ -11,7 +11,7 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
     Timer timer;
     _isPlayer = isPlayer;
     _component.clear();
-    _component.push_back(std::make_shared<Position>(position));
+    _component.push_back(position);
     timer.create_clock("moveClock");
     _component.push_back(std::make_shared<Timer>(timer));
     if (_isPlayer) {

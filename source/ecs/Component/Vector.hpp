@@ -16,14 +16,15 @@ private:
 
 public:
     Vector(double x, double y, double z = 0);
+    Vector();
 
     void setX(double);
     void setY(double);
     void setZ(double);
 
-    double getX();
-    double getY();
-    double getZ();
+    double getX() const;
+    double getY() const;
+    double getZ() const;
 };
 
 #endif //CPP_RTYPE_2019_VECTOR_HPP

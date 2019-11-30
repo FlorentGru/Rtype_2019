@@ -16,9 +16,10 @@ bool BoostUdpClient::doConnect(const std::string &host, const std::string &port)
     endpoint_ = *iter;
 
     doReceive();
-    boost::thread t(boost::bind(&Client::run, this));
+//    boost::thread t(boost::bind(&Client::run, this));
     io_context_.run();
-    t.join();
+//    t.join();
+    return true;
 }
 
 bool BoostUdpClient::sendData(const char *data, size_t size)

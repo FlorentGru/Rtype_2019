@@ -186,15 +186,15 @@ bool PacketManager::isValidEvents(const char *data, std::size_t size)
 
 
 RawData PacketManager::getCommand() const {
-    return RawData(_command.data, Protocol::MAX_COMMAND_LENGTH);
+    return RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH);
 }
 
 RawData PacketManager::getEvents() const {
-    return RawData(_events.data, Protocol::MAX_EVENT_LENGTH);
+    return RawData(_events.rawData, Protocol::MAX_EVENT_LENGTH);
 }
 
 RawData PacketManager::getEntity() const {
-    return RawData(_entity.data, Protocol::MAX_ENTITY_LENGTH);
+    return RawData(_entity.rawData, Protocol::MAX_ENTITY_LENGTH);
 }
 
 RawData PacketManager::events(const Events &events) {
@@ -210,6 +210,7 @@ RawData PacketManager::events(const Events &events) {
     _events.data.dKey = events.isDKey();
     _events.data.eKey = events.isEKey();
     _events.data.enter = events.isEnter();
+    return (RawData(_events.rawData, MAX_EVENT_LENGTH));
 }
 
 const PacketManager::EntityPacket &PacketManager::getEntityPacket() const {
