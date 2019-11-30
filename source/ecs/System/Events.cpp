@@ -9,7 +9,7 @@ bool Events::Events::isLeftArrow() const {
 }
 
 void Events::Events::setLeftArrow(bool leftArrow_) {
-    Events::leftArrow = leftArrow_;
+    this->leftArrow = leftArrow_;
 }
 
 bool Events::Events::isRightArrow() const {
@@ -17,7 +17,7 @@ bool Events::Events::isRightArrow() const {
 }
 
 void Events::Events::setRightArrow(bool rightArrow_) {
-    Events::rightArrow = rightArrow_;
+    this->rightArrow = rightArrow_;
 }
 
 bool Events::Events::isUpArrow() const {
@@ -25,7 +25,7 @@ bool Events::Events::isUpArrow() const {
 }
 
 void Events::Events::setUpArrow(bool upArrow_) {
-    Events::upArrow = upArrow_;
+    this->upArrow = upArrow_;
 }
 
 bool Events::Events::isDownArrow() const {
@@ -33,7 +33,7 @@ bool Events::Events::isDownArrow() const {
 }
 
 void Events::Events::setDownArrow(bool downArrow_) {
-    Events::downArrow = downArrow_;
+    this->downArrow = downArrow_;
 }
 
 bool Events::Events::isAKey() const {
@@ -41,7 +41,7 @@ bool Events::Events::isAKey() const {
 }
 
 void Events::Events::setAKey(bool aKey_) {
-    Events::aKey = aKey_;
+    this->aKey = aKey_;
 }
 
 bool Events::Events::isBKey() const {
@@ -49,7 +49,7 @@ bool Events::Events::isBKey() const {
 }
 
 void Events::Events::setBKey(bool bKey_) {
-    Events::bKey = bKey_;
+    this->bKey = bKey_;
 }
 
 bool Events::Events::isCKey() const {
@@ -57,7 +57,7 @@ bool Events::Events::isCKey() const {
 }
 
 void Events::Events::setCKey(bool cKey_) {
-    Events::cKey = cKey_;
+    this->cKey = cKey_;
 }
 
 bool Events::isDKey() const {
@@ -65,7 +65,7 @@ bool Events::isDKey() const {
 }
 
 void Events::setDKey(bool dKey_) {
-    Events::dKey = dKey_;
+    this->dKey = dKey_;
 }
 
 bool Events::isEKey() const {
@@ -73,7 +73,7 @@ bool Events::isEKey() const {
 }
 
 void Events::setEKey(bool eKey_) {
-    Events::eKey = eKey_;
+    this->eKey = eKey_;
 }
 
 bool Events::isFKey() const {
@@ -81,7 +81,7 @@ bool Events::isFKey() const {
 }
 
 void Events::setFKey(bool fKey_) {
-    Events::fKey = fKey_;
+    this->fKey = fKey_;
 }
 
 bool Events::isGKey() const {
@@ -89,7 +89,7 @@ bool Events::isGKey() const {
 }
 
 void Events::setGKey(bool gKey_) {
-    Events::gKey = gKey_;
+    this->gKey = gKey_;
 }
 
 bool Events::isHKey() const {
@@ -97,7 +97,7 @@ bool Events::isHKey() const {
 }
 
 void Events::setHKey(bool hKey_) {
-    Events::hKey = hKey_;
+    this->hKey = hKey_;
 }
 
 bool Events::isIKey() const {
@@ -105,7 +105,7 @@ bool Events::isIKey() const {
 }
 
 void Events::setIKey(bool iKey_) {
-    Events::iKey = iKey_;
+    this->iKey = iKey_;
 }
 
 bool Events::isJKey() const {
@@ -113,7 +113,7 @@ bool Events::isJKey() const {
 }
 
 void Events::setJKey(bool jKey_) {
-    Events::jKey = jKey_;
+    this->jKey = jKey_;
 }
 
 bool Events::isKKey() const {
@@ -121,7 +121,7 @@ bool Events::isKKey() const {
 }
 
 void Events::setKKey(bool kKey_) {
-    Events::kKey = kKey_;
+    this->kKey = kKey_;
 }
 
 bool Events::isLKey() const {
@@ -129,7 +129,7 @@ bool Events::isLKey() const {
 }
 
 void Events::setLKey(bool lKey_) {
-    Events::lKey = lKey_;
+    this->lKey = lKey_;
 }
 
 bool Events::isMKey() const {
@@ -137,7 +137,7 @@ bool Events::isMKey() const {
 }
 
 void Events::setMKey(bool mKey_) {
-    Events::mKey = mKey_;
+    this->mKey = mKey_;
 }
 
 bool Events::isOKey() const {
@@ -145,7 +145,7 @@ bool Events::isOKey() const {
 }
 
 void Events::setOKey(bool oKey_) {
-    Events::oKey = oKey_;
+    this->oKey = oKey_;
 }
 
 bool Events::isPKey() const {
@@ -153,7 +153,7 @@ bool Events::isPKey() const {
 }
 
 void Events::setPKey(bool pKey_) {
-    Events::pKey = pKey_;
+    this->pKey = pKey_;
 }
 
 bool Events::isQKey() const {
@@ -161,7 +161,7 @@ bool Events::isQKey() const {
 }
 
 void Events::setQKey(bool qKey_) {
-    Events::qKey = qKey_;
+    this->qKey = qKey_;
 }
 
 bool Events::isRKey() const {
@@ -169,7 +169,7 @@ bool Events::isRKey() const {
 }
 
 void Events::setRKey(bool rKey_) {
-    Events::rKey = rKey_;
+    this->rKey = rKey_;
 }
 
 bool Events::isSKey() const {
@@ -177,7 +177,7 @@ bool Events::isSKey() const {
 }
 
 void Events::setSKey(bool sKey_) {
-    Events::sKey = sKey_;
+    this->sKey = sKey_;
 }
 
 bool Events::isTKey() const {
@@ -185,7 +185,7 @@ bool Events::isTKey() const {
 }
 
 void Events::setTKey(bool tKey_) {
-    Events::tKey = tKey_;
+    this->tKey = tKey_;
 }
 
 bool Events::isUKey() const {
@@ -193,7 +193,7 @@ bool Events::isUKey() const {
 }
 
 void Events::setUKey(bool uKey_) {
-    Events::uKey = uKey_;
+    this->uKey = uKey_;
 }
 
 bool Events::isVKey() const {
@@ -201,7 +201,7 @@ bool Events::isVKey() const {
 }
 
 void Events::setVKey(bool vKey_) {
-    Events::vKey = vKey_;
+    this->vKey = vKey_;
 }
 
 bool Events::isWKey() const {
@@ -209,7 +209,7 @@ bool Events::isWKey() const {
 }
 
 void Events::setWKey(bool wKey_) {
-    Events::wKey = wKey_;
+    this->wKey = wKey_;
 }
 
 bool Events::isXKey() const {
@@ -217,7 +217,7 @@ bool Events::isXKey() const {
 }
 
 void Events::setXKey(bool xKey_) {
-    Events::xKey = xKey_;
+    this->xKey = xKey_;
 }
 
 bool Events::isYKey() const {
@@ -225,7 +225,7 @@ bool Events::isYKey() const {
 }
 
 void Events::setYKey(bool yKey_) {
-    Events::yKey = yKey_;
+    this->yKey = yKey_;
 }
 
 bool Events::isZKey() const {
@@ -233,7 +233,7 @@ bool Events::isZKey() const {
 }
 
 void Events::setZKey(bool zKey_) {
-    Events::zKey = zKey_;
+    this->zKey = zKey_;
 }
 
 bool Events::isEnter() const {
@@ -241,5 +241,5 @@ bool Events::isEnter() const {
 }
 
 void Events::setEnter(bool enter_) {
-    Events::enter = enter_;
+    this->enter = enter_;
 }

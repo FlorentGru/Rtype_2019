@@ -38,6 +38,11 @@ Events ServerNetwork::getEvents(const std::string &userId)
     std::vector<RawData> data = this->udpServer->receiveUserPackets(userId);
     Protocol::PacketManager::EventsPacket packet;
 
+    if (data.empty()) {
+       // std::cout << "no events received" << std::endl;
+        return (event);
+    }
+
     if (!this->packetManager.isValidEvents(data.back().data, data.back().size))
         return(event);
 
@@ -46,6 +51,8 @@ Events ServerNetwork::getEvents(const std::string &userId)
 
     event.setEnter(packet.data.enter);
     event.setZKey(packet.data.zKey);
+    event.setAKey(packet.data.aKey);
+    event.setEKey(packet.data.eKey);
     event.setQKey(packet.data.qKey);
     event.setSKey(packet.data.sKey);
     event.setDKey(packet.data.dKey);

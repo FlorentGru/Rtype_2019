@@ -112,7 +112,7 @@ bool PacketManager::isValid(const char *data, std::size_t size, CMD tag)
     }
 
     if (type != tag) {
-        std::cout << "CMD" << std::endl;
+        std::cout << "Invalid tag" << std::endl;
         return false;
     }
 
@@ -241,5 +241,7 @@ bool PacketManager::isValidEntity(const char *data, std::size_t size) {
     if (_entity.data.entityNbr > 10 || _entity.data.entityNbr < 0) {
         return false;
     }
+    std::cout << "entity is valid" << std::endl;
+
     return true;
 }

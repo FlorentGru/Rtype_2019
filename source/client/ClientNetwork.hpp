@@ -19,7 +19,6 @@ public:
 
     bool sendEvents(const Events &events);
     std::vector<SerializedEntity> getEntities();
-//    std::vector<SerialisedEntity> getEntities();
 private:
     SerializedEntity entityPacketToSerialized(const Protocol::PacketManager::Entity &packet);
 

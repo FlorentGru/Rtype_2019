@@ -22,6 +22,8 @@ public:
 
     bool doConnect(const std::string &address, const std::string &port) override ;
 
+    void startListening() override;
+
     bool sendData(const char *data, size_t size) override ;
 
     bool sendAndReceiveNext(const char *data, size_t size) override ;
@@ -34,6 +36,7 @@ public:
 private:
     void doReceive();
     void handle_receive_from(const boost::system::error_code& error, size_t bytes_recvd);
+    void handle_receive_sync(size_t _recvd);
     void handle_send();
 
     boost::array<char, Protocol::MAX_ENTITY_LENGTH> recv_buf;

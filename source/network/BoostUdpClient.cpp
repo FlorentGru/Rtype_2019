@@ -18,8 +18,16 @@ bool BoostUdpClient::doConnect(const std::string &host, const std::string &port)
 
     //doReceive();
     //boost::thread t(boost::bind(&boost::asio::io_context::run, boost::ref(io_context_)));
+    //   t.join();
     return true;
 }
+
+void BoostUdpClient::startListening()
+{
+    doReceive();
+    boost::thread t(boost::bind(&boost::asio::io_context::run, boost::ref(io_context_)));
+}
+
 
 bool BoostUdpClient::sendData(const char *data, size_t size)
 {
@@ -34,7 +42,8 @@ bool BoostUdpClient::sendAndReceiveNext(const char *data, size_t size)
 {
     socket_.send_to(boost::asio::buffer(data, size), endpoint_);
     size_t recvd = socket_.receive_from(boost::asio::buffer(recv_buf), sender_endpoint);
-    handle_receive_from(boost::asio::error::message_size, recvd);
+    handle_receive_sync(recvd);
+    std::cout << "blocking receive" << std::endl;
     return true;
 }
 
@@ -64,6 +73,8 @@ void BoostUdpClient::handle_receive_from(const boost::system::error_code &error,
 {
     RawData data = RawData();
 
+    std::cout << "received packet async" << std::endl;
+
     if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {
         memcpy(data.data, recv_buf.data(), bytes_recvd);
         data.size = bytes_recvd;
@@ -73,6 +84,20 @@ void BoostUdpClient::handle_receive_from(const boost::system::error_code &error,
 
     if (!error || error == boost::asio::error::message_size)
         doReceive();
+}
+
+void BoostUdpClient::handle_receive_sync(size_t bytes_recvd)
+{
+    RawData data = RawData();
+
+    std::cout << "received packet sync" << std::endl;
+
+    if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {
+        memcpy(data.data, recv_buf.data(), bytes_recvd);
+        data.size = bytes_recvd;
+        //use mutex
+        this->packets.emplace_back(data);
+    }
 }
 
 RawData BoostUdpClient::receiveNext()

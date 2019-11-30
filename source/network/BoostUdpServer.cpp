@@ -13,8 +13,7 @@ void BoostUdpServer::openServer()
 {
     std::cout << "openserver" << std::endl;
     doReceive();
-//    boost::thread t(boost::bind(&Server::run, this));
-    ioContext_.run();
+    boost::thread t(boost::bind(&boost::asio::io_context::run, boost::ref(this->ioContext_)));
 //    t.join();
 }
 
@@ -40,6 +39,7 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
 {
     RawData data = RawData();
 
+    std::cout << "packet received" << std::endl;
     if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {
         memcpy(data.data, recv_buf.data(), bytes_recvd);
         data.size = bytes_recvd;
@@ -81,8 +81,9 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
         data = packetManager.error(Protocol::ERROR, "Invalid Packet");
         send(data.data, data.size);
     } else if (packetType == Protocol::EVENTS) {
-        if (this->clientList.find(remoteEndpoint_) == this->clientList.end()) {
+        if (this->clientList.find(remoteEndpoint_) != this->clientList.end()) {
             packetManager.setEvents(data.data, data.size);
+            std::cout << "received events" << std::endl;
             this->clientList[remoteEndpoint_]->addEventPacket(packetManager.getEvents());
         } else {
             data = packetManager.error(Protocol::ERROR, "User not connected");
@@ -104,8 +105,12 @@ bool BoostUdpServer::send(const char *data, size_t size)
 
 void BoostUdpServer::sendAsync(const char *data, size_t size, std::string userId)
 {
-    socket_.async_send_to(boost::asio::buffer(data, size), this->usersEndpoint.find(userId)->second,
-          boost::bind(&BoostUdpServer::handleSend, this));
+    if (this->usersEndpoint.find(userId) != this->usersEndpoint.end()) {
+        socket_.async_send_to(boost::asio::buffer(data, size), this->usersEndpoint.find(userId)->second,
+                              boost::bind(&BoostUdpServer::handleSend, this));
+    } else {
+    //    std::cout << "no connected user" << std::endl;
+    }
 }
 
 void BoostUdpServer::handleSend()
@@ -114,5 +119,10 @@ void BoostUdpServer::handleSend()
 
 std::vector<RawData> BoostUdpServer::receiveUserPackets(std::string userAddress)
 {
-    return this->clientList[this->usersEndpoint.find(userAddress)->second]->getPacketData();
+    std::vector<RawData> packets;
+
+    if (this->usersEndpoint.find(userAddress) != this->usersEndpoint.end()) {
+        return this->clientList[this->usersEndpoint.find(userAddress)->second]->getPacketData();
+    }
+    return (packets);
 }

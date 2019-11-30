@@ -23,10 +23,7 @@ bool ClientNetwork::connect(const std::string &host, const std::string &port) {
     }
 
     RawData packet = this->packetManager.handshake(false, true);
-    if (!this->udpClient->sendAndReceiveNext(packet.data, packet.size)) {
-        std::cout << "error 2" << std::endl;
-        return false;
-    }
+    this->udpClient->sendAndReceiveNext(packet.data, packet.size);
 
     std::vector<RawData> packets = this->udpClient->receiveAll();
     if (packets.empty()) {
@@ -44,6 +41,8 @@ bool ClientNetwork::connect(const std::string &host, const std::string &port) {
         std::cout << "error 5" << std::endl;
         return false;
     }
+
+    this->udpClient->startListening();
     return true;
 }
 
