@@ -2,6 +2,7 @@
 // Created by tfian on 28/11/2019.
 //
 
+#include <PacketManager.hpp>
 #include "ClientNetwork.hpp"
 #include "BoostUdpClient.hpp"
 
@@ -53,6 +54,15 @@ bool ClientNetwork::sendEvents(const Events &events)
     return this->udpClient->sendData(packet.data, packet.size);
 }
 
+bool ClientNetwork::findIdExist(int id, std::vector<int> idList)
+{
+    for (size_t i = 0; i != idList.size(); i++) {
+        if (id == idList[i])
+            return true;
+    }
+    return false;
+}
+
 std::vector<SerializedEntity> ClientNetwork::getEntities()
 {
     std::vector<RawData> packets = this->udpClient->receiveAll();
@@ -66,9 +76,21 @@ std::vector<SerializedEntity> ClientNetwork::getEntities()
     }
 
     std::vector<SerializedEntity> entities;
-    for (const Protocol::PacketManager::EntityPacket &packet : entityPackets) {
+/*    for (const Protocol::PacketManager::EntityPacket &packet : entityPackets) {
         for (int i = 0; i < packet.data.entityNbr; i++) {
             entities.push_back(entityPacketToSerialized(packet.data.entities[i]));
+        }
+    }*/
+
+    std::vector<int> alreadyAdd;
+    if (!entityPackets.empty() == true) {
+        for (auto it = entityPackets.end(); it != entityPackets.begin(); it--) {
+            for (int i = 0; i < it->data.entityNbr; i++) {
+                if (!findIdExist(it->data.entities[i].id, alreadyAdd)) {
+                    entities.push_back(entityPacketToSerialized(it->data.entities[i]));
+                    alreadyAdd.push_back(it->data.entities[i].id);
+                }
+            }
         }
     }
 

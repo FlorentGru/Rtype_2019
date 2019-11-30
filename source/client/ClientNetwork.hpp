@@ -21,6 +21,7 @@ public:
     std::vector<SerializedEntity> getEntities();
 private:
     SerializedEntity entityPacketToSerialized(const Protocol::PacketManager::Entity &packet);
+    bool findIdExist(int, std::vector<int>);
 
     std::shared_ptr<IUdpClient> udpClient;
     Protocol::PacketManager packetManager;
