@@ -76,8 +76,9 @@ RawData PacketManager::error(const Protocol::CMD cmd, const std::string &msg)
     _command.data.tag = cmd;
     _command.data.res = true;
     memset(_command.data._error.msg, 0, Protocol::PRO_SIZE::MAX_MSG_ERROR);
-    for (size_t i = 0; i < Protocol::PRO_SIZE::MAX_MSG_ERROR; i++)
-        _command.data._error.msg[i] = msg[i];
+    if (msg.size() < Protocol::MAX_MSG_ERROR) {
+        memcpy(_command.data._error.msg, msg.c_str(), msg.size());
+    }
     return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
 }
 
@@ -86,7 +87,7 @@ CMD PacketManager::getType(const char *pck, std::size_t size)
     BasePacket packet;
 
     memset(packet.rawData, 0, MIN_LENGTH);
-    memcpy(packet.rawData, pck, size);
+    memcpy(packet.rawData, pck, MIN_LENGTH);
 
     return (packet.data.tag);
 }
@@ -96,7 +97,7 @@ bool PacketManager::isSuccess(const char *pck, std::size_t size)
     BasePacket packet;
 
     memset(packet.rawData, 0, MIN_LENGTH);
-    memcpy(packet.rawData, pck, size);
+    memcpy(packet.rawData, pck, MIN_LENGTH);
 
     return packet.data.res;
 }
@@ -105,7 +106,13 @@ bool PacketManager::isValid(const char *data, std::size_t size, CMD tag)
 {
     CMD type = getType(data, size);
 
-    if (type != tag || !isSuccess(data, size)) {
+    if (!isSuccess(data, size)) {
+        std::cout << "success" << std::endl;
+        return false;
+    }
+
+    if (type != tag) {
+        std::cout << "CMD" << std::endl;
         return false;
     }
 

@@ -3,25 +3,45 @@
 //
 
 #include "ClientNetwork.hpp"
+#include "BoostUdpClient.hpp"
+
+ClientNetwork::ClientNetwork()
+{
+    this->udpClient = std::make_shared<BoostUdpClient>();
+}
+
+void print_packet(RawData packet) {
+    std::cout << "packet size:" << packet.size << std::endl;
+    for (size_t i = 0; i < packet.size; i++) {
+    }
+};
 
 bool ClientNetwork::connect(const std::string &host, const std::string &port) {
     if (!this->udpClient->doConnect(host, port)) {
+        std::cout << "error 1" << std::endl;
         return false;
     }
 
     RawData packet = this->packetManager.handshake(false, true);
-    if (!this->udpClient->sendData(packet.data, packet.size)) {
+    if (!this->udpClient->sendAndReceiveNext(packet.data, packet.size)) {
+        std::cout << "error 2" << std::endl;
         return false;
     }
 
     std::vector<RawData> packets = this->udpClient->receiveAll();
-    if (packets.empty()) { return false; }
+    if (packets.empty()) {
+        std::cout << "error 3" << std::endl;
+        return false;
+    }
 
     packet = packets.back();
+    print_packet(packet);
     if (!packetManager.isValid(packet.data, packet.size, Protocol::HANDSHAKE)) {
+        std::cout << "error 4" << std::endl;
         return false;
     }
     if (!packetManager.isValidHandshake(packet.data, packet.size, true, false)) {
+        std::cout << "error 5" << std::endl;
         return false;
     }
     return true;

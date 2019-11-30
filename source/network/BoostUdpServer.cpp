@@ -11,6 +11,7 @@ BoostUdpServer::BoostUdpServer(short port) : ioContext_(), socket_(ioContext_, u
 
 void BoostUdpServer::openServer()
 {
+    std::cout << "openserver" << std::endl;
     doReceive();
 //    boost::thread t(boost::bind(&Server::run, this));
     ioContext_.run();

@@ -6,7 +6,8 @@
 #include "Client.hpp"
 
 BoostUdpClient::BoostUdpClient() : io_context_(), socket_(io_context_, udp::endpoint(udp::v4(), 0))
-{}
+{
+}
 
 bool BoostUdpClient::doConnect(const std::string &host, const std::string &port)
 {
@@ -15,20 +16,35 @@ bool BoostUdpClient::doConnect(const std::string &host, const std::string &port)
     udp::resolver::iterator iter = resolver.resolve(query);
     endpoint_ = *iter;
 
-    doReceive();
-//    boost::thread t(boost::bind(&Client::run, this));
-    io_context_.run();
-//    t.join();
+    //doReceive();
+    //boost::thread t(boost::bind(&boost::asio::io_context::run, boost::ref(io_context_)));
     return true;
 }
 
 bool BoostUdpClient::sendData(const char *data, size_t size)
 {
-    return socket_.send_to(boost::asio::buffer(data, size), endpoint_) == size;
+    socket_.async_send_to(boost::asio::buffer(data, size), endpoint_,
+                          boost::bind(&BoostUdpClient::handle_send, this));
+//    return socket_.send_to(boost::asio::buffer(data, size), endpoint_) == size;
+    std::cout << "sendData" << std::endl;
+    return true;
+}
+
+bool BoostUdpClient::sendAndReceiveNext(const char *data, size_t size)
+{
+    socket_.send_to(boost::asio::buffer(data, size), endpoint_);
+    size_t recvd = socket_.receive_from(boost::asio::buffer(recv_buf), sender_endpoint);
+    handle_receive_from(boost::asio::error::message_size, recvd);
+    return true;
+}
+
+void BoostUdpClient::handle_send()
+{
 }
 
 std::vector<RawData> BoostUdpClient::receiveAll()
 {
+    //use mutex
     std::vector<RawData> copy = this->packets;
 
     this->packets.clear();
@@ -51,6 +67,7 @@ void BoostUdpClient::handle_receive_from(const boost::system::error_code &error,
     if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {
         memcpy(data.data, recv_buf.data(), bytes_recvd);
         data.size = bytes_recvd;
+        //use mutex
         this->packets.emplace_back(data);
     }
 

@@ -14,7 +14,7 @@
 class ClientNetwork
 {
 public:
-    ClientNetwork() = default;
+    ClientNetwork();
     bool connect(const std::string &host, const std::string &port);
 
     bool sendEvents(const Events &events);

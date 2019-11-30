@@ -11,8 +11,9 @@ bool Client::run(const std::string &host, const std::string &port)
     if (!this->network.connect(host, port)) {
         return false;
     }
-
-    while ("forever") {
+    std::cout << "connection success" << std::endl;
+    return true;
+    while (1) {
         //this->engine.getEvents();
         this->network.sendEvents(events);
         auto entities = this->network.getEntities();

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(rtype LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 if (UNIX)
-    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code")
+    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code -g")
 endif (UNIX)
 
 include(CTest)
