@@ -53,7 +53,7 @@ add_executable(rtype_server
         source/ecs/System/UpdateEntitySystem.cpp
         source/server/server.cpp
         source/server/gameEngine/GameEngine.cpp
-        source/server/main.cppsource/server/main.cpp)
+        source/server/main.cpp
         source/ecs/Entity/Server/Fire.cpp
         source/ecs/Entity/SerializedEntity.cpp
         source/network/PacketManager.cpp
@@ -79,17 +79,12 @@ add_executable(rtype_client
         source/ecs/ClientEcs.cpp
         source/ecs/System/IRenderSystem.hpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/ecs/Entity/Fire.cpp source/ecs/Entity/Fire.hpp source/ecs/Entity/RenderPlayer.cpp source/ecs/Entity/RenderPlayer.hpp
-        source/client/client.cpp
         source/client/ClientEngine.cpp
         source/client/ClientMain.cpp
         source/client/background/background.cpp
         source/client/window/initWindow.cpp
         source/client/window/window.cpp
-        source/client/main.cpp
-        source/client/player.cpp)
-        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp source/client/ClientMain.cpp source/client/ClientMain.hpp source/client/ClientEngine.cpp source/client/ClientEngine.hpp
-        source/ecs/System/IRenderSystem.hpp source/ecs/System/IEventsSystem.hpp
+        source/client/player.cpp
         source/ecs/Entity/Client/RenderPlayer.cpp
         source/ecs/Entity/Client/RenderFire.cpp
         source/ecs/Entity/SerializedEntity.cpp
