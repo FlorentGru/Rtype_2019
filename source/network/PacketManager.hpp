@@ -11,6 +11,7 @@
 #include "iostream"
 #include "RawData.hpp"
 #include "Events.hpp"
+#include "SerializedEntity.hpp"
 
 namespace Protocol
 {
@@ -148,8 +149,8 @@ namespace Protocol
 
         RawData events(const Events &events);
 
-//        vector<EntityPacket> entity(const vector<SerializedEntity> &entities);
 
+        std::vector<RawData> entity(const std::vector<SerializedEntity> &entities);
         RawData handshake(bool fromServ, bool fromClient);
         RawData disconnection();
         RawData error(Protocol::CMD cmd, const std::string &msg);
@@ -160,7 +161,7 @@ namespace Protocol
 
         const EntityPacket &getEntityPacket() const;
         const CommandPacket &getCommandPacket() const;
-        const EventsPacket &getEventPack() const;
+        const EventsPacket &getEventPacket() const;
 
         void setCommand(const char *, std::size_t size);
         void setEvents(const char *, std::size_t size);
@@ -173,6 +174,7 @@ namespace Protocol
         bool isValidHandshake(const char *, std::size_t, bool serv, bool client);
         bool isValidDisconnection(const char *, std::size_t);
         bool isValidEntity(const char *, std::size_t);
+        bool isValidEvents(const char *, std::size_t);
     };
 };
 

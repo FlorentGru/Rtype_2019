@@ -10,15 +10,26 @@
 
 class SerializedEntity
 {
+public:
+    SerializedEntity(IEntity::Type type, int id, float x, float y, float z = 0);
+
+    IEntity::Type getType() const;
+    void setType(IEntity::Type type);
+    int getId() const;
+    void setId(int id);
+    float getX() const;
+    void setX(float x);
+    float getY() const;
+    void setY(float y);
+    float getZ() const;
+    void setZ(float z);
+
 private:
     IEntity::Type _type;
     int _id;
     float _x;
     float _y;
     float _z;
-
-public:
-    SerializedEntity(IEntity::Type type, int id, float x, float y, float z = 0);
 };
 
 #endif //RTYPE_SERIALIZEDENTITY_HPP

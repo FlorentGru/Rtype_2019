@@ -3,6 +3,7 @@
 //
 
 #include "BoostUdpServer.hpp"
+#include "Server.hpp"
 
 BoostUdpServer::BoostUdpServer(short port) : ioContext_(), socket_(ioContext_, udp::endpoint(udp::v4(), port))
 {
@@ -11,7 +12,9 @@ BoostUdpServer::BoostUdpServer(short port) : ioContext_(), socket_(ioContext_, u
 bool BoostUdpServer::openServer()
 {
     doReceive();
+    boost::thread t(boost::bind(&Server::run, this));
     ioContext_.run();
+    t.join();
 }
 
 void BoostUdpServer::doReceive()

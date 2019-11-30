@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <iostream>
+#include <PacketManager.hpp>
 #include "ServerNetwork.hpp"
 
 using boost::asio::ip::udp;
@@ -24,12 +25,36 @@ bool ServerNetwork::connect(){
     return true;
 }
 
-bool ServerNetwork::sendEntities(const std::string &userId)
+bool ServerNetwork::sendEntitiesToPlayer(const std::string &userId, std::vector<SerializedEntity> entities)
 {
+    std::vector<RawData> data = this->packetManager.entity(entities);
+
+    for (auto &packet : data) {
+        this->udpServer->sendAsync(packet.data, packet.size);
+    }
     return true;
 }
 
-void ServerNetwork::getEvents(const std::string &userId)
+Events ServerNetwork::getEvents(const std::string &userId)
 {
-    std::vector<RawData> packets = this->udpServer->receiveUserPackets(userId);
+    Events event;
+    std::vector<RawData> data = this->udpServer->receiveUserPackets(userId);
+    Protocol::PacketManager::EventsPacket packet;
+
+    if (!this->packetManager.isValidEvents(data.back().data, data.back().size))
+        return(event);
+
+    this->packetManager.setEvents(data.back().data, data.back().size);
+    packet = this->packetManager.getEventPacket();
+
+    event.setEnter(packet.data.enter);
+    event.setZKey(packet.data.zKey);
+    event.setQKey(packet.data.qKey);
+    event.setSKey(packet.data.sKey);
+    event.setDKey(packet.data.dKey);
+    event.setUpArrow(packet.data.upArrow);
+    event.setDownArrow(packet.data.downArrow);
+    event.setRightArrow(packet.data.rightArrow);
+    event.setLeftArrow(packet.data.leftArrow);
+    return(event);
 }

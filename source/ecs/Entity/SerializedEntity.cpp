@@ -12,3 +12,43 @@ SerializedEntity::SerializedEntity(IEntity::Type type, int id, float x, float y,
     _y = y;
     _z = z;
 }
+
+IEntity::Type SerializedEntity::getType() const {
+    return _type;
+}
+
+void SerializedEntity::setType(IEntity::Type type) {
+    _type = type;
+}
+
+int SerializedEntity::getId() const {
+    return _id;
+}
+
+void SerializedEntity::setId(int id) {
+    _id = id;
+}
+
+float SerializedEntity::getX() const {
+    return _x;
+}
+
+void SerializedEntity::setX(float x) {
+    _x = x;
+}
+
+float SerializedEntity::getY() const {
+    return _y;
+}
+
+void SerializedEntity::setY(float y) {
+    _y = y;
+}
+
+float SerializedEntity::getZ() const {
+    return _z;
+}
+
+void SerializedEntity::setZ(float z) {
+    _z = z;
+}

@@ -17,6 +17,37 @@ PacketManager::PacketManager()
     setEvents();
 }
 
+
+std::vector<RawData> PacketManager::entity(const std::vector<SerializedEntity> &entities)
+{
+    std::vector<RawData> result;
+
+    int numberEntities = entities.size();
+
+    int numberRawData = (numberEntities / 10) + 1;
+    int numbers = numberEntities % 10;
+    int size = 10;
+    int count = 0;
+
+    for (int i = 0; i != numberRawData; i++) {
+        if (i == (numberRawData - 1))
+            size = numbers;
+        setEntity();
+        _entity.data.tag = CMD::ENTITY;
+        _entity.data.res = true;
+        _entity.data.entityNbr = size;
+        for (int j = 0; j != size; j++) {
+            _entity.data.entities[j].id = entities.at(count).getId();
+            _entity.data.entities[j].type = entities.at(count).getType();
+            _entity.data.entities[j].posX = entities.at(count).getX();
+            _entity.data.entities[j].posY = entities.at(count).getY();
+            count += 1;
+        }
+        result.emplace_back(RawData(_entity.rawData, Protocol::MAX_ENTITY_LENGTH));
+    }
+    return(result);
+}
+
 RawData PacketManager::handshake(bool fromServ, bool fromClient)
 {
     setCommand();
@@ -47,11 +78,6 @@ RawData PacketManager::error(const Protocol::CMD cmd, const std::string &msg)
     memset(_command.data._error.msg, 0, Protocol::PRO_SIZE::MAX_MSG_ERROR);
     for (size_t i = 0; i < Protocol::PRO_SIZE::MAX_MSG_ERROR; i++)
         _command.data._error.msg[i] = msg[i];
-    return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
-}
-
-RawData PacketManager::getCommand()
-{
     return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
 }
 
@@ -145,6 +171,20 @@ bool PacketManager::isValidDisconnection(const char *data, std::size_t size)
     return _command.data.res;
 }
 
+bool PacketManager::isValidEvents(const char *data, std::size_t size)
+{
+    if (!isValid(data, size, Protocol::EVENTS)) {
+        return false;
+    }
+    if (size != MAX_EVENT_LENGTH)
+        return false;
+
+    setEvents(data, size);
+
+    return _events.data.res;
+}
+
+
 RawData PacketManager::getCommand() const {
     return RawData(_command.data, Protocol::MAX_COMMAND_LENGTH);
 }
@@ -180,7 +220,7 @@ const PacketManager::CommandPacket &PacketManager::getCommandPacket() const {
     return this->_command;
 }
 
-const PacketManager::EventsPacket &PacketManager::getEventPack() const {
+const PacketManager::EventsPacket &PacketManager::getEventPacket() const {
     return this->_events;
 }
 
@@ -195,4 +235,3 @@ bool PacketManager::isValidEntity(const char *data, std::size_t size) {
     }
     return true;
 }
-
