@@ -8,20 +8,21 @@
 #ifndef _RTYPEPACKET_HPP_
 #define _RTYPEPACKET_HPP_
 
-// #ifdef __GNUC__
-// #define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
-// #endif
-
-// #ifdef _MSC_VER
-// #define PACK( __Declaration__ ) __pragma( pack(push, 1) ) __Declaration__ __pragma( pack(pop))
-// #endif
-
 #include "iostream"
 #include "RawData.hpp"
-//#include "Events.hpp"
+#include "Events.hpp"
 
 namespace Protocol
 {
+    #ifdef __GNUC__
+        #define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
+    #endif
+
+    #ifdef _MSC_VER
+        #define PACK( __Declaration__ ) __pragma( pack(push, 1) ) __Declaration__ __pragma( pack(pop))
+    #endif
+
+
     enum INFO : char {
         SEPARATOR = ';',
     };
@@ -145,7 +146,7 @@ namespace Protocol
         PacketManager();
         ~PacketManager() {};
 
-//        EventsPacket &events(const Events &events);
+        RawData events(const Events &events);
 
 //        vector<EntityPacket> entity(const vector<SerializedEntity> &entities);
 
@@ -154,10 +155,12 @@ namespace Protocol
         RawData error(Protocol::CMD cmd, const std::string &msg);
 
         RawData getCommand() const;
-
         RawData getEvents() const;
-
         RawData getEntity() const;
+
+        const EntityPacket &getEntityPacket() const;
+        const CommandPacket &getCommandPacket() const;
+        const EventsPacket &getEventPack() const;
 
         void setCommand(const char *, std::size_t size);
         void setEvents(const char *, std::size_t size);
@@ -169,6 +172,7 @@ namespace Protocol
 
         bool isValidHandshake(const char *, std::size_t, bool serv, bool client);
         bool isValidDisconnection(const char *, std::size_t);
+        bool isValidEntity(const char *, std::size_t);
     };
 };
 

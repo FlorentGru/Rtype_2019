@@ -156,3 +156,43 @@ RawData PacketManager::getEvents() const {
 RawData PacketManager::getEntity() const {
     return RawData(_entity.data, Protocol::MAX_ENTITY_LENGTH);
 }
+
+RawData PacketManager::events(const Events &events) {
+    setEvents();
+
+    _events.data.tag = Protocol::EVENTS;
+    _events.data.res = true;
+
+    _events.data.aKey = events.isAKey();
+    _events.data.zKey = events.isZKey();
+    _events.data.qKey = events.isQKey();
+    _events.data.sKey = events.isSKey();
+    _events.data.dKey = events.isDKey();
+    _events.data.eKey = events.isEKey();
+    _events.data.enter = events.isEnter();
+}
+
+const PacketManager::EntityPacket &PacketManager::getEntityPacket() const {
+    return this->_entity;
+}
+
+const PacketManager::CommandPacket &PacketManager::getCommandPacket() const {
+    return this->_command;
+}
+
+const PacketManager::EventsPacket &PacketManager::getEventPack() const {
+    return this->_events;
+}
+
+bool PacketManager::isValidEntity(const char *data, std::size_t size) {
+    if (!isValid(data, size, Protocol::ENTITY)) {
+        return false;
+    }
+
+    setEntity(data, size);
+    if (_entity.data.entityNbr > 10 || _entity.data.entityNbr < 0) {
+        return false;
+    }
+    return true;
+}
+
