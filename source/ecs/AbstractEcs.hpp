@@ -19,7 +19,7 @@ class AbstractEcs
 public:
     virtual bool run(Events &events) = 0;
 
-    const vector<shared_ptr<IRenderEntity>> &getRenderEntities();
+    vector<SerializedEntity> getEntities();
 
     bool addEntity(shared_ptr<IEntity> entity);
     bool addEntities(const vector<shared_ptr<IEntity>> &entities);
@@ -30,8 +30,8 @@ public:
 
     bool destroy();
 protected:
-    vector<shared_ptr<IEntity>> entities;
-    vector<shared_ptr<ISystem>> systems;
+    vector<shared_ptr<IEntity>> _entities;
+    vector<shared_ptr<ISystem>> _systems;
 };
 
 

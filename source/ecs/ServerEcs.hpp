@@ -12,6 +12,7 @@ using namespace std;
 class ServerEcs : public AbstractEcs
 {
 public:
+    ServerEcs();
     bool run(Events &events) override;
 };
 

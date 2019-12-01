@@ -36,6 +36,9 @@ add_executable(r-type_server
         source/server/Session.cpp
         source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
+        source/ecs/ClientEcs.cpp
+        source/ecs/ServerEcs.cpp
+        source/server/GameEngine.cpp
         source/ecs/Component/Acceleration.cpp
         source/ecs/Component/Vector.cpp
         source/ecs/Component/Position.cpp
@@ -43,10 +46,7 @@ add_executable(r-type_server
         source/ecs/Component/Timer.cpp
         source/ecs/Component/Velocity.cpp
         source/ecs/Entity/Server/Player.cpp
-        source/ecs/ServerEcs.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/server/gameEngine/GameEngine.cpp
-        source/server/main.cpp
         source/ecs/Entity/Server/Fire.cpp
         source/ecs/Entity/SerializedEntity.cpp
         source/network/PacketManager.cpp
@@ -62,7 +62,6 @@ set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
 add_executable(r-type_client
         source/client/main.cpp
         source/client/Client.cpp
-        source/ecs/System/Events.cpp
         source/ecs/AbstractEcs.cpp
         source/ecs/Component/Acceleration.cpp
         source/ecs/Component/Vector.cpp
@@ -97,7 +96,6 @@ add_executable(rtype_client_test
         source/ecs/Component/Rendering.cpp
         source/ecs/Component/Timer.cpp
         source/ecs/Component/Velocity.cpp
-        source/ecs/System/Events.cpp
         source/ecs/ClientEcs.cpp
         source/ecs/System/IRenderSystem.hpp
         source/client/ClientEngine.cpp
