@@ -5,8 +5,10 @@
 #include "UpdateEntitySystem.hpp"
 #include "Events.hpp"
 
+
 UpdateEntitySystem::UpdateEntitySystem()
 {
+    _timer.create_clock("fire");
     _windowLength = 1280;
     _windowHeight = 920;
 }
@@ -21,7 +23,7 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
         if (mover->getType() == IEntity::PLAYER) {
             std::shared_ptr<Player> player = std::dynamic_pointer_cast<Player>(mover);
             manageShip(player, events);
-            if (events.isEnter()) {
+            if (events.isEnter() && _timer.restart("fire", 1)) {
                 std::shared_ptr<Fire> fire = createFire(player, true);
                 entities.push_back(fire);
             }
@@ -34,6 +36,7 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
         else
             move(mover, UpdateEntitySystem::LEFT);
     }
+    destroyEntity(entities);
     return _isSucceed;
 }
 
@@ -51,7 +54,7 @@ void UpdateEntitySystem::move(std::shared_ptr<IMovingEntity> entity, Direction d
 {
     if (direction == LEFT && entity->getPosition()->getX() > 0)
         entity->move(entity->getPosition()->getX() - 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
-    if (direction == RIGHT && entity->getPosition()->getX() < _windowLength - 200)
+    if (direction == RIGHT && entity->getPosition()->getX() < _windowLength - 300)
         entity->move(entity->getPosition()->getX() + 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
     if (direction == UP && entity->getPosition()->getY() > 0)
         entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() - 7, entity->getPosition()->getZ());
@@ -70,4 +73,17 @@ void UpdateEntitySystem::manageShip(std::shared_ptr<Player> &player, Events even
         move(std::dynamic_pointer_cast<IMovingEntity>(player), LEFT);
     if (events.isDKey())
         move(std::dynamic_pointer_cast<IMovingEntity>(player), RIGHT);
+}
+
+void UpdateEntitySystem::destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities)
+{
+    for (size_t i = 0; i < entities.size(); ++i) {
+        if (entities[i]->getType() == IEntity::FIRE
+        && (entities[i]->getPosition()->getX() >= _windowLength - 300
+        || entities[i]->getPosition()->getX() <= 0))
+            entities.erase(entities.begin() + i);
+        if (!(entities[i]->getType() == IEntity::PLAYER)
+        && entities[i]->getPosition()->getX() <= 50)
+            entities.erase(entities.begin() + 1);
+    }
 }

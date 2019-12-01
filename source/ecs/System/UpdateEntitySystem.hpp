@@ -9,6 +9,7 @@
 #include "ISystem.hpp"
 #include "Player.hpp"
 #include "Fire.hpp"
+#include "Timer.hpp"
 
 class UpdateEntitySystem : public ISystem {
 public:
@@ -32,8 +33,11 @@ private:
 
     void manageShip(std::shared_ptr<Player> &player, Events event);
 
+    void destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities);
+
     size_t _windowLength;
     size_t _windowHeight;
+    Timer _timer;
 };
 
 #endif //CPP_RTYPE_2019_UPDATEENTITYSYSTEM_HPP

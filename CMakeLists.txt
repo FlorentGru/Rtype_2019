@@ -54,7 +54,7 @@ add_executable(r-type_server
         source/network/BoostUdpServer.cpp
         source/ecs/Component/Hitbox.cpp
         source/ecs/System/CollideSystem.cpp
-        )
+        source/ecs/Entity/Server/Enemy.cpp source/ecs/Entity/Server/Enemy.hpp)
 
 target_link_libraries(r-type_server ${CONAN_LIBS})
 set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
@@ -110,7 +110,8 @@ add_executable(rtype_client_test
         source/ecs/Entity/Server/Fire.cpp
         source/ecs/Component/Hitbox.cpp
         source/ecs/System/UpdateEntitySystem.cpp
-        source/main.cpp)
+        source/main.cpp
+        )
 
 target_link_libraries(rtype_client_test ${CONAN_LIBS})
 set_target_properties(rtype_client_test PROPERTIES LINKER_LANGUAGE CXX)
