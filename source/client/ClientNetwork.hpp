@@ -16,6 +16,7 @@ class ClientNetwork
 public:
     ClientNetwork();
     bool connect(const std::string &host, const std::string &port);
+    bool disconnect();
 
     bool sendEvents(const Events &events);
     std::vector<SerializedEntity> getEntities();

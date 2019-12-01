@@ -106,3 +106,11 @@ SerializedEntity ClientNetwork::entityPacketToSerialized(const Protocol::PacketM
 
     return SerializedEntity(type, id, x, y);
 }
+
+bool ClientNetwork::disconnect()
+{
+    RawData packet = this->packetManager.disconnection();
+    this->udpClient->sendAndReceiveNext(packet.data, packet.size);
+
+    return this->udpClient->disconnect();
+}

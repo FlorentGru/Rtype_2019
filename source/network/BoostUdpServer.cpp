@@ -52,12 +52,16 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
             std::cout << "Received : magic number" << std::endl;
             data = packetManager.handshake(true, false);
             send(data.data, data.size);
+
+            mtx.lock();
             if (this->clientList.find(remoteEndpoint_) == this->clientList.end()) {
                 std::cout << "new" << std::endl;
                 std::shared_ptr<ISession> session(new Session("Robert"));
                 this->clientList.emplace(remoteEndpoint_, session);
                 this->usersEndpoint.emplace("Player " + std::to_string(this->clientList.size()), remoteEndpoint_);
             }
+            mtx.unlock();
+
         } else {
             data = packetManager.error(Protocol::ERROR, "Invalid Handshake");
             send(data.data, data.size);
@@ -68,8 +72,12 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
             data = packetManager.disconnection();
             std::cout << "Disconnect client" << std::endl;send(data.data, data.size);
             send(data.data, data.size);
+
+            mtx.lock();
             this->clientList.erase(remoteEndpoint_);
             removeClient(remoteEndpoint_);
+            mtx.unlock();
+
         } else {
             data = packetManager.error(Protocol::ERROR, "Invalid Disconnection");
             send(data.data, data.size);
@@ -80,6 +88,8 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
         data = packetManager.error(Protocol::ERROR, "Invalid Packet");
         send(data.data, data.size);
     } else if (packetType == Protocol::EVENTS) {
+
+        mtx.lock();
         if (this->clientList.find(remoteEndpoint_) != this->clientList.end()) {
             packetManager.setEvents(data.data, data.size);
             this->clientList[remoteEndpoint_]->addEventPacket(packetManager.getEvents());
@@ -87,6 +97,8 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
             data = packetManager.error(Protocol::ERROR, "User not connected");
             send(data.data, data.size);
         }
+        mtx.unlock();
+
     } else {
         data = packetManager.error(Protocol::ERROR, "Unknown packet");
         send(data.data, data.size);
@@ -103,12 +115,14 @@ bool BoostUdpServer::send(const char *data, size_t size)
 
 void BoostUdpServer::sendAsync(const char *data, size_t size, std::string userId)
 {
+    mtx.lock();
     if (this->usersEndpoint.find(userId) != this->usersEndpoint.end()) {
         socket_.async_send_to(boost::asio::buffer(data, size), this->usersEndpoint.find(userId)->second,
                               boost::bind(&BoostUdpServer::handleSend, this));
     } else {
     //    std::cout << "no connected user" << std::endl;
     }
+    mtx.unlock();
 }
 
 void BoostUdpServer::handleSend()
@@ -119,8 +133,11 @@ std::vector<RawData> BoostUdpServer::receiveUserPackets(std::string userAddress)
 {
     std::vector<RawData> packets;
 
+    mtx.lock();
     if (this->usersEndpoint.find(userAddress) != this->usersEndpoint.end()) {
-        return this->clientList[this->usersEndpoint.find(userAddress)->second]->getPacketData();
+        packets = this->clientList[this->usersEndpoint.find(userAddress)->second]->getPacketData();
     }
+    mtx.unlock();
+
     return (packets);
 }

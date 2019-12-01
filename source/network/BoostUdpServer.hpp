@@ -35,6 +35,8 @@ private:
     std::map<udp::endpoint, std::shared_ptr<ISession>> clientList;
     std::map<std::string, udp::endpoint> usersEndpoint;
 
+    boost::mutex mtx;
+
     void doReceive();
     void handleReceive(const boost::system::error_code& error, size_t bytes_recvd);
     void handleSend();

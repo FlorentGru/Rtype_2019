@@ -29,15 +29,6 @@ bool Server::run()
     std::cout << "thread success" << std::endl;
     while (true) {
         events = this->network.getEvents("Player 1");
-        if (events.isAKey()) {
-            std::cout << "events: " << std::endl;
-            std::cout << "    A: " << events.isAKey() << std::endl;
-            std::cout << "    Z: " << events.isZKey() << std::endl;
-            std::cout << "    E: " << events.isEKey() << std::endl;
-            std::cout << "    Q: " << events.isQKey() << std::endl;
-            std::cout << "    S: " << events.isSKey() << std::endl;
-            std::cout << "    D: " << events.isDKey() << std::endl;
-        }
         entities = this->engine.run(events);
         this->network.sendEntitiesToPlayer("Player 1", entities);
     }

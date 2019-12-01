@@ -37,6 +37,8 @@ namespace Protocol
         MAGIC_NBR = 42
     };
 
+#undef ERROR
+
     enum CMD : unsigned char {
         NONE = 0,
         ERROR,

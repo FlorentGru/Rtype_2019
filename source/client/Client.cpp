@@ -28,5 +28,6 @@ bool Client::run(const std::string &host, const std::string &port)
             break;
         }
     }
-    return true;
+
+    return this->network.disconnect();
 }
