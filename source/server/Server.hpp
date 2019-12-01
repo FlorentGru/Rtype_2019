@@ -16,7 +16,16 @@ using boost::asio::ip::udp;
 class Server
 {
 public:
+    /**
+     * Initialise the server connection
+     * @param port is the opened port of the server
+     */
     Server(short port);
+    /**
+     * Launch the server connection
+     * @return true
+     * @return false
+     */
     bool run();
 
 private:
