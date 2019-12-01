@@ -26,7 +26,6 @@ bool Server::run()
 
     entities.emplace_back(SerializedEntity(IEntity::PLAYER, 1, 0, 0));
 
-    std::cout << "thread success" << std::endl;
     while (true) {
         events = this->network.getEvents("Player 1");
         entities = this->engine.run(events);
