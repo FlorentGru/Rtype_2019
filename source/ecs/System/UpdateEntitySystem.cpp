@@ -4,6 +4,7 @@
 
 #include "UpdateEntitySystem.hpp"
 #include "Events.hpp"
+#include "Timer.hpp"
 
 
 UpdateEntitySystem::UpdateEntitySystem()
@@ -15,8 +16,10 @@ UpdateEntitySystem::UpdateEntitySystem()
 
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
+    Timer time;
     std::vector<std::shared_ptr<IMovingEntity>> moving;
     moving.clear();
+    time.create_clock("fire");
     for (auto & entity : entities)
         moving.push_back(std::dynamic_pointer_cast<IMovingEntity>(entity));
     for (auto & mover : moving) {

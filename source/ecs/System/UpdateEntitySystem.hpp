@@ -6,6 +6,7 @@
 #define CPP_RTYPE_2019_UPDATEENTITYSYSTEM_HPP
 
 #include <memory>
+#include <iostream>
 #include "ISystem.hpp"
 #include "Player.hpp"
 #include "Fire.hpp"

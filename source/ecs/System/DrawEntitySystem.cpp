@@ -33,7 +33,6 @@ DrawEntitySystem::DrawEntitySystem()
     _windowSize = windowSize;
     frame = 32;
     _timer.create_clock("background");
-    std::cout << "test" << std::endl;
 }
 
 void DrawEntitySystem::CreateWindow()
