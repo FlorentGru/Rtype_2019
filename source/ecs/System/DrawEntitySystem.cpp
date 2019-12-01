@@ -177,6 +177,16 @@ bool DrawEntitySystem::getEvents(Events &events)
 {
     sf::Event event;
 
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+        events.setZKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        events.setQKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        events.setSKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        events.setDKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+        events.setEnter(true);
     while (_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             _window.close();
@@ -192,9 +202,6 @@ bool DrawEntitySystem::getEvents(Events &events)
                 break;
             case sf::Keyboard::C:
                 events.setCKey(true);
-                break;
-            case sf::Keyboard::D:
-                events.setDKey(true);
                 break;
             case sf::Keyboard::E:
                 events.setEKey(true);
@@ -232,14 +239,8 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::P:
                 events.setPKey(true);
                 break;
-            case sf::Keyboard::Q:
-                events.setQKey(true);
-                break;
             case sf::Keyboard::R:
                 events.setRKey(true);
-                break;
-            case sf::Keyboard::S:
-                events.setSKey(true);
                 break;
             case sf::Keyboard::T:
                 events.setTKey(true);
@@ -259,9 +260,7 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::Y:
                 events.setYKey(true);
                 break;
-            case sf::Keyboard::Z:
-                events.setZKey(true);
-                break;
+
             case sf::Keyboard::Left:
                 events.setLeftArrow(true);
                 break;
@@ -274,8 +273,6 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::Down:
                 events.setDownArrow(true);
                 break;
-            case sf::Keyboard::Enter:
-                events.setEnter(true);
             default:
                 break;
             }

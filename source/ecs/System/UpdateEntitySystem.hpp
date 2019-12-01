@@ -27,7 +27,7 @@ private:
 
     bool _isSucceed = true;
 
-    std::shared_ptr<Fire> createFire(std::shared_ptr<Player> &player, bool isPlayer);
+    std::shared_ptr<Fire> createFire(std::shared_ptr<Player> &player, bool isPlayer, std::vector<std::shared_ptr<IEntity>> &entities);
 
     void move(std::shared_ptr<IMovingEntity>, Direction direction);
 
@@ -35,8 +35,8 @@ private:
 
     void destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities);
 
-    size_t _windowLength;
-    size_t _windowHeight;
+    float _windowLength;
+    float _windowHeight;
     Timer _timer;
 };
 

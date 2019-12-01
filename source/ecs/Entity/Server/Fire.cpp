@@ -5,9 +5,10 @@
 #include "Fire.hpp"
 #include "Timer.hpp"
 
-Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
+Fire::Fire(int id, int playerId, std::shared_ptr<Position> position, bool isPlayer = false)
 {
     _id = id;
+    _playerId = playerId;
     Timer timer;
     Hitbox hitbox(100, 50);
     _isPlayer = isPlayer;
