@@ -52,12 +52,14 @@ add_executable(r-type_server
         source/network/PacketManager.cpp
         source/network/RawData.cpp
         source/network/BoostUdpServer.cpp
+        source/ecs/Component/Hitbox.cpp
+        source/ecs/System/CollideSystem.cpp
         )
 
 target_link_libraries(r-type_server ${CONAN_LIBS})
 set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
 
-add_executable(rtype_client
+add_executable(r-type_client
         source/client/main.cpp
         source/client/Client.cpp
         source/ecs/System/Events.cpp
@@ -83,8 +85,8 @@ add_executable(rtype_client
         source/ecs/System/DrawEntitySystem.cpp
         )
 
-target_link_libraries(rtype_client ${CONAN_LIBS})
-set_target_properties(rtype_client PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(r-type_client ${CONAN_LIBS})
+set_target_properties(r-type_client PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(rtype_client_test
         source/ecs/System/Events.cpp

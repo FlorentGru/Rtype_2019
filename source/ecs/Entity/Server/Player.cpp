@@ -68,3 +68,21 @@ std::shared_ptr<Position> Player::getPosition()
     for (; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Position>(_component[i]));
 }
+
+std::shared_ptr<Hitbox> Player::getHitbox() const
+{
+    int i = 0;
+
+    for (; _component[i]->getId() == std::type_index(typeid(Hitbox)); ++i);
+    return (std::dynamic_pointer_cast<Hitbox>(_component[i]));
+}
+
+int Player::getPv() const
+{
+    return _pv;
+}
+
+void Player::setPv(int pv)
+{
+    _pv = pv;
+}

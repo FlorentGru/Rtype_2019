@@ -22,6 +22,9 @@ public:
     void move(double x, double y, double z) override;
     SerializedEntity serialize() override;
     std::shared_ptr<Position> getPosition() override;
+    std::shared_ptr<Hitbox> getHitbox() const override;
+    int getPv() const override;
+    void setPv(int pv) override;
 };
 
 #endif //CPP_RTYPE_2019_PLAYER_HPP
