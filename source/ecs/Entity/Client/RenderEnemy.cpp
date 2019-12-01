@@ -8,7 +8,7 @@
 RenderEnemy::RenderEnemy(int id, std::shared_ptr<Position> position)
 {
     _id = id;
-    Rendering render("enemy.png", "", 0);
+    Rendering render("../../Resources/player.png", "", 0);
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(render));
     _component.push_back(position);

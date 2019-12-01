@@ -8,11 +8,13 @@
 Enemy::Enemy(size_t pv, int id, std::shared_ptr<Position> position)
 {
     Timer timer;
+    Hitbox hitbox(134, 100);
     timer.create_clock("moveClock");
     _pv = pv;
     _id = id;
     _component.push_back(position);
     _component.push_back(std::make_shared<Timer>(timer));
+    _component.push_back(std::make_shared<Hitbox>(hitbox));
 }
 
 std::vector<std::shared_ptr<IComponent>> Enemy::getComponents()
@@ -54,7 +56,7 @@ SerializedEntity Enemy::serialize()
     x = std::dynamic_pointer_cast<Position>(_component[i])->getX();
     y = std::dynamic_pointer_cast<Position>(_component[i])->getY();
     z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
-    SerializedEntity res(IEntity::PLAYER, _id, x, y, z);
+    SerializedEntity res(IEntity::ENEMY, _id, x, y, z);
     return res;
 }
 
@@ -68,9 +70,9 @@ std::shared_ptr<Position> Enemy::getPosition()
 
 std::shared_ptr<Hitbox> Enemy::getHitbox() const
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Hitbox)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Hitbox)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Hitbox>(_component[i]));
 }
 

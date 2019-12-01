@@ -49,7 +49,7 @@ std::shared_ptr<Fire> UpdateEntitySystem::createFire(std::shared_ptr<Player> &pl
     firePosition.setX(firePosition.getX() + 100);
     firePosition.setY(firePosition.getY() + 50);
 
-    Fire fire(entities.size() + 15 ,player->getId(), std::make_shared<Position>(firePosition), isPlayer);
+    Fire fire(entities.size() + 15 , player->getId(), std::make_shared<Position>(firePosition), isPlayer);
     return std::make_shared<Fire>(fire);
 }
 
@@ -87,7 +87,7 @@ void UpdateEntitySystem::destroyEntity(std::vector<std::shared_ptr<IEntity>> &en
             entities.erase(entities.begin() + i);
             continue;
         }
-        if (!(entities[i]->getType() == IEntity::PLAYER)
+        if ((entities[i]->getType() != IEntity::PLAYER)
         && entities[i]->getPosition()->getX() <= 50)
             entities.erase(entities.begin() + 1);
     }

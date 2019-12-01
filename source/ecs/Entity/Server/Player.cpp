@@ -10,10 +10,12 @@
 Player::Player(size_t pv, int id, std::shared_ptr<Position> position)
 {
     Timer timer;
+    Hitbox hitbox(201, 150);
     timer.create_clock("moveClock");
     _component.clear();
     _component.push_back(std::make_shared<Timer>(timer));
     _component.push_back(position);
+    _component.push_back(std::make_shared<Hitbox>(hitbox));
     _pv = pv;
     _id = id;
 }
@@ -71,9 +73,9 @@ std::shared_ptr<Position> Player::getPosition()
 
 std::shared_ptr<Hitbox> Player::getHitbox() const
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Hitbox)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Hitbox)); ++i);
     return (std::dynamic_pointer_cast<Hitbox>(_component[i]));
 }
 

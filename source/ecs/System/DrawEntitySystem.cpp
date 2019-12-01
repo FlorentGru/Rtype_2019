@@ -102,13 +102,17 @@ bool DrawEntitySystem::draw(std::shared_ptr<IRenderEntity> renderEntity)
 {
     if (renderEntity->getType() == IEntity::PLAYER)
         drawPlayer(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
+
     if (renderEntity->getType() == IEntity::FIRE)
         drawFire(std::dynamic_pointer_cast<RenderFire> (renderEntity));
+
     if (renderEntity->getType() == IEntity::ENEMY)
         drawEnemy(std::dynamic_pointer_cast<RenderEnemy> (renderEntity));
+
     if (renderEntity->getType() == IEntity::DESTRUCTIBLE)
         drawDestructible(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
 
+    return true;
 }
 
 void    DrawEntitySystem::drawPlayer(std::shared_ptr<RenderPlayer> renderPlayer)
@@ -152,6 +156,8 @@ void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderEnemy> renderEnemy)
     else {
         playerS.setTexture(playerT);
         playerS.setPosition(renderEnemy->getPosition()->getX(), renderEnemy->getPosition()->getY());
+        playerS.setTextureRect(sf::IntRect(0, 0, 67, 40));
+        playerS.setScale(-2, 2);
         _window.draw(playerS);
     }
 
@@ -276,4 +282,5 @@ bool DrawEntitySystem::getEvents(Events &events)
             }
         }
     }
+    return true;
 }

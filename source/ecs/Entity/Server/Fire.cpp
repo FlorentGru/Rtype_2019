@@ -8,9 +8,10 @@
 Fire::Fire(int id, int playerId, std::shared_ptr<Position> position, bool isPlayer = false)
 {
     _id = id;
+    _pv = 1;
     _playerId = playerId;
     Timer timer;
-    Hitbox hitbox(100, 50);
+    Hitbox hitbox(90, 90);
     _isPlayer = isPlayer;
     _component.clear();
     _component.push_back(position);
@@ -100,4 +101,9 @@ int Fire::getPv() const
 void Fire::setPv(int pv)
 {
     _pv = pv;
+}
+
+int Fire::getPlayerId() const
+{
+    return _playerId;
 }
