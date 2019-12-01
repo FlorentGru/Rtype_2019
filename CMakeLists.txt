@@ -79,7 +79,6 @@ add_executable(r-type_client
         source/network/PacketManager.cpp
         source/client/ClientNetwork.cpp
         source/network/BoostUdpClient.cpp
-        source/client/Menu.cpp
         source/network/RawData.cpp
         source/ecs/System/DrawEntitySystem.cpp
         )
