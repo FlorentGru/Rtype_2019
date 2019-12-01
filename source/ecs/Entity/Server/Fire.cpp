@@ -54,12 +54,12 @@ int Fire::getId()
 
 SerializedEntity Fire::serialize()
 {
-    int i = 0;
+    size_t i = 0;
     float x = 0;
     float y = 0;
     float z = 0;
 
-    for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (i = 0; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     x = std::dynamic_pointer_cast<Position>(_component[i])->getX();
     y = std::dynamic_pointer_cast<Position>(_component[i])->getY();
     z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
@@ -69,9 +69,9 @@ SerializedEntity Fire::serialize()
 
 std::shared_ptr<Position> Fire::getPosition()
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Position>(_component[i]));
 }
 

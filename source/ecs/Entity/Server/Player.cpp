@@ -35,9 +35,9 @@ int Player::getId()
 
 void Player::move(double x, double y, double z)
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Timer)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Timer)) && i < _component.size(); ++i);
     if (std::dynamic_pointer_cast<Timer>(_component[i])->restart("moveClock", 0.033)) {
         for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
         std::dynamic_pointer_cast<Position>(_component[i])->setX(x);
@@ -48,12 +48,12 @@ void Player::move(double x, double y, double z)
 
 SerializedEntity Player::serialize()
 {
-    int i = 0;
+    size_t i = 0;
     float x = 0;
     float y = 0;
     float z = 0;
 
-    for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (i = 0; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     x = std::dynamic_pointer_cast<Position>(_component[i])->getX();
     y = std::dynamic_pointer_cast<Position>(_component[i])->getY();
     z = std::dynamic_pointer_cast<Position>(_component[i])->getZ();
@@ -63,8 +63,8 @@ SerializedEntity Player::serialize()
 
 std::shared_ptr<Position> Player::getPosition()
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Position>(_component[i]));
 }

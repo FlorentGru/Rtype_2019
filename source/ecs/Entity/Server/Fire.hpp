@@ -12,7 +12,7 @@ class Fire : public IMovingEntity
 {
 private:
     std::vector<std::shared_ptr<IComponent>> _component;
-    size_t _id;
+    int _id;
     bool _isPlayer;
 
 public:

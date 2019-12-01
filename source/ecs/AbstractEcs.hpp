@@ -17,7 +17,7 @@ using namespace std;
 class AbstractEcs
 {
 public:
-    virtual bool run(Events events) = 0;
+    virtual bool run(Events &events) = 0;
 
     const vector<shared_ptr<IRenderEntity>> &getRenderEntities();
 

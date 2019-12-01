@@ -6,8 +6,8 @@
 
 UpdateEntitySystem::UpdateEntitySystem()
 {
-    _windowLength = 1980;
-    _windowHeight = 960;
+    _windowLength = 1280;
+    _windowHeight = 920;
 }
 
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)

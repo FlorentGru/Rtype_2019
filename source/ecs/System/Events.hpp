@@ -132,6 +132,8 @@ public:
 
     void setEnter(bool enter);
 
+    void resetEvent();
+
 private:
     bool enter = false;
 

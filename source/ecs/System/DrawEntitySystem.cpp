@@ -9,18 +9,19 @@
 
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
 {
-    if (!_window.isOpen()) {
+    if (!_window.isOpen() && _isSucceed) {
         CreateWindow();
-        _isSucceed = false;
     }
     initBackground();
     if (!_isSucceed)
         return _isSucceed;
     _window.clear();
     setBackground();
+
     for(auto &entity: entities)
         draw(std::dynamic_pointer_cast<IRenderEntity> (entity));
     _window.display();
+
     getEvents(events);
     return (_isSucceed);
 }
@@ -32,6 +33,7 @@ DrawEntitySystem::DrawEntitySystem()
     _windowSize = windowSize;
     frame = 32;
     _timer.create_clock("background");
+    std::cout << "test" << std::endl;
 }
 
 void DrawEntitySystem::CreateWindow()
@@ -49,11 +51,13 @@ void DrawEntitySystem::initBackground()
     
     if (!text.loadFromFile("../../Resources/backgroundSpace.png")) {
         _isSucceed = false;
+        std::cout << _isSucceed << std::endl;
         return;
     }
     _backText.emplace("back", text);
     if (!text.loadFromFile("../../Resources/front.png")) {
         _isSucceed = false;
+        std::cout << _isSucceed << std::endl;
         return;
     }
     _backText.emplace("front", text);
@@ -81,7 +85,7 @@ void DrawEntitySystem::move(sf::Vector2f &front, float speed)
 
 void DrawEntitySystem::setBackground()
 {
-    if (_timer.restart("background", 0.2)) {
+    if (_timer.restart("background", 0.02)) {
         move(_backVector["front"], 5);
         move(_backVector["back"], 3);
     }
@@ -118,6 +122,8 @@ void    DrawEntitySystem::drawPlayer(std::shared_ptr<RenderPlayer> renderPlayer)
     else {
         playerS.setTexture(playerT);
         playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        playerS.setTextureRect(sf::IntRect(0, 0, 67, 50));
+        playerS.setScale(3, 3);
         _window.draw(playerS);
     }
 }
@@ -132,6 +138,7 @@ void    DrawEntitySystem::drawFire(std::shared_ptr<RenderFire> renderFire)
     else {
         fireS.setTexture(fireT);
         fireS.setPosition(renderFire->getPosition()->getX(), renderFire->getPosition()->getY());
+        fireS.setScale(3, 3);
         _window.draw(fireS);
     }
 }
@@ -170,8 +177,10 @@ bool DrawEntitySystem::getEvents(Events &events)
     sf::Event event;
 
     while (_window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed)
+        if (event.type == sf::Event::Closed) {
             _window.close();
+            _isSucceed = false;
+        }
         if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
             switch (event.key.code) {
             case sf::Keyboard::A:

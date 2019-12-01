@@ -4,19 +4,14 @@
 
 #include "ClientEcs.hpp"
 
-bool ClientEcs::run(Events _events)
+bool ClientEcs::run(Events &_events)
 {
-    this->events = _events;
-
+    std::cout << "avant: " << _events.isZKey() << std::endl;
     for (auto &system : this->systems) {
-        if (!system->run(this->entities, events)) {
+        if (!system->run(this->entities, _events)) {
             return false;
         }
     }
+    std::cout << "apres" << _events.isZKey() << std::endl;
     return true;
-}
-
-const Events& ClientEcs::getEvents() const
-{
-    return events;
 }

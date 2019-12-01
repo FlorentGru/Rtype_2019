@@ -17,7 +17,6 @@ bool Client::run(const std::string &host, const std::string &port)
         //this->engine.getEvents();
         this->network.sendEvents(events);
         auto entities = this->network.getEntities();
-        this->engine.draw(entities);
     }
     return true;
 }

@@ -9,6 +9,7 @@
 #define DRAWENTITYSYSTEM_HPP
 
 #include <memory>
+#include <iostream>
 #include <map>
 #include "RenderPlayer.hpp"
 #include "RenderFire.hpp"

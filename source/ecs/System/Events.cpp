@@ -251,3 +251,40 @@ bool Events::isEnter() const {
 void Events::setEnter(bool enter_) {
     Events::enter = enter_;
 }
+
+void Events::resetEvent()
+{
+     enter = false;
+
+     leftArrow = false;
+     rightArrow = false;
+     upArrow = false;
+     downArrow = false;
+
+     aKey = false;
+     bKey = false;
+     cKey = false;
+     dKey = false;
+     eKey = false;
+     fKey = false;
+     gKey = false;
+     hKey = false;
+     iKey = false;
+     jKey = false;
+     kKey = false;
+     lKey = false;
+     mKey = false;
+     nKey = false;
+     oKey = false;
+     pKey = false;
+     qKey = false;
+     rKey = false;
+     sKey = false;
+     tKey = false;
+     uKey = false;
+     vKey = false;
+     wKey = false;
+     xKey = false;
+     yKey = false;
+     zKey = false;
+}

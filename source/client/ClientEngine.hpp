@@ -7,8 +7,14 @@
 
 #include "ClientEcs.hpp"
 #include "DrawEntitySystem.hpp"
+#include "SerializedEntity.hpp"
+#include "Events.hpp"
+#include "RenderPlayer.hpp"
+#include "Position.hpp"
+#include "RenderFire.hpp"
+#include <iostream>
 
-namespace Client {
+namespace Client_engine {
     enum Scene {
         MENU,
         GAME
@@ -18,16 +24,14 @@ namespace Client {
 class ClientEngine
 {
 public:
-    ClientEngine();
-    const Events &getEvents();
-    bool draw(vector<shared_ptr<IRenderEntity>> entities);
+    ClientEngine() = default;
+    bool run(vector<SerializedEntity> entities, Events &events);
+    shared_ptr<IEntity> deserializedEntity(SerializedEntity entities);
 
-    bool setScene(Client::Scene scene);
+    bool setScene(Client_engine::Scene scene);
 private:
-    DrawEntitySystem des;
     ClientEcs ecs;
-    Client::Scene scene;
+    Client_engine::Scene scene;
 };
-
 
 #endif //RTYPE_CLIENTENGINE_HPP
