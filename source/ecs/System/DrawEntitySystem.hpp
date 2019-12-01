@@ -25,7 +25,7 @@ class DrawEntitySystem : public IRenderSystem
         DrawEntitySystem();
     
     private:
-        void CreateWindow() override;
+        void createWindow() override;
         void setBackground();
         bool draw(std::shared_ptr<IRenderEntity> renderEntity) override;
         void drawPlayer(std::shared_ptr<RenderPlayer>);
