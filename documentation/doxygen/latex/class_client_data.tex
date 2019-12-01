@@ -1,0 +1,79 @@
+\hypertarget{class_client_data}{}\doxysection{Client\+Data Class Reference}
+\label{class_client_data}\index{ClientData@{ClientData}}
+
+
+{\ttfamily \#include $<$Client\+Data.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_client_data_a91d9e59cd25cbe73d6d6df46e414091d}{Client\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_client_data_a3a3022079cae873a6951f84c6ab58fe8}{create\+Request}} (std\+::string)
+\item 
+char $\ast$ \mbox{\hyperlink{class_client_data_adc7edfdbc55d9b789dba53b676e37fa6}{get\+Packet\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_client_data_af2b1e0bb0139de6d94a55a2c690e1eae}{manage\+Received\+Data}} (std\+::string request)
+\item 
+bool \mbox{\hyperlink{class_client_data_a77c69100fd97fc0ac917102228ed5fc7}{in\+Disconnection}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_client_data}{Client\+Data}} create and do everythin with the parcket between client adn server 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_client_data_a91d9e59cd25cbe73d6d6df46e414091d}\label{class_client_data_a91d9e59cd25cbe73d6d6df46e414091d}} 
+\index{ClientData@{ClientData}!ClientData@{ClientData}}
+\index{ClientData@{ClientData}!ClientData@{ClientData}}
+\doxysubsubsection{\texorpdfstring{ClientData()}{ClientData()}}
+{\footnotesize\ttfamily Client\+Data\+::\+Client\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor \mbox{\hyperlink{class_client_data}{Client\+Data}} just set the disconnection at false 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_data_a3a3022079cae873a6951f84c6ab58fe8}\label{class_client_data_a3a3022079cae873a6951f84c6ab58fe8}} 
+\index{ClientData@{ClientData}!createRequest@{createRequest}}
+\index{createRequest@{createRequest}!ClientData@{ClientData}}
+\doxysubsubsection{\texorpdfstring{createRequest()}{createRequest()}}
+{\footnotesize\ttfamily void Client\+Data\+::create\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{request }\end{DoxyParamCaption})}
+
+The function run do the connect with the server and set the scene like G\+A\+ME or M\+E\+NU and send the events
+
+@\+Param string \+: the request for the handskae \mbox{\Hypertarget{class_client_data_adc7edfdbc55d9b789dba53b676e37fa6}\label{class_client_data_adc7edfdbc55d9b789dba53b676e37fa6}} 
+\index{ClientData@{ClientData}!getPacketData@{getPacketData}}
+\index{getPacketData@{getPacketData}!ClientData@{ClientData}}
+\doxysubsubsection{\texorpdfstring{getPacketData()}{getPacketData()}}
+{\footnotesize\ttfamily char $\ast$ Client\+Data\+::get\+Packet\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The get\+Pack\+Data is a getter for the packet
+
+\begin{DoxyReturn}{Returns}
+a char$\ast$ who return the raw\+Data for the packet 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_data_a77c69100fd97fc0ac917102228ed5fc7}\label{class_client_data_a77c69100fd97fc0ac917102228ed5fc7}} 
+\index{ClientData@{ClientData}!inDisconnection@{inDisconnection}}
+\index{inDisconnection@{inDisconnection}!ClientData@{ClientData}}
+\doxysubsubsection{\texorpdfstring{inDisconnection()}{inDisconnection()}}
+{\footnotesize\ttfamily bool Client\+Data\+::in\+Disconnection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter of the bool Disconnection
+
+\begin{DoxyReturn}{Returns}
+bool because disconnection is a bool ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_data_af2b1e0bb0139de6d94a55a2c690e1eae}\label{class_client_data_af2b1e0bb0139de6d94a55a2c690e1eae}} 
+\index{ClientData@{ClientData}!manageReceivedData@{manageReceivedData}}
+\index{manageReceivedData@{manageReceivedData}!ClientData@{ClientData}}
+\doxysubsubsection{\texorpdfstring{manageReceivedData()}{manageReceivedData()}}
+{\footnotesize\ttfamily void Client\+Data\+::manage\+Received\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{request }\end{DoxyParamCaption})}
+
+The get\+Pack\+Data is a getter for the packet
+
+@\+Param data \+: the command in string who are send 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/client/Client\+Data.\+hpp\item 
+source/client/Client\+Data.\+cpp\end{DoxyCompactItemize}

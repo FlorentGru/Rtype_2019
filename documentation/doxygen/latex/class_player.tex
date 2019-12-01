@@ -1,0 +1,177 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+Inheritance diagram for Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_player__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_a87a3dd77e36ce1d5707c3dd08415d20b}{Player}} (size\+\_\+t pv, int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_player_a86f946c0b36aa168c8fbc272792f46c0}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_player_a9a6492696b23f0bcd695237a5571f806}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_player_a0d601f5c08d4b8f126afed7089756e5e}{get\+Id}} () override
+\item 
+void \mbox{\hyperlink{class_player_a29919900bc1f2b04272e8d8a0d01ec76}{move}} (float x, float y, float z) override
+\item 
+\mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} \mbox{\hyperlink{class_player_a1d77063455b89383cedc652051a39206}{serialize}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_player_a7bd1f6542832f9f272ec446830ad8258}{get\+Position}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ \mbox{\hyperlink{class_player_af1eb3e67feac9055e237e9da3c29543c}{get\+Hitbox}} () const override
+\item 
+\mbox{\Hypertarget{class_player_abec559bdde5d0d71fe7c159ceedf36b8}\label{class_player_abec559bdde5d0d71fe7c159ceedf36b8}} 
+int {\bfseries get\+Pv} () const override
+\item 
+\mbox{\Hypertarget{class_player_a5195d2c186f6e209dd21ab65998ceb01}\label{class_player_a5195d2c186f6e209dd21ab65998ceb01}} 
+void {\bfseries set\+Pv} (int pv) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_a87a3dd77e36ce1d5707c3dd08415d20b}\label{class_player_a87a3dd77e36ce1d5707c3dd08415d20b}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pv,  }\item[{int}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$}]{position }\end{DoxyParamCaption})}
+
+Constructs a player entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv} & entity pv \\
+\hline
+{\em id} & entity id \\
+\hline
+{\em position} & entity position \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a86f946c0b36aa168c8fbc272792f46c0}\label{class_player_a86f946c0b36aa168c8fbc272792f46c0}} 
+\index{Player@{Player}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Player\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_player_af1eb3e67feac9055e237e9da3c29543c}\label{class_player_af1eb3e67feac9055e237e9da3c29543c}} 
+\index{Player@{Player}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ Player\+::get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+a pointer on the hitbox of the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_player_a0d601f5c08d4b8f126afed7089756e5e}\label{class_player_a0d601f5c08d4b8f126afed7089756e5e}} 
+\index{Player@{Player}!getId@{getId}}
+\index{getId@{getId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Player\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_player_a7bd1f6542832f9f272ec446830ad8258}\label{class_player_a7bd1f6542832f9f272ec446830ad8258}} 
+\index{Player@{Player}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Player\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_player_a9a6492696b23f0bcd695237a5571f806}\label{class_player_a9a6492696b23f0bcd695237a5571f806}} 
+\index{Player@{Player}!getType@{getType}}
+\index{getType@{getType}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Player\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_player_a29919900bc1f2b04272e8d8a0d01ec76}\label{class_player_a29919900bc1f2b04272e8d8a0d01ec76}} 
+\index{Player@{Player}!move@{move}}
+\index{move@{move}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Player\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the position of an entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position on x axis \\
+\hline
+{\em y} & position on y axis \\
+\hline
+{\em z} & position on z axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_player_a1d77063455b89383cedc652051a39206}\label{class_player_a1d77063455b89383cedc652051a39206}} 
+\index{Player@{Player}!serialize@{serialize}}
+\index{serialize@{serialize}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} Player\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+the entity serialized 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}{I\+Moving\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Server/Player.\+hpp\item 
+source/ecs/\+Entity/\+Server/Player.\+cpp\end{DoxyCompactItemize}

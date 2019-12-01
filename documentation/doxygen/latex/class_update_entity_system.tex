@@ -1,0 +1,56 @@
+\hypertarget{class_update_entity_system}{}\doxysection{Update\+Entity\+System Class Reference}
+\label{class_update_entity_system}\index{UpdateEntitySystem@{UpdateEntitySystem}}
+
+
+{\ttfamily \#include $<$Update\+Entity\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Update\+Entity\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_update_entity_system__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_update_entity_system_a37abd9dd4eef3cee3d09109edae37696}{Update\+Entity\+System}} ()
+\item 
+bool \mbox{\hyperlink{class_update_entity_system_a17af69c41c9e8f03ca11a8bff2f39a42}{run}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&entities, \mbox{\hyperlink{class_events}{Events}} \&events) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_update_entity_system}{Update\+Entity\+System}} inherited the \mbox{\hyperlink{class_i_system}{I\+System}}. Move and update all the entities in the ecs 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_update_entity_system_a37abd9dd4eef3cee3d09109edae37696}\label{class_update_entity_system_a37abd9dd4eef3cee3d09109edae37696}} 
+\index{UpdateEntitySystem@{UpdateEntitySystem}!UpdateEntitySystem@{UpdateEntitySystem}}
+\index{UpdateEntitySystem@{UpdateEntitySystem}!UpdateEntitySystem@{UpdateEntitySystem}}
+\doxysubsubsection{\texorpdfstring{UpdateEntitySystem()}{UpdateEntitySystem()}}
+{\footnotesize\ttfamily Update\+Entity\+System\+::\+Update\+Entity\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of the class who create the clock \char`\"{}fire\char`\"{} and the window lenght, height 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_update_entity_system_a17af69c41c9e8f03ca11a8bff2f39a42}\label{class_update_entity_system_a17af69c41c9e8f03ca11a8bff2f39a42}} 
+\index{UpdateEntitySystem@{UpdateEntitySystem}!run@{run}}
+\index{run@{run}!UpdateEntitySystem@{UpdateEntitySystem}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Update\+Entity\+System\+::run (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&}]{entities,  }\item[{\mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Funtion run call all the function to move and update the player or the fire
+
+@\+Param entities\+: Took all the entities to know what to update or create @\+Param events\+: Took the event to know in wich direction the player need to move
+
+\begin{DoxyReturn}{Returns}
+a bool to return if the function work well and return true 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+System/Update\+Entity\+System.\+hpp\item 
+source/ecs/\+System/Update\+Entity\+System.\+cpp\end{DoxyCompactItemize}

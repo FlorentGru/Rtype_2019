@@ -1,0 +1,66 @@
+\hypertarget{class_client_engine}{}\doxysection{Client\+Engine Class Reference}
+\label{class_client_engine}\index{ClientEngine@{ClientEngine}}
+
+
+{\ttfamily \#include $<$Client\+Engine.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_client_engine_ad3a72f6c32a141cc3f318dbf685139ce}{run}} (vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ entities, \mbox{\hyperlink{class_events}{Events}} \&events)
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$ \mbox{\hyperlink{class_client_engine_a4e7a115362c50848f7f9641abe948581}{deserialized\+Entity}} (\mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} entities)
+\item 
+bool \mbox{\hyperlink{class_client_engine_a9f11151143927ecaf40260a3154f9d3c}{set\+Scene}} (Client\+\_\+engine\+::\+Scene scene)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_client_engine}{Client\+Engine}} the engine on the side of the client, for took the entity and set the scene 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_engine_a4e7a115362c50848f7f9641abe948581}\label{class_client_engine_a4e7a115362c50848f7f9641abe948581}} 
+\index{ClientEngine@{ClientEngine}!deserializedEntity@{deserializedEntity}}
+\index{deserializedEntity@{deserializedEntity}!ClientEngine@{ClientEngine}}
+\doxysubsubsection{\texorpdfstring{deserializedEntity()}{deserializedEntity()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$ Client\+Engine\+::deserialized\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}}}]{entities }\end{DoxyParamCaption})}
+
+Funtion run call all the function to move and update the player or the fire
+
+@\+Param entities\+: Took the entity serialized to know which one is it
+
+\begin{DoxyReturn}{Returns}
+the shared\+\_\+ptr$<$\+I\+Entity$>$ to get the good one entity like Plyaer or \mbox{\hyperlink{class_fire}{Fire}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_engine_ad3a72f6c32a141cc3f318dbf685139ce}\label{class_client_engine_ad3a72f6c32a141cc3f318dbf685139ce}} 
+\index{ClientEngine@{ClientEngine}!run@{run}}
+\index{run@{run}!ClientEngine@{ClientEngine}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Client\+Engine\+::run (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$}]{entities,  }\item[{\mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})}
+
+The run function who remove all the entities but mostly add them after deserialized
+
+@\+Param entities\+: Took all the entities to serialized them @\+Param events\+: just here cause the function is in the interface and need to get it
+
+\begin{DoxyReturn}{Returns}
+a bool to return if the function work well and return true at the end or false if ecs equals false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_engine_a9f11151143927ecaf40260a3154f9d3c}\label{class_client_engine_a9f11151143927ecaf40260a3154f9d3c}} 
+\index{ClientEngine@{ClientEngine}!setScene@{setScene}}
+\index{setScene@{setScene}!ClientEngine@{ClientEngine}}
+\doxysubsubsection{\texorpdfstring{setScene()}{setScene()}}
+{\footnotesize\ttfamily bool Client\+Engine\+::set\+Scene (\begin{DoxyParamCaption}\item[{Client\+\_\+engine\+::\+Scene}]{scene }\end{DoxyParamCaption})}
+
+the cuntion set\+Scene is for know which scene the system need to draw
+
+@\+Param scene\+\_\+\+: just to know in the enum what scene is called
+
+\begin{DoxyReturn}{Returns}
+check if the function go to the end for return true 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/client/Client\+Engine.\+hpp\item 
+source/client/Client\+Engine.\+cpp\end{DoxyCompactItemize}

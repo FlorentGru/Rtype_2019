@@ -1,0 +1,59 @@
+\hypertarget{class_i_session}{}\doxysection{I\+Session Class Reference}
+\label{class_i_session}\index{ISession@{ISession}}
+
+
+Inheritance diagram for I\+Session\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{class_i_session__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ \mbox{\hyperlink{class_i_session_a2914843322d3047f874d1b145e69d984}{get\+Packet\+Data}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_session_aace927b961ab52abcca997562f8484e4}{add\+Event\+Packet}} (\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} entity)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_session_aace927b961ab52abcca997562f8484e4}\label{class_i_session_aace927b961ab52abcca997562f8484e4}} 
+\index{ISession@{ISession}!addEventPacket@{addEventPacket}}
+\index{addEventPacket@{addEventPacket}!ISession@{ISession}}
+\doxysubsubsection{\texorpdfstring{addEventPacket()}{addEventPacket()}}
+{\footnotesize\ttfamily virtual bool I\+Session\+::add\+Event\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_raw_data}{Raw\+Data}}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Add an Event Packet 
+\begin{DoxyParams}{Parameters}
+{\em entity} & is an entity packet sent by the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_session_a545bf39617d3e8d92f378eb66ff4ee55}{Session}}.
+
+\mbox{\Hypertarget{class_i_session_a2914843322d3047f874d1b145e69d984}\label{class_i_session_a2914843322d3047f874d1b145e69d984}} 
+\index{ISession@{ISession}!getPacketData@{getPacketData}}
+\index{getPacketData@{getPacketData}!ISession@{ISession}}
+\doxysubsubsection{\texorpdfstring{getPacketData()}{getPacketData()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$\mbox{\hyperlink{struct_raw_data}{Raw\+Data}}$>$ I\+Session\+::get\+Packet\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get a list of received data packet \begin{DoxyReturn}{Returns}
+a list of binary packet 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_session_a535bf79c7d98515ed53d199dcce0a21d}{Session}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/server/I\+Session.\+hpp\end{DoxyCompactItemize}

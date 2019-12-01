@@ -1,0 +1,107 @@
+\hypertarget{class_i_entity}{}\doxysection{I\+Entity Class Reference}
+\label{class_i_entity}\index{IEntity@{IEntity}}
+
+
+{\ttfamily \#include $<$I\+Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_entity__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_entity_aa80727c50fdf36974d7427eb2f00649c}\label{class_i_entity_aa80727c50fdf36974d7427eb2f00649c}} 
+enum {\bfseries Type} \{ {\bfseries P\+L\+A\+Y\+ER}, 
+{\bfseries F\+I\+RE}, 
+{\bfseries E\+N\+E\+MY}, 
+{\bfseries D\+E\+S\+T\+R\+U\+C\+T\+I\+B\+LE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{get\+Position}} ()=0
+\item 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{get\+Components}} ()=0
+\item 
+virtual Type \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{get\+Type}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{get\+Id}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface of any entity meant to be used by the E\+CS 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_entity_a150bbf608f2912c284538f8014898b4d}\label{class_i_entity_a150bbf608f2912c284538f8014898b4d}} 
+\index{IEntity@{IEntity}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!IEntity@{IEntity}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_i_component}{I\+Component}}$>$ $>$ I\+Entity\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fire_a1934bf537a2d9f7e000c1be27a5f055f}{Fire}}, \mbox{\hyperlink{class_enemy_a2f92a200a171083e8e5248bd8e4df308}{Enemy}}, \mbox{\hyperlink{class_player_a86f946c0b36aa168c8fbc272792f46c0}{Player}}, \mbox{\hyperlink{class_render_player_aa3e2f29047f35ce4bd4df94c9b945d0f}{Render\+Player}}, \mbox{\hyperlink{class_render_fire_aad4779143fcf38428fd21f313ed3e121}{Render\+Fire}}, and \mbox{\hyperlink{class_render_enemy_a19a32460f749ebe4931a46c901e1b9f3}{Render\+Enemy}}.
+
+\mbox{\Hypertarget{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}\label{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}} 
+\index{IEntity@{IEntity}!getId@{getId}}
+\index{getId@{getId}!IEntity@{IEntity}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily virtual int I\+Entity\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fire_acd66ca08a796ab9d7e1e868cd5ad71ba}{Fire}}, \mbox{\hyperlink{class_enemy_aab7898ff92ddc95ff2262caf3957682b}{Enemy}}, \mbox{\hyperlink{class_player_a0d601f5c08d4b8f126afed7089756e5e}{Player}}, \mbox{\hyperlink{class_render_player_abe5879447bb29e022f8ade995a1b30b6}{Render\+Player}}, \mbox{\hyperlink{class_render_fire_a7037df74259b3023014ac30a47bc63ea}{Render\+Fire}}, and \mbox{\hyperlink{class_render_enemy_a0581cdc32be77bc37243f226c6b34449}{Render\+Enemy}}.
+
+\mbox{\Hypertarget{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}\label{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}} 
+\index{IEntity@{IEntity}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!IEntity@{IEntity}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_position}{Position}}$>$ I\+Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_enemy_a21257e8dfe752ab6a009747e33c6a733}{Enemy}}, \mbox{\hyperlink{class_fire_ae17fd57e8f4fd08f542467c8165c3fa3}{Fire}}, \mbox{\hyperlink{class_player_a7bd1f6542832f9f272ec446830ad8258}{Player}}, \mbox{\hyperlink{class_render_player_a7328b7eb871a416b2798467d61f96b0a}{Render\+Player}}, \mbox{\hyperlink{class_render_fire_a40fa4e69568ac99b2f0e5a3d40c17615}{Render\+Fire}}, and \mbox{\hyperlink{class_render_enemy_a48ceb5b0076c0bd1964611cd1fe4bfdd}{Render\+Enemy}}.
+
+\mbox{\Hypertarget{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}\label{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}} 
+\index{IEntity@{IEntity}!getType@{getType}}
+\index{getType@{getType}!IEntity@{IEntity}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily virtual Type I\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fire_a98e052ddb3247e7cf5b173807602ca0e}{Fire}}, \mbox{\hyperlink{class_enemy_a57419cac7789213ae4862c33230e5c2b}{Enemy}}, \mbox{\hyperlink{class_player_a9a6492696b23f0bcd695237a5571f806}{Player}}, \mbox{\hyperlink{class_render_player_a1fe4f3cc052a6a184e1e43402f34b9ce}{Render\+Player}}, \mbox{\hyperlink{class_render_fire_a3707c5d26e3db3c61700dac73d31803e}{Render\+Fire}}, and \mbox{\hyperlink{class_render_enemy_a28bdc3a2d1242c02774ccecec973ff66}{Render\+Enemy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/I\+Entity.\+hpp\end{DoxyCompactItemize}

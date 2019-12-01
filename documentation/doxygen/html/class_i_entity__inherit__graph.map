@@ -1,0 +1,11 @@
+<map id="IEntity" name="IEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="203,5,262,32"/>
+<area shape="rect" id="node2" href="$class_i_moving_entity.html" title=" " alt="" coords="93,80,191,107"/>
+<area shape="rect" id="node6" href="$class_i_render_entity.html" title=" " alt="" coords="304,80,404,107"/>
+<area shape="rect" id="node3" href="$class_enemy.html" title=" " alt="" coords="5,155,68,181"/>
+<area shape="rect" id="node4" href="$class_fire.html" title=" " alt="" coords="92,155,136,181"/>
+<area shape="rect" id="node5" href="$class_player.html" title=" " alt="" coords="161,155,219,181"/>
+<area shape="rect" id="node7" href="$class_render_enemy.html" title=" " alt="" coords="243,155,347,181"/>
+<area shape="rect" id="node8" href="$class_render_fire.html" title=" " alt="" coords="371,155,457,181"/>
+<area shape="rect" id="node9" href="$class_render_player.html" title=" " alt="" coords="481,155,581,181"/>
+</map>

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['send_191',['send',['../class_boost_udp_server.html#a9a53789abd975bd1daf5559dd3f8fea0',1,'BoostUdpServer::send()'],['../class_i_udp_server.html#a0b0b12cf90cf146ae6fd8816ba856631',1,'IUdpServer::send()']]],
+  ['sendandreceivenext_192',['sendAndReceiveNext',['../class_boost_udp_client.html#a3f1008f9f441ee3f49899c3cb7b76323',1,'BoostUdpClient::sendAndReceiveNext()'],['../class_i_udp_client.html#a22e425208ab2e992a957b24de2d9bd60',1,'IUdpClient::sendAndReceiveNext()']]],
+  ['sendasync_193',['sendAsync',['../class_boost_udp_server.html#a718adb154011191c9c612897fa06a085',1,'BoostUdpServer::sendAsync()'],['../class_i_udp_server.html#ab9ec145c6bab74922de27201412f6386',1,'IUdpServer::sendAsync()']]],
+  ['senddata_194',['sendData',['../class_boost_udp_client.html#ae53641a3e6302e1694e70be3445d2e48',1,'BoostUdpClient::sendData()'],['../class_i_udp_client.html#afb36e1bf1132998facab773b52f5a6e9',1,'IUdpClient::sendData()']]],
+  ['sendentitiestoplayer_195',['sendEntitiesToPlayer',['../class_server_network.html#a8f55710f9058762c9692c64cc51a2130',1,'ServerNetwork']]],
+  ['sendevents_196',['sendEvents',['../class_client_network.html#acc996e1be45023106b6ce7d92d3fa58c',1,'ClientNetwork']]],
+  ['serialize_197',['serialize',['../class_enemy.html#aadb22d8b5097b1ba567e06ab37e6b60c',1,'Enemy::serialize()'],['../class_fire.html#a133cae65b4e14c05cc0c9ca88165df41',1,'Fire::serialize()'],['../class_i_moving_entity.html#ad756de4fa78833c6766c5b03292fcbb2',1,'IMovingEntity::serialize()'],['../class_player.html#a1d77063455b89383cedc652051a39206',1,'Player::serialize()']]],
+  ['serializedentity_198',['SerializedEntity',['../class_serialized_entity.html#aa976dc501b2d1faf360058fd5ad5b401',1,'SerializedEntity']]],
+  ['server_199',['Server',['../class_server.html#a768dfeea2919da9d9d1a7f3a5eb507f2',1,'Server']]],
+  ['servernetwork_200',['ServerNetwork',['../class_server_network.html#a2859430e2e927223893ec557ba456010',1,'ServerNetwork']]],
+  ['session_201',['Session',['../class_session.html#aa5ce10ce389c68ee8761cbc8ad53f001',1,'Session']]],
+  ['setheigh_202',['setHeigh',['../class_hitbox.html#aa2fbfddc215c26d417278c6128b2e7d8',1,'Hitbox']]],
+  ['setlength_203',['setLength',['../class_hitbox.html#a023c1fd45567961fd7e9a56fb1266d3e',1,'Hitbox']]],
+  ['setpv_204',['setPv',['../class_rendering.html#a5368e019803f40f329d3eaa774fc8da7',1,'Rendering']]],
+  ['setscalex_205',['setScaleX',['../class_rendering.html#a120a2be4efd56f003fd2fadc60aafde3',1,'Rendering']]],
+  ['setscaley_206',['setScaleY',['../class_rendering.html#a0537e3a9fa4aab56455fc1c61a4052af',1,'Rendering']]],
+  ['setscene_207',['setScene',['../class_client_engine.html#a9f11151143927ecaf40260a3154f9d3c',1,'ClientEngine']]],
+  ['setsoundeffect_208',['setSoundEffect',['../class_rendering.html#a89ff095e74a4154e93b7276a92049bad',1,'Rendering']]],
+  ['settexture_209',['setTexture',['../class_rendering.html#a9dc05180c5677b1a8f01569c8748f62b',1,'Rendering']]],
+  ['setx_210',['setX',['../class_vector.html#a7c223fdc8ab5da0a50b469378091773b',1,'Vector']]],
+  ['sety_211',['setY',['../class_vector.html#a5551df1f5f27b021f460cc72b182adea',1,'Vector']]],
+  ['setz_212',['setZ',['../class_vector.html#a4bcff44c182b397afe6b494c1023a7f9',1,'Vector']]],
+  ['startlistening_213',['startListening',['../class_boost_udp_client.html#a6f9061a512583e1f5866a1e343899ceb',1,'BoostUdpClient::startListening()'],['../class_i_udp_client.html#a1919d3ad5101be3516c72c4613a2b539',1,'IUdpClient::startListening()']]]
+];

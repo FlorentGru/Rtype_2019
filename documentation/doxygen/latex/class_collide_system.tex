@@ -1,0 +1,45 @@
+\hypertarget{class_collide_system}{}\doxysection{Collide\+System Class Reference}
+\label{class_collide_system}\index{CollideSystem@{CollideSystem}}
+
+
+{\ttfamily \#include $<$Collide\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Collide\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_collide_system__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_collide_system_ab14f68e437d96e9d7e93f77ed3db770c}{run}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&entities, \mbox{\hyperlink{class_events}{Events}} \&events) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class collide\+System to create the collision in all the game 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collide_system_ab14f68e437d96e9d7e93f77ed3db770c}\label{class_collide_system_ab14f68e437d96e9d7e93f77ed3db770c}} 
+\index{CollideSystem@{CollideSystem}!run@{run}}
+\index{run@{run}!CollideSystem@{CollideSystem}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Collide\+System\+::run (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&}]{entities,  }\item[{\mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+The function assembles of the function to chekc if a collide is do and need to call the good one function
+
+@\+Param entities\+: took all the entities to call the collide function for all the entities @\+Param events\+: unused cause the override need to be here
+
+\begin{DoxyReturn}{Returns}
+a bool to check if the function return true and works, 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+System/Collide\+System.\+hpp\item 
+source/ecs/\+System/Collide\+System.\+cpp\end{DoxyCompactItemize}

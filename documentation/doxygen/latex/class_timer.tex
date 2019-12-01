@@ -1,0 +1,82 @@
+\hypertarget{class_timer}{}\doxysection{Timer Class Reference}
+\label{class_timer}\index{Timer@{Timer}}
+
+
+Inheritance diagram for Timer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_timer__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_timer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}} ()
+\item 
+void \mbox{\hyperlink{class_timer_af5383fed79b78fe884aafe9683c0322b}{create\+\_\+clock}} (const std\+::string \&)
+\item 
+bool \mbox{\hyperlink{class_timer_a6af032ac14b6f2c9de75697415deae0a}{restart}} (const std\+::string \&, float)
+\item 
+std\+::type\+\_\+index \mbox{\hyperlink{class_timer_a4cb52e5d22f775eb58e728c7aa328ace}{get\+Id}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_timer_a5f16e8da27d2a5a5242dead46de05d97}\label{class_timer_a5f16e8da27d2a5a5242dead46de05d97}} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+clear the clock 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_timer_af5383fed79b78fe884aafe9683c0322b}\label{class_timer_af5383fed79b78fe884aafe9683c0322b}} 
+\index{Timer@{Timer}!create\_clock@{create\_clock}}
+\index{create\_clock@{create\_clock}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{create\_clock()}{create\_clock()}}
+{\footnotesize\ttfamily void Timer\+::create\+\_\+clock (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+Create a new clock 
+\begin{DoxyParams}{Parameters}
+{\em key} & is the id clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_timer_a4cb52e5d22f775eb58e728c7aa328ace}\label{class_timer_a4cb52e5d22f775eb58e728c7aa328ace}} 
+\index{Timer@{Timer}!getId@{getId}}
+\index{getId@{getId}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::type\+\_\+index Timer\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the component id \begin{DoxyReturn}{Returns}
+the component id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_component_aca028b369b27fb5c072cb48b41a05323}{I\+Component}}.
+
+\mbox{\Hypertarget{class_timer_a6af032ac14b6f2c9de75697415deae0a}\label{class_timer_a6af032ac14b6f2c9de75697415deae0a}} 
+\index{Timer@{Timer}!restart@{restart}}
+\index{restart@{restart}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily bool Timer\+::restart (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{float}]{time\+In\+Second }\end{DoxyParamCaption})}
+
+Re-\/create a new clock 
+\begin{DoxyParams}{Parameters}
+{\em key} & is the id clock \\
+\hline
+{\em time\+In\+Second} & is the setting time for the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Component/Timer.\+hpp\item 
+source/ecs/\+Component/Timer.\+cpp\end{DoxyCompactItemize}

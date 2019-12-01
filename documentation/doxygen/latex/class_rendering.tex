@@ -1,0 +1,178 @@
+\hypertarget{class_rendering}{}\doxysection{Rendering Class Reference}
+\label{class_rendering}\index{Rendering@{Rendering}}
+
+
+Inheritance diagram for Rendering\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_rendering__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rendering_a18f0ff2d4ad360fcdcf545d3020a7daa}{Rendering}} (const std\+::string \&texture, const std\+::string \&sound\+Effect, size\+\_\+t pv)
+\item 
+std\+::string \mbox{\hyperlink{class_rendering_a9a50a937324065e53e83d7021a130379}{get\+Sound\+Effect}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_rendering_aaabca631734b851a3c183d21ce057018}{get\+Texture}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_rendering_afb91459ea4ad90ba4ff3ca79beb1e972}{get\+Pv}} ()
+\item 
+float \mbox{\hyperlink{class_rendering_a7f05578a0c60eaccbf7e91a32e96c0d6}{get\+ScaleX}} ()
+\item 
+float \mbox{\hyperlink{class_rendering_a47e061ee6d087abc8afd85782e7b72c0}{get\+ScaleY}} ()
+\item 
+void \mbox{\hyperlink{class_rendering_a89ff095e74a4154e93b7276a92049bad}{set\+Sound\+Effect}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{class_rendering_a9dc05180c5677b1a8f01569c8748f62b}{set\+Texture}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{class_rendering_a5368e019803f40f329d3eaa774fc8da7}{set\+Pv}} (size\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_rendering_a120a2be4efd56f003fd2fadc60aafde3}{set\+ScaleX}} (float)
+\item 
+void \mbox{\hyperlink{class_rendering_a0537e3a9fa4aab56455fc1c61a4052af}{set\+ScaleY}} (float)
+\item 
+std\+::type\+\_\+index \mbox{\hyperlink{class_rendering_a076db0c09fa192fb07581bb868cce4bd}{get\+Id}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rendering_a18f0ff2d4ad360fcdcf545d3020a7daa}\label{class_rendering_a18f0ff2d4ad360fcdcf545d3020a7daa}} 
+\index{Rendering@{Rendering}!Rendering@{Rendering}}
+\index{Rendering@{Rendering}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{Rendering()}{Rendering()}}
+{\footnotesize\ttfamily Rendering\+::\+Rendering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture,  }\item[{const std\+::string \&}]{sound\+Effect,  }\item[{size\+\_\+t}]{pv }\end{DoxyParamCaption})}
+
+Initialize displaying information 
+\begin{DoxyParams}{Parameters}
+{\em texture} & for the component \\
+\hline
+{\em sound\+Effect} & on event per component \\
+\hline
+{\em pv} & is the actual life \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rendering_a076db0c09fa192fb07581bb868cce4bd}\label{class_rendering_a076db0c09fa192fb07581bb868cce4bd}} 
+\index{Rendering@{Rendering}!getId@{getId}}
+\index{getId@{getId}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::type\+\_\+index Rendering\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the component id \begin{DoxyReturn}{Returns}
+the component id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_component_aca028b369b27fb5c072cb48b41a05323}{I\+Component}}.
+
+\mbox{\Hypertarget{class_rendering_afb91459ea4ad90ba4ff3ca79beb1e972}\label{class_rendering_afb91459ea4ad90ba4ff3ca79beb1e972}} 
+\index{Rendering@{Rendering}!getPv@{getPv}}
+\index{getPv@{getPv}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getPv()}{getPv()}}
+{\footnotesize\ttfamily size\+\_\+t Rendering\+::get\+Pv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the actual life \begin{DoxyReturn}{Returns}
+actual pv 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rendering_a7f05578a0c60eaccbf7e91a32e96c0d6}\label{class_rendering_a7f05578a0c60eaccbf7e91a32e96c0d6}} 
+\index{Rendering@{Rendering}!getScaleX@{getScaleX}}
+\index{getScaleX@{getScaleX}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getScaleX()}{getScaleX()}}
+{\footnotesize\ttfamily float Rendering\+::get\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the x scaling argument \begin{DoxyReturn}{Returns}
+scale x 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rendering_a47e061ee6d087abc8afd85782e7b72c0}\label{class_rendering_a47e061ee6d087abc8afd85782e7b72c0}} 
+\index{Rendering@{Rendering}!getScaleY@{getScaleY}}
+\index{getScaleY@{getScaleY}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getScaleY()}{getScaleY()}}
+{\footnotesize\ttfamily float Rendering\+::get\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the y scaling argument \begin{DoxyReturn}{Returns}
+scale y 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rendering_a9a50a937324065e53e83d7021a130379}\label{class_rendering_a9a50a937324065e53e83d7021a130379}} 
+\index{Rendering@{Rendering}!getSoundEffect@{getSoundEffect}}
+\index{getSoundEffect@{getSoundEffect}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getSoundEffect()}{getSoundEffect()}}
+{\footnotesize\ttfamily std\+::string Rendering\+::get\+Sound\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the sound \begin{DoxyReturn}{Returns}
+sound\+Effect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rendering_aaabca631734b851a3c183d21ce057018}\label{class_rendering_aaabca631734b851a3c183d21ce057018}} 
+\index{Rendering@{Rendering}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily std\+::string Rendering\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the texture \begin{DoxyReturn}{Returns}
+Texture 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rendering_a5368e019803f40f329d3eaa774fc8da7}\label{class_rendering_a5368e019803f40f329d3eaa774fc8da7}} 
+\index{Rendering@{Rendering}!setPv@{setPv}}
+\index{setPv@{setPv}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{setPv()}{setPv()}}
+{\footnotesize\ttfamily void Rendering\+::set\+Pv (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pv }\end{DoxyParamCaption})}
+
+Set the life 
+\begin{DoxyParams}{Parameters}
+{\em pv} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rendering_a120a2be4efd56f003fd2fadc60aafde3}\label{class_rendering_a120a2be4efd56f003fd2fadc60aafde3}} 
+\index{Rendering@{Rendering}!setScaleX@{setScaleX}}
+\index{setScaleX@{setScaleX}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{setScaleX()}{setScaleX()}}
+{\footnotesize\ttfamily void Rendering\+::set\+ScaleX (\begin{DoxyParamCaption}\item[{float}]{scaleX }\end{DoxyParamCaption})}
+
+Set the x scaling argument 
+\begin{DoxyParams}{Parameters}
+{\em scale} & x \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rendering_a0537e3a9fa4aab56455fc1c61a4052af}\label{class_rendering_a0537e3a9fa4aab56455fc1c61a4052af}} 
+\index{Rendering@{Rendering}!setScaleY@{setScaleY}}
+\index{setScaleY@{setScaleY}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{setScaleY()}{setScaleY()}}
+{\footnotesize\ttfamily void Rendering\+::set\+ScaleY (\begin{DoxyParamCaption}\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+Set the y scaling argument 
+\begin{DoxyParams}{Parameters}
+{\em scale} & y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rendering_a89ff095e74a4154e93b7276a92049bad}\label{class_rendering_a89ff095e74a4154e93b7276a92049bad}} 
+\index{Rendering@{Rendering}!setSoundEffect@{setSoundEffect}}
+\index{setSoundEffect@{setSoundEffect}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{setSoundEffect()}{setSoundEffect()}}
+{\footnotesize\ttfamily void Rendering\+::set\+Sound\+Effect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sound\+Effect }\end{DoxyParamCaption})}
+
+Set the sound 
+\begin{DoxyParams}{Parameters}
+{\em sound\+Effect} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rendering_a9dc05180c5677b1a8f01569c8748f62b}\label{class_rendering_a9dc05180c5677b1a8f01569c8748f62b}} 
+\index{Rendering@{Rendering}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Rendering@{Rendering}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily void Rendering\+::set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture }\end{DoxyParamCaption})}
+
+Set the texture 
+\begin{DoxyParams}{Parameters}
+{\em Texture} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Component/Rendering.\+hpp\item 
+source/ecs/\+Component/Rendering.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,185 @@
+\hypertarget{class_fire}{}\doxysection{Fire Class Reference}
+\label{class_fire}\index{Fire@{Fire}}
+
+
+Inheritance diagram for Fire\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_fire__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fire_a84c9d1165f06356e495112d65b1e1ac8}{Fire}} (int id, int player\+Id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position, bool is\+Player)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_fire_ae17fd57e8f4fd08f542467c8165c3fa3}{get\+Position}} () override
+\item 
+\mbox{\Hypertarget{class_fire_a777ecc8aea0fb674aef82314764ab3a1}\label{class_fire_a777ecc8aea0fb674aef82314764ab3a1}} 
+int {\bfseries get\+Player\+Id} () const
+\item 
+void \mbox{\hyperlink{class_fire_a02347cd8b14e33e2b6436c9501545542}{move}} (float x, float y, float z) override
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_fire_a1934bf537a2d9f7e000c1be27a5f055f}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_fire_a98e052ddb3247e7cf5b173807602ca0e}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_fire_acd66ca08a796ab9d7e1e868cd5ad71ba}{get\+Id}} () override
+\item 
+\mbox{\Hypertarget{class_fire_a8b12a801b80f0168869c953d97c1a055}\label{class_fire_a8b12a801b80f0168869c953d97c1a055}} 
+bool {\bfseries is\+Player} () const
+\item 
+\mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} \mbox{\hyperlink{class_fire_a133cae65b4e14c05cc0c9ca88165df41}{serialize}} () override
+\item 
+\mbox{\Hypertarget{class_fire_a29d2b1e12817b703d25d4394e9a9105a}\label{class_fire_a29d2b1e12817b703d25d4394e9a9105a}} 
+int {\bfseries get\+Pv} () const override
+\item 
+\mbox{\Hypertarget{class_fire_a9c794917dd291895423aee48620be686}\label{class_fire_a9c794917dd291895423aee48620be686}} 
+void {\bfseries set\+Pv} (int pv) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ \mbox{\hyperlink{class_fire_a2119dec4792c2f1771637af88f13ca00}{get\+Hitbox}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_fire_a84c9d1165f06356e495112d65b1e1ac8}\label{class_fire_a84c9d1165f06356e495112d65b1e1ac8}} 
+\index{Fire@{Fire}!Fire@{Fire}}
+\index{Fire@{Fire}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{Fire()}{Fire()}}
+{\footnotesize\ttfamily Fire\+::\+Fire (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{player\+Id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$}]{position,  }\item[{bool}]{is\+Player = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Constructs a fire entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & entity id \\
+\hline
+{\em player\+Id} & id player who fired \\
+\hline
+{\em position} & entity position \\
+\hline
+{\em is\+Player} & to know if the fire is link with a player \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fire_a1934bf537a2d9f7e000c1be27a5f055f}\label{class_fire_a1934bf537a2d9f7e000c1be27a5f055f}} 
+\index{Fire@{Fire}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Fire\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_a2119dec4792c2f1771637af88f13ca00}\label{class_fire_a2119dec4792c2f1771637af88f13ca00}} 
+\index{Fire@{Fire}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ Fire\+::get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+a pointer on the hitbox of the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_acd66ca08a796ab9d7e1e868cd5ad71ba}\label{class_fire_acd66ca08a796ab9d7e1e868cd5ad71ba}} 
+\index{Fire@{Fire}!getId@{getId}}
+\index{getId@{getId}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Fire\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_ae17fd57e8f4fd08f542467c8165c3fa3}\label{class_fire_ae17fd57e8f4fd08f542467c8165c3fa3}} 
+\index{Fire@{Fire}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Fire\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_a98e052ddb3247e7cf5b173807602ca0e}\label{class_fire_a98e052ddb3247e7cf5b173807602ca0e}} 
+\index{Fire@{Fire}!getType@{getType}}
+\index{getType@{getType}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Fire\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_a02347cd8b14e33e2b6436c9501545542}\label{class_fire_a02347cd8b14e33e2b6436c9501545542}} 
+\index{Fire@{Fire}!move@{move}}
+\index{move@{move}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Fire\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the position of an entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position on x axis \\
+\hline
+{\em y} & position on y axis \\
+\hline
+{\em z} & position on z axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_fire_a133cae65b4e14c05cc0c9ca88165df41}\label{class_fire_a133cae65b4e14c05cc0c9ca88165df41}} 
+\index{Fire@{Fire}!serialize@{serialize}}
+\index{serialize@{serialize}!Fire@{Fire}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} Fire\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+the entity serialized 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}{I\+Moving\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Server/Fire.\+hpp\item 
+source/ecs/\+Entity/\+Server/Fire.\+cpp\end{DoxyCompactItemize}

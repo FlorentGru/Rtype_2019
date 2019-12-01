@@ -1,0 +1,110 @@
+\hypertarget{class_render_enemy}{}\doxysection{Render\+Enemy Class Reference}
+\label{class_render_enemy}\index{RenderEnemy@{RenderEnemy}}
+
+
+Inheritance diagram for Render\+Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_render_enemy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_render_enemy_a1c53e4b081523c2f280bd7a512878a34}\label{class_render_enemy_a1c53e4b081523c2f280bd7a512878a34}} 
+{\bfseries Render\+Enemy} (int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_render_enemy_a19a32460f749ebe4931a46c901e1b9f3}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_render_enemy_a28bdc3a2d1242c02774ccecec973ff66}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_render_enemy_a0581cdc32be77bc37243f226c6b34449}{get\+Id}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_render_enemy_a8bc7d48bf4bdadf2a84b1c8328868f4e}{get\+Texture}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_render_enemy_a48ceb5b0076c0bd1964611cd1fe4bfdd}{get\+Position}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_render_enemy_a19a32460f749ebe4931a46c901e1b9f3}\label{class_render_enemy_a19a32460f749ebe4931a46c901e1b9f3}} 
+\index{RenderEnemy@{RenderEnemy}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!RenderEnemy@{RenderEnemy}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Render\+Enemy\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_enemy_a0581cdc32be77bc37243f226c6b34449}\label{class_render_enemy_a0581cdc32be77bc37243f226c6b34449}} 
+\index{RenderEnemy@{RenderEnemy}!getId@{getId}}
+\index{getId@{getId}!RenderEnemy@{RenderEnemy}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Render\+Enemy\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_enemy_a48ceb5b0076c0bd1964611cd1fe4bfdd}\label{class_render_enemy_a48ceb5b0076c0bd1964611cd1fe4bfdd}} 
+\index{RenderEnemy@{RenderEnemy}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!RenderEnemy@{RenderEnemy}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Render\+Enemy\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_enemy_a8bc7d48bf4bdadf2a84b1c8328868f4e}\label{class_render_enemy_a8bc7d48bf4bdadf2a84b1c8328868f4e}} 
+\index{RenderEnemy@{RenderEnemy}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!RenderEnemy@{RenderEnemy}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily std\+::string Render\+Enemy\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get entity texture \begin{DoxyReturn}{Returns}
+the entity texture 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_render_entity_a445bb489c9598eb6b02ab74142068ed5}{I\+Render\+Entity}}.
+
+\mbox{\Hypertarget{class_render_enemy_a28bdc3a2d1242c02774ccecec973ff66}\label{class_render_enemy_a28bdc3a2d1242c02774ccecec973ff66}} 
+\index{RenderEnemy@{RenderEnemy}!getType@{getType}}
+\index{getType@{getType}!RenderEnemy@{RenderEnemy}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Render\+Enemy\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Client/Render\+Enemy.\+hpp\item 
+source/ecs/\+Entity/\+Client/Render\+Enemy.\+cpp\end{DoxyCompactItemize}

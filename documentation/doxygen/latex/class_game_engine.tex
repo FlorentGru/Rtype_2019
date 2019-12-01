@@ -1,0 +1,41 @@
+\hypertarget{class_game_engine}{}\doxysection{Game\+Engine Class Reference}
+\label{class_game_engine}\index{GameEngine@{GameEngine}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_engine_a64c430f74d72e2745646fdbffbd97930}{Game\+Engine}} ()
+\item 
+vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ \mbox{\hyperlink{class_game_engine_a08270686263f499ac6c70feefcf2864d}{run}} (\mbox{\hyperlink{class_events}{Events}} \&events)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_engine_a64c430f74d72e2745646fdbffbd97930}\label{class_game_engine_a64c430f74d72e2745646fdbffbd97930}} 
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{GameEngine()}{GameEngine()}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Game\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create Entities and Systems used by E\+CS 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_engine_a08270686263f499ac6c70feefcf2864d}\label{class_game_engine_a08270686263f499ac6c70feefcf2864d}} 
+\index{GameEngine@{GameEngine}!run@{run}}
+\index{run@{run}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ Game\+Engine\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})}
+
+Run the game 
+\begin{DoxyParams}{Parameters}
+{\em events} & is a packet with information about what key has been pressed by the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+several packets of actualised Entity to the client 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/server/Game\+Engine.\+hpp\item 
+source/server/Game\+Engine.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="IRenderEntity" name="IRenderEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="126,80,226,107"/>
+<area shape="rect" id="node3" href="$class_render_enemy.html" title=" " alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node4" href="$class_render_fire.html" title=" " alt="" coords="133,155,219,181"/>
+<area shape="rect" id="node5" href="$class_render_player.html" title=" " alt="" coords="243,155,343,181"/>
+<area shape="rect" id="node2" href="$class_i_entity.html" title=" " alt="" coords="147,5,205,32"/>
+</map>

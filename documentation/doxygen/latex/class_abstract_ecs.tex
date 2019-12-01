@@ -1,0 +1,50 @@
+\hypertarget{class_abstract_ecs}{}\doxysection{Abstract\+Ecs Class Reference}
+\label{class_abstract_ecs}\index{AbstractEcs@{AbstractEcs}}
+
+
+Inheritance diagram for Abstract\+Ecs\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_abstract_ecs__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_af724a3101d76b4e51056dc040f76f478}\label{class_abstract_ecs_af724a3101d76b4e51056dc040f76f478}} 
+virtual bool {\bfseries run} (\mbox{\hyperlink{class_events}{Events}} \&events)=0
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_a95b3a8362dc2266126026d95fb3b21d1}\label{class_abstract_ecs_a95b3a8362dc2266126026d95fb3b21d1}} 
+vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ {\bfseries get\+Entities} ()
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_a9c26e9fb892c62131e2dbb8740a42e7e}\label{class_abstract_ecs_a9c26e9fb892c62131e2dbb8740a42e7e}} 
+bool {\bfseries add\+Entity} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$ entity)
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_afdceb2ce77d3b429955d6c0728280679}\label{class_abstract_ecs_afdceb2ce77d3b429955d6c0728280679}} 
+bool {\bfseries add\+Entities} (const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&entities)
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_a114c21a7cc90e1f608295bb0611b377a}\label{class_abstract_ecs_a114c21a7cc90e1f608295bb0611b377a}} 
+bool {\bfseries remove\+All\+Entities} ()
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_a56c8898dba3831b9608f21b0f148bb39}\label{class_abstract_ecs_a56c8898dba3831b9608f21b0f148bb39}} 
+bool {\bfseries add\+System} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_system}{I\+System}} $>$ system)
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_ac17d71e6660ced40bda82638de6a2e54}\label{class_abstract_ecs_ac17d71e6660ced40bda82638de6a2e54}} 
+bool {\bfseries destroy} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_ad35e6dfe7e37117e515981f2e8258f02}\label{class_abstract_ecs_ad35e6dfe7e37117e515981f2e8258f02}} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$ $>$ {\bfseries \+\_\+entities}
+\item 
+\mbox{\Hypertarget{class_abstract_ecs_aa0f434a542e284fc1f887860421c28ac}\label{class_abstract_ecs_aa0f434a542e284fc1f887860421c28ac}} 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_system}{I\+System}} $>$ $>$ {\bfseries \+\_\+systems}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/Abstract\+Ecs.\+hpp\item 
+source/ecs/Abstract\+Ecs.\+cpp\end{DoxyCompactItemize}

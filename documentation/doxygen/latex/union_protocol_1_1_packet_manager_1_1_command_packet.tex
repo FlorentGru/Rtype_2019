@@ -1,0 +1,33 @@
+\hypertarget{union_protocol_1_1_packet_manager_1_1_command_packet}{}\doxysection{Protocol\+::Packet\+Manager\+::Command\+Packet Union Reference}
+\label{union_protocol_1_1_packet_manager_1_1_command_packet}\index{Protocol::PacketManager::CommandPacket@{Protocol::PacketManager::CommandPacket}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{union_protocol_1_1_packet_manager_1_1_command_packet_a476d74737a7eef62f47bf8448cc1a66d}\label{union_protocol_1_1_packet_manager_1_1_command_packet_a476d74737a7eef62f47bf8448cc1a66d}} 
+char {\bfseries raw\+Data} \mbox{[}M\+A\+X\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH\mbox{]}
+\item 
+\mbox{\Hypertarget{union_protocol_1_1_packet_manager_1_1_command_packet_ab67d281b68186ff675024ab7868358c2}\label{union_protocol_1_1_packet_manager_1_1_command_packet_ab67d281b68186ff675024ab7868358c2}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>CMD {\bfseries tag}\\
+\>bool {\bfseries res}\\
+\mbox{\Hypertarget{struct_protocol_1_1_packet_manager_1_1_command_packet_1_1_0d3_a11f471bf676eb425b628330c7dc75b84}\label{struct_protocol_1_1_packet_manager_1_1_command_packet_1_1_0d3_a11f471bf676eb425b628330c7dc75b84}} 
+\>union \{\\
+\>\>struct \{\\
+\>\>\>int {\bfseries magicNumber}\\
+\>\>\>bool {\bfseries client}\\
+\>\>\>bool {\bfseries serv}\\
+\>\>\} {\bfseries \_handshake}\\
+\>\>struct \{\\
+\>\>\>char {\bfseries msg} \mbox{[}MAX\_MSG\_ERROR\mbox{]}\\
+\>\>\} {\bfseries \_error}\\
+\>\} \\
+\} {\bfseries data}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/network/Packet\+Manager.\+hpp\end{DoxyCompactItemize}

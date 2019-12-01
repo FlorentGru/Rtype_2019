@@ -1,0 +1,87 @@
+\hypertarget{class_protocol_1_1_packet_manager}{}\doxysection{Protocol\+::Packet\+Manager Class Reference}
+\label{class_protocol_1_1_packet_manager}\index{Protocol::PacketManager@{Protocol::PacketManager}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_base_packet}{Base\+Packet}}
+\item 
+union \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_command_packet}{Command\+Packet}}
+\item 
+struct \mbox{\hyperlink{struct_protocol_1_1_packet_manager_1_1_entity}{Entity}}
+\item 
+union \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_entity_packet}{Entity\+Packet}}
+\item 
+union \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_events_packet}{Events\+Packet}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a47150035d7b45783ff46f1c79815b885}\label{class_protocol_1_1_packet_manager_a47150035d7b45783ff46f1c79815b885}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries events} (const \mbox{\hyperlink{class_events}{Events}} \&events)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_ac445ab3fb070a6753d277956efc84e94}\label{class_protocol_1_1_packet_manager_ac445ab3fb070a6753d277956efc84e94}} 
+std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ {\bfseries entity} (const std\+::vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ \&entities)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a47c0a52adcd40e8120867b7ba8846fff}\label{class_protocol_1_1_packet_manager_a47c0a52adcd40e8120867b7ba8846fff}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries handshake} (bool from\+Serv, bool from\+Client)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_ab515ac9f41188fd868dacd90a432e630}\label{class_protocol_1_1_packet_manager_ab515ac9f41188fd868dacd90a432e630}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries disconnection} ()
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a12ecd6f7fa7defc7dfbbe3577e3932d4}\label{class_protocol_1_1_packet_manager_a12ecd6f7fa7defc7dfbbe3577e3932d4}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries error} (Protocol\+::\+C\+MD cmd, const std\+::string \&msg)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_af39d1e4418cfb82f8f0b698701d310e5}\label{class_protocol_1_1_packet_manager_af39d1e4418cfb82f8f0b698701d310e5}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries get\+Command} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a86cca612893b8c41a55d638e3665bea9}\label{class_protocol_1_1_packet_manager_a86cca612893b8c41a55d638e3665bea9}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries get\+Events} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a3deedf2adbe1a14840e96d06a3750b75}\label{class_protocol_1_1_packet_manager_a3deedf2adbe1a14840e96d06a3750b75}} 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} {\bfseries get\+Entity} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_ac0716829924ea0799f1bd2760b42f6eb}\label{class_protocol_1_1_packet_manager_ac0716829924ea0799f1bd2760b42f6eb}} 
+const \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_entity_packet}{Entity\+Packet}} \& {\bfseries get\+Entity\+Packet} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_aae94448eaef47297e03f5dca27c1b6e6}\label{class_protocol_1_1_packet_manager_aae94448eaef47297e03f5dca27c1b6e6}} 
+const \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_command_packet}{Command\+Packet}} \& {\bfseries get\+Command\+Packet} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a88f77731572e210c60daaf060bff0ab7}\label{class_protocol_1_1_packet_manager_a88f77731572e210c60daaf060bff0ab7}} 
+const \mbox{\hyperlink{union_protocol_1_1_packet_manager_1_1_events_packet}{Events\+Packet}} \& {\bfseries get\+Event\+Packet} () const
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_aa0af168904dfb56f5bec0e885f789a16}\label{class_protocol_1_1_packet_manager_aa0af168904dfb56f5bec0e885f789a16}} 
+void {\bfseries set\+Command} (const char $\ast$, std\+::size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_af12e148f3e7277191f32e85f7e5957e0}\label{class_protocol_1_1_packet_manager_af12e148f3e7277191f32e85f7e5957e0}} 
+void {\bfseries set\+Events} (const char $\ast$, std\+::size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a5a035c380358c6991aa348e2ff11c5f0}\label{class_protocol_1_1_packet_manager_a5a035c380358c6991aa348e2ff11c5f0}} 
+void {\bfseries set\+Entity} (const char $\ast$, std\+::size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a8231fa3b575b3de464cb047292571e6c}\label{class_protocol_1_1_packet_manager_a8231fa3b575b3de464cb047292571e6c}} 
+C\+MD {\bfseries get\+Type} (const char $\ast$pck)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_abaf6cffae8b1240bc2c2c6e00710e042}\label{class_protocol_1_1_packet_manager_abaf6cffae8b1240bc2c2c6e00710e042}} 
+bool {\bfseries is\+Success} (const char $\ast$pck)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_aec78984a555e9855002065d0d97fc8c9}\label{class_protocol_1_1_packet_manager_aec78984a555e9855002065d0d97fc8c9}} 
+bool {\bfseries is\+Valid} (const char $\ast$pck, C\+MD tag)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a8489ec6e169741ea66097552b5233b8e}\label{class_protocol_1_1_packet_manager_a8489ec6e169741ea66097552b5233b8e}} 
+bool {\bfseries is\+Valid\+Handshake} (const char $\ast$, std\+::size\+\_\+t, bool serv, bool client)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_a0bd8bb26f5a4c08060c00061324b4355}\label{class_protocol_1_1_packet_manager_a0bd8bb26f5a4c08060c00061324b4355}} 
+bool {\bfseries is\+Valid\+Disconnection} (const char $\ast$, std\+::size\+\_\+t)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_af3bf42c76991ba441d89ab77fce1ed45}\label{class_protocol_1_1_packet_manager_af3bf42c76991ba441d89ab77fce1ed45}} 
+bool {\bfseries is\+Valid\+Entity} (const char $\ast$, std\+::size\+\_\+t)
+\item 
+\mbox{\Hypertarget{class_protocol_1_1_packet_manager_acbc446c38722083ea0569d08853df91b}\label{class_protocol_1_1_packet_manager_acbc446c38722083ea0569d08853df91b}} 
+bool {\bfseries is\+Valid\+Events} (const char $\ast$, std\+::size\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/network/Packet\+Manager.\+hpp\item 
+source/network/Packet\+Manager.\+cpp\end{DoxyCompactItemize}

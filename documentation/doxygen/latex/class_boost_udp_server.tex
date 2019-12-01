@@ -1,0 +1,114 @@
+\hypertarget{class_boost_udp_server}{}\doxysection{Boost\+Udp\+Server Class Reference}
+\label{class_boost_udp_server}\index{BoostUdpServer@{BoostUdpServer}}
+
+
+{\ttfamily \#include $<$Boost\+Udp\+Server.\+hpp$>$}
+
+
+
+Inheritance diagram for Boost\+Udp\+Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_boost_udp_server__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_boost_udp_server_ade1ddac315b2e886287af25151d7b3a8}\label{class_boost_udp_server_ade1ddac315b2e886287af25151d7b3a8}} 
+{\bfseries Boost\+Udp\+Server} (short port)
+\item 
+void \mbox{\hyperlink{class_boost_udp_server_a8835630ba601d60fd986ed3b154c7707}{open\+Server}} () override
+\item 
+bool \mbox{\hyperlink{class_boost_udp_server_a9a53789abd975bd1daf5559dd3f8fea0}{send}} (const char $\ast$data, size\+\_\+t size) override
+\item 
+void \mbox{\hyperlink{class_boost_udp_server_a718adb154011191c9c612897fa06a085}{send\+Async}} (const char $\ast$data, size\+\_\+t size, std\+::string) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ \mbox{\hyperlink{class_boost_udp_server_affc642a30b8e54d92ad4968c7292a2a4}{receive\+User\+Packets}} (std\+::string user\+Address) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Boost implementation of Udp\+Server 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_boost_udp_server_a8835630ba601d60fd986ed3b154c7707}\label{class_boost_udp_server_a8835630ba601d60fd986ed3b154c7707}} 
+\index{BoostUdpServer@{BoostUdpServer}!openServer@{openServer}}
+\index{openServer@{openServer}!BoostUdpServer@{BoostUdpServer}}
+\doxysubsubsection{\texorpdfstring{openServer()}{openServer()}}
+{\footnotesize\ttfamily void Boost\+Udp\+Server\+::open\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start the server, now listening for incoming connections 
+
+Implements \mbox{\hyperlink{class_i_udp_server_a80a25911e9185c87f9e87496bbace540}{I\+Udp\+Server}}.
+
+\mbox{\Hypertarget{class_boost_udp_server_affc642a30b8e54d92ad4968c7292a2a4}\label{class_boost_udp_server_affc642a30b8e54d92ad4968c7292a2a4}} 
+\index{BoostUdpServer@{BoostUdpServer}!receiveUserPackets@{receiveUserPackets}}
+\index{receiveUserPackets@{receiveUserPackets}!BoostUdpServer@{BoostUdpServer}}
+\doxysubsubsection{\texorpdfstring{receiveUserPackets()}{receiveUserPackets()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ Boost\+Udp\+Server\+::receive\+User\+Packets (\begin{DoxyParamCaption}\item[{std\+::string}]{user\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Receive the packets from particular user
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Address} & Id of the client\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of packets in raw data with size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_server_affba29b8c3c3de1506a0446f5df748fd}{I\+Udp\+Server}}.
+
+\mbox{\Hypertarget{class_boost_udp_server_a9a53789abd975bd1daf5559dd3f8fea0}\label{class_boost_udp_server_a9a53789abd975bd1daf5559dd3f8fea0}} 
+\index{BoostUdpServer@{BoostUdpServer}!send@{send}}
+\index{send@{send}!BoostUdpServer@{BoostUdpServer}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily bool Boost\+Udp\+Server\+::send (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends a packet
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & raw data for the packet \\
+\hline
+{\em size} & size of the packet in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true for success 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_server_a0b0b12cf90cf146ae6fd8816ba856631}{I\+Udp\+Server}}.
+
+\mbox{\Hypertarget{class_boost_udp_server_a718adb154011191c9c612897fa06a085}\label{class_boost_udp_server_a718adb154011191c9c612897fa06a085}} 
+\index{BoostUdpServer@{BoostUdpServer}!sendAsync@{sendAsync}}
+\index{sendAsync@{sendAsync}!BoostUdpServer@{BoostUdpServer}}
+\doxysubsubsection{\texorpdfstring{sendAsync()}{sendAsync()}}
+{\footnotesize\ttfamily void Boost\+Udp\+Server\+::send\+Async (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{std\+::string}]{user\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends a packet to a client asynchronously
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & raw data for the packet \\
+\hline
+{\em size} & size of the packet in bytes \\
+\hline
+{\em user\+Id} & Id of the client \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_udp_server_ab9ec145c6bab74922de27201412f6386}{I\+Udp\+Server}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/network/Boost\+Udp\+Server.\+hpp\item 
+source/network/Boost\+Udp\+Server.\+cpp\end{DoxyCompactItemize}

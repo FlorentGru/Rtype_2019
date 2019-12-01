@@ -1,0 +1,110 @@
+\hypertarget{class_render_fire}{}\doxysection{Render\+Fire Class Reference}
+\label{class_render_fire}\index{RenderFire@{RenderFire}}
+
+
+Inheritance diagram for Render\+Fire\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_render_fire__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_render_fire_a41b9f4abafcbbd6dbd5996b998bf7197}\label{class_render_fire_a41b9f4abafcbbd6dbd5996b998bf7197}} 
+{\bfseries Render\+Fire} (int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_render_fire_aad4779143fcf38428fd21f313ed3e121}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_render_fire_a3707c5d26e3db3c61700dac73d31803e}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_render_fire_a7037df74259b3023014ac30a47bc63ea}{get\+Id}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_render_fire_a1b43f70bca712a6bbb66bb0b37fe2268}{get\+Texture}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_render_fire_a40fa4e69568ac99b2f0e5a3d40c17615}{get\+Position}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_render_fire_aad4779143fcf38428fd21f313ed3e121}\label{class_render_fire_aad4779143fcf38428fd21f313ed3e121}} 
+\index{RenderFire@{RenderFire}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!RenderFire@{RenderFire}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Render\+Fire\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_fire_a7037df74259b3023014ac30a47bc63ea}\label{class_render_fire_a7037df74259b3023014ac30a47bc63ea}} 
+\index{RenderFire@{RenderFire}!getId@{getId}}
+\index{getId@{getId}!RenderFire@{RenderFire}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Render\+Fire\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_fire_a40fa4e69568ac99b2f0e5a3d40c17615}\label{class_render_fire_a40fa4e69568ac99b2f0e5a3d40c17615}} 
+\index{RenderFire@{RenderFire}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!RenderFire@{RenderFire}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Render\+Fire\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_fire_a1b43f70bca712a6bbb66bb0b37fe2268}\label{class_render_fire_a1b43f70bca712a6bbb66bb0b37fe2268}} 
+\index{RenderFire@{RenderFire}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!RenderFire@{RenderFire}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily std\+::string Render\+Fire\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get entity texture \begin{DoxyReturn}{Returns}
+the entity texture 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_render_entity_a445bb489c9598eb6b02ab74142068ed5}{I\+Render\+Entity}}.
+
+\mbox{\Hypertarget{class_render_fire_a3707c5d26e3db3c61700dac73d31803e}\label{class_render_fire_a3707c5d26e3db3c61700dac73d31803e}} 
+\index{RenderFire@{RenderFire}!getType@{getType}}
+\index{getType@{getType}!RenderFire@{RenderFire}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Render\+Fire\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Client/Render\+Fire.\+hpp\item 
+source/ecs/\+Entity/\+Client/Render\+Fire.\+cpp\end{DoxyCompactItemize}

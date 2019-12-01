@@ -1,0 +1,177 @@
+\hypertarget{class_enemy}{}\doxysection{Enemy Class Reference}
+\label{class_enemy}\index{Enemy@{Enemy}}
+
+
+Inheritance diagram for Enemy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_enemy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a7ea76f06a7bddd407e4a81dff947c994}{Enemy}} (size\+\_\+t pv, int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_enemy_a2f92a200a171083e8e5248bd8e4df308}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_enemy_a57419cac7789213ae4862c33230e5c2b}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_enemy_aab7898ff92ddc95ff2262caf3957682b}{get\+Id}} () override
+\item 
+void \mbox{\hyperlink{class_enemy_ad4aa4596b08fe82644b0ac6e7252b375}{move}} (float x, float y, float z) override
+\item 
+\mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} \mbox{\hyperlink{class_enemy_aadb22d8b5097b1ba567e06ab37e6b60c}{serialize}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_enemy_a21257e8dfe752ab6a009747e33c6a733}{get\+Position}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ \mbox{\hyperlink{class_enemy_a8475c9c8df13c1963d0bfb3a53556106}{get\+Hitbox}} () const override
+\item 
+\mbox{\Hypertarget{class_enemy_aa50fb949e8f641bfce6202a23b5634d8}\label{class_enemy_aa50fb949e8f641bfce6202a23b5634d8}} 
+int {\bfseries get\+Pv} () const override
+\item 
+\mbox{\Hypertarget{class_enemy_a840318a2852804afdcb858c0dd80859f}\label{class_enemy_a840318a2852804afdcb858c0dd80859f}} 
+void {\bfseries set\+Pv} (int pv) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_enemy_a7ea76f06a7bddd407e4a81dff947c994}\label{class_enemy_a7ea76f06a7bddd407e4a81dff947c994}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pv,  }\item[{int}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$}]{position }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{class_enemy}{Enemy}} entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv} & entity health point \\
+\hline
+{\em id} & entity id \\
+\hline
+{\em position} & entity position \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_a2f92a200a171083e8e5248bd8e4df308}\label{class_enemy_a2f92a200a171083e8e5248bd8e4df308}} 
+\index{Enemy@{Enemy}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Enemy\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_a8475c9c8df13c1963d0bfb3a53556106}\label{class_enemy_a8475c9c8df13c1963d0bfb3a53556106}} 
+\index{Enemy@{Enemy}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ Enemy\+::get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+a pointer on the hitbox of the entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_aab7898ff92ddc95ff2262caf3957682b}\label{class_enemy_aab7898ff92ddc95ff2262caf3957682b}} 
+\index{Enemy@{Enemy}!getId@{getId}}
+\index{getId@{getId}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Enemy\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_a21257e8dfe752ab6a009747e33c6a733}\label{class_enemy_a21257e8dfe752ab6a009747e33c6a733}} 
+\index{Enemy@{Enemy}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Enemy\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_a57419cac7789213ae4862c33230e5c2b}\label{class_enemy_a57419cac7789213ae4862c33230e5c2b}} 
+\index{Enemy@{Enemy}!getType@{getType}}
+\index{getType@{getType}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Enemy\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_ad4aa4596b08fe82644b0ac6e7252b375}\label{class_enemy_ad4aa4596b08fe82644b0ac6e7252b375}} 
+\index{Enemy@{Enemy}!move@{move}}
+\index{move@{move}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Enemy\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Update the position of an entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position on x axis \\
+\hline
+{\em y} & position on y axis \\
+\hline
+{\em z} & position on z axis \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}{I\+Moving\+Entity}}.
+
+\mbox{\Hypertarget{class_enemy_aadb22d8b5097b1ba567e06ab37e6b60c}\label{class_enemy_aadb22d8b5097b1ba567e06ab37e6b60c}} 
+\index{Enemy@{Enemy}!serialize@{serialize}}
+\index{serialize@{serialize}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} Enemy\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+the entity serialized 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}{I\+Moving\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Server/Enemy.\+hpp\item 
+source/ecs/\+Entity/\+Server/Enemy.\+cpp\end{DoxyCompactItemize}

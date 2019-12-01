@@ -1,0 +1,76 @@
+\hypertarget{class_session}{}\doxysection{Session Class Reference}
+\label{class_session}\index{Session@{Session}}
+
+
+Inheritance diagram for Session\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{class_session__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_session_aa5ce10ce389c68ee8761cbc8ad53f001}{Session}} (std\+::string pseudo)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ \mbox{\hyperlink{class_session_a535bf79c7d98515ed53d199dcce0a21d}{get\+Packet\+Data}} () override
+\item 
+bool \mbox{\hyperlink{class_session_a545bf39617d3e8d92f378eb66ff4ee55}{add\+Event\+Packet}} (\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} entity) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_session_aa5ce10ce389c68ee8761cbc8ad53f001}\label{class_session_aa5ce10ce389c68ee8761cbc8ad53f001}} 
+\index{Session@{Session}!Session@{Session}}
+\index{Session@{Session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}}
+{\footnotesize\ttfamily Session\+::\+Session (\begin{DoxyParamCaption}\item[{std\+::string}]{pseudo }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{class_session}{Session}} for a new client 
+\begin{DoxyParams}{Parameters}
+{\em pseudo} & is the player name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_session_a545bf39617d3e8d92f378eb66ff4ee55}\label{class_session_a545bf39617d3e8d92f378eb66ff4ee55}} 
+\index{Session@{Session}!addEventPacket@{addEventPacket}}
+\index{addEventPacket@{addEventPacket}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{addEventPacket()}{addEventPacket()}}
+{\footnotesize\ttfamily bool Session\+::add\+Event\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_raw_data}{Raw\+Data}}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add an Event Packet 
+\begin{DoxyParams}{Parameters}
+{\em entity} & is an entity packet sent by the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_session_aace927b961ab52abcca997562f8484e4}{I\+Session}}.
+
+\mbox{\Hypertarget{class_session_a535bf79c7d98515ed53d199dcce0a21d}\label{class_session_a535bf79c7d98515ed53d199dcce0a21d}} 
+\index{Session@{Session}!getPacketData@{getPacketData}}
+\index{getPacketData@{getPacketData}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{getPacketData()}{getPacketData()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ Session\+::get\+Packet\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get a list of received data packet \begin{DoxyReturn}{Returns}
+a list of binary packet 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_session_a2914843322d3047f874d1b145e69d984}{I\+Session}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/server/Session.\+hpp\item 
+source/server/Session.\+cpp\end{DoxyCompactItemize}

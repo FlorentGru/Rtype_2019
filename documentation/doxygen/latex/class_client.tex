@@ -1,0 +1,36 @@
+\hypertarget{class_client}{}\doxysection{Client Class Reference}
+\label{class_client}\index{Client@{Client}}
+
+
+{\ttfamily \#include $<$Client.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_client_a32cb6007d49ac31a0fdd88ca4b140d6d}{run}} (const std\+::string \&host, const std\+::string \&port)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{class_client}{Client}} who is the called by the main, make the connection with the server 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_a32cb6007d49ac31a0fdd88ca4b140d6d}\label{class_client_a32cb6007d49ac31a0fdd88ca4b140d6d}} 
+\index{Client@{Client}!run@{run}}
+\index{run@{run}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Client\+::run (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{const std\+::string \&}]{port }\end{DoxyParamCaption})}
+
+The function run do the connect with the server and set the scene like G\+A\+ME or M\+E\+NU and send the events
+
+@\+Param host \+: the ip adrdress of the server @\+Param port\+: the port of the server
+
+\begin{DoxyReturn}{Returns}
+a bool to check if the server disconnect or not and if an error arrivec 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/client/Client.\+hpp\item 
+source/client/Client.\+cpp\end{DoxyCompactItemize}

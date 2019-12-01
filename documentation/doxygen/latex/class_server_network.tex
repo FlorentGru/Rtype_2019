@@ -1,0 +1,79 @@
+\hypertarget{class_server_network}{}\doxysection{Server\+Network Class Reference}
+\label{class_server_network}\index{ServerNetwork@{ServerNetwork}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_network_a2859430e2e927223893ec557ba456010}{Server\+Network}} (short port)
+\item 
+bool \mbox{\hyperlink{class_server_network_ac27bb34ac6d4c479ee56dec9df5fc8e8}{connect}} ()
+\item 
+bool \mbox{\hyperlink{class_server_network_a8f55710f9058762c9692c64cc51a2130}{send\+Entities\+To\+Player}} (const std\+::string \&user\+Id, std\+::vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ entities)
+\item 
+\mbox{\hyperlink{class_events}{Events}} \mbox{\hyperlink{class_server_network_ab944ab2ff59c252d280a6e0455750a20}{get\+Events}} (const std\+::string \&user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_server_network_a2859430e2e927223893ec557ba456010}\label{class_server_network_a2859430e2e927223893ec557ba456010}} 
+\index{ServerNetwork@{ServerNetwork}!ServerNetwork@{ServerNetwork}}
+\index{ServerNetwork@{ServerNetwork}!ServerNetwork@{ServerNetwork}}
+\doxysubsubsection{\texorpdfstring{ServerNetwork()}{ServerNetwork()}}
+{\footnotesize\ttfamily Server\+Network\+::\+Server\+Network (\begin{DoxyParamCaption}\item[{short}]{port }\end{DoxyParamCaption})}
+
+Initialise the connection by calling the abstract network class 
+\begin{DoxyParams}{Parameters}
+{\em port} & is the opened port \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_server_network_ac27bb34ac6d4c479ee56dec9df5fc8e8}\label{class_server_network_ac27bb34ac6d4c479ee56dec9df5fc8e8}} 
+\index{ServerNetwork@{ServerNetwork}!connect@{connect}}
+\index{connect@{connect}!ServerNetwork@{ServerNetwork}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Server\+Network\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Open the server for clients \begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_network_ab944ab2ff59c252d280a6e0455750a20}\label{class_server_network_ab944ab2ff59c252d280a6e0455750a20}} 
+\index{ServerNetwork@{ServerNetwork}!getEvents@{getEvents}}
+\index{getEvents@{getEvents}!ServerNetwork@{ServerNetwork}}
+\doxysubsubsection{\texorpdfstring{getEvents()}{getEvents()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_events}{Events}} Server\+Network\+::get\+Events (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{user\+Id }\end{DoxyParamCaption})}
+
+Get the events from the client 
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & is the Id of the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an events packet where every pressed key are set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_server_network_a8f55710f9058762c9692c64cc51a2130}\label{class_server_network_a8f55710f9058762c9692c64cc51a2130}} 
+\index{ServerNetwork@{ServerNetwork}!sendEntitiesToPlayer@{sendEntitiesToPlayer}}
+\index{sendEntitiesToPlayer@{sendEntitiesToPlayer}!ServerNetwork@{ServerNetwork}}
+\doxysubsubsection{\texorpdfstring{sendEntitiesToPlayer()}{sendEntitiesToPlayer()}}
+{\footnotesize\ttfamily bool Server\+Network\+::send\+Entities\+To\+Player (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{user\+Id,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$}]{entities }\end{DoxyParamCaption})}
+
+Send Entities to the player 
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & is the Id of the client to send Entities \\
+\hline
+{\em entities} & is a list of entities sent from the server to convert into packet for the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/server/Server\+Network.\+hpp\item 
+source/server/Server\+Network.\+cpp\end{DoxyCompactItemize}

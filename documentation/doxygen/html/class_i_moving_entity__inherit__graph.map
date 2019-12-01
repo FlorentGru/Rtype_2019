@@ -1,0 +1,7 @@
+<map id="IMovingEntity" name="IMovingEntity">
+<area shape="rect" id="node1" title=" " alt="" coords="65,80,163,107"/>
+<area shape="rect" id="node3" href="$class_enemy.html" title=" " alt="" coords="5,155,68,181"/>
+<area shape="rect" id="node4" href="$class_fire.html" title=" " alt="" coords="92,155,136,181"/>
+<area shape="rect" id="node5" href="$class_player.html" title=" " alt="" coords="161,155,219,181"/>
+<area shape="rect" id="node2" href="$class_i_entity.html" title=" " alt="" coords="85,5,143,32"/>
+</map>

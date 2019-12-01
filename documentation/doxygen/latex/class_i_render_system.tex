@@ -1,0 +1,38 @@
+\hypertarget{class_i_render_system}{}\doxysection{I\+Render\+System Class Reference}
+\label{class_i_render_system}\index{IRenderSystem@{IRenderSystem}}
+
+
+{\ttfamily \#include $<$I\+Render\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Render\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_i_render_system__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_render_system_a40b7ffdce79af75c7719e255aa6af67c}\label{class_i_render_system_a40b7ffdce79af75c7719e255aa6af67c}} 
+bool {\bfseries run} (vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&entities, \mbox{\hyperlink{class_events}{Events}} \&events) override=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_render_system_a2741eb410b9c375d7751d5b5d7d66337}\label{class_i_render_system_a2741eb410b9c375d7751d5b5d7d66337}} 
+virtual bool {\bfseries draw} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_render_entity}{I\+Render\+Entity}} $>$ render\+Entity)=0
+\item 
+\mbox{\Hypertarget{class_i_render_system_ad518bb98b9c409678477c028f1b30cd5}\label{class_i_render_system_ad518bb98b9c409678477c028f1b30cd5}} 
+virtual void {\bfseries create\+Window} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_i_render_system}{I\+Render\+System}} is the interface for the graphic system 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+System/I\+Render\+System.\+hpp\end{DoxyCompactItemize}

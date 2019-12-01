@@ -1,0 +1,113 @@
+\hypertarget{class_render_player}{}\doxysection{Render\+Player Class Reference}
+\label{class_render_player}\index{RenderPlayer@{RenderPlayer}}
+
+
+Inheritance diagram for Render\+Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_render_player__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_render_player_aa2c98db6b7b4ab547f734522ebd6e00b}\label{class_render_player_aa2c98db6b7b4ab547f734522ebd6e00b}} 
+{\bfseries Render\+Player} (size\+\_\+t pv, int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ position)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ \mbox{\hyperlink{class_render_player_aa3e2f29047f35ce4bd4df94c9b945d0f}{get\+Components}} () override
+\item 
+Type \mbox{\hyperlink{class_render_player_a1fe4f3cc052a6a184e1e43402f34b9ce}{get\+Type}} () override
+\item 
+int \mbox{\hyperlink{class_render_player_abe5879447bb29e022f8ade995a1b30b6}{get\+Id}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_render_player_a01e2661609ec3f9de419da756e778aac}{get\+Texture}} () override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ \mbox{\hyperlink{class_render_player_a7328b7eb871a416b2798467d61f96b0a}{get\+Position}} () override
+\item 
+\mbox{\Hypertarget{class_render_player_a34462bff54a12d0d6d6bcc74431c3a01}\label{class_render_player_a34462bff54a12d0d6d6bcc74431c3a01}} 
+size\+\_\+t {\bfseries get\+Pv} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_render_player_aa3e2f29047f35ce4bd4df94c9b945d0f}\label{class_render_player_aa3e2f29047f35ce4bd4df94c9b945d0f}} 
+\index{RenderPlayer@{RenderPlayer}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!RenderPlayer@{RenderPlayer}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_component}{I\+Component}} $>$ $>$ Render\+Player\+::get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the list of components inside the entity
+
+\begin{DoxyReturn}{Returns}
+List of pointers toward any component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a150bbf608f2912c284538f8014898b4d}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_player_abe5879447bb29e022f8ade995a1b30b6}\label{class_render_player_abe5879447bb29e022f8ade995a1b30b6}} 
+\index{RenderPlayer@{RenderPlayer}!getId@{getId}}
+\index{getId@{getId}!RenderPlayer@{RenderPlayer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Render\+Player\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the id of the entity
+
+\begin{DoxyReturn}{Returns}
+integer representing the entity id 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a48eadb88ccac3f7ac05e67f84305f4d0}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_player_a7328b7eb871a416b2798467d61f96b0a}\label{class_render_player_a7328b7eb871a416b2798467d61f96b0a}} 
+\index{RenderPlayer@{RenderPlayer}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!RenderPlayer@{RenderPlayer}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_position}{Position}} $>$ Render\+Player\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the position component of the entity
+
+\begin{DoxyReturn}{Returns}
+shared pointer of position component 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_a71cf855190afdcbb5a8f75fc0da341b5}{I\+Entity}}.
+
+\mbox{\Hypertarget{class_render_player_a01e2661609ec3f9de419da756e778aac}\label{class_render_player_a01e2661609ec3f9de419da756e778aac}} 
+\index{RenderPlayer@{RenderPlayer}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!RenderPlayer@{RenderPlayer}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily std\+::string Render\+Player\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get entity texture \begin{DoxyReturn}{Returns}
+the entity texture 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_render_entity_a445bb489c9598eb6b02ab74142068ed5}{I\+Render\+Entity}}.
+
+\mbox{\Hypertarget{class_render_player_a1fe4f3cc052a6a184e1e43402f34b9ce}\label{class_render_player_a1fe4f3cc052a6a184e1e43402f34b9ce}} 
+\index{RenderPlayer@{RenderPlayer}!getType@{getType}}
+\index{getType@{getType}!RenderPlayer@{RenderPlayer}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily I\+Entity\+::\+Type Render\+Player\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the type of the entity
+
+\begin{DoxyReturn}{Returns}
+enum of entity type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_entity_ab25eb6913c7002a64dc1c31668857d1c}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Client/Render\+Player.\+hpp\item 
+source/ecs/\+Entity/\+Client/Render\+Player.\+cpp\end{DoxyCompactItemize}

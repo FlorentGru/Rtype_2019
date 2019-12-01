@@ -1,0 +1,61 @@
+\hypertarget{class_draw_entity_system}{}\doxysection{Draw\+Entity\+System Class Reference}
+\label{class_draw_entity_system}\index{DrawEntitySystem@{DrawEntitySystem}}
+
+
+{\ttfamily \#include $<$Draw\+Entity\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Draw\+Entity\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_draw_entity_system__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_draw_entity_system_a8a15fc129bfd11130de24aee256be0ed}{run}} (vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&entities, \mbox{\hyperlink{class_events}{Events}} \&events) override
+\item 
+\mbox{\hyperlink{class_draw_entity_system_a256381bd325b4e7f66bf672f3b3a082b}{Draw\+Entity\+System}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class who include the most bigest part of S\+F\+ML who draw all the entities and the window/\+Background 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_draw_entity_system_a256381bd325b4e7f66bf672f3b3a082b}\label{class_draw_entity_system_a256381bd325b4e7f66bf672f3b3a082b}} 
+\index{DrawEntitySystem@{DrawEntitySystem}!DrawEntitySystem@{DrawEntitySystem}}
+\index{DrawEntitySystem@{DrawEntitySystem}!DrawEntitySystem@{DrawEntitySystem}}
+\doxysubsubsection{\texorpdfstring{DrawEntitySystem()}{DrawEntitySystem()}}
+{\footnotesize\ttfamily Draw\+Entity\+System\+::\+Draw\+Entity\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of the class, set the window\+Size and the frame and create the clock for the background 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_draw_entity_system_a8a15fc129bfd11130de24aee256be0ed}\label{class_draw_entity_system_a8a15fc129bfd11130de24aee256be0ed}} 
+\index{DrawEntitySystem@{DrawEntitySystem}!run@{run}}
+\index{run@{run}!DrawEntitySystem@{DrawEntitySystem}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Draw\+Entity\+System\+::run (\begin{DoxyParamCaption}\item[{vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_entity}{I\+Entity}} $>$$>$ \&}]{entities,  }\item[{\mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+The function run who start and create all of the graphical creation
+
+@\+Param entities\+: took all the entities to call the system for draw the entities @\+Param events\+: Take the events for the get\+Events who fill all the events do
+
+\begin{DoxyReturn}{Returns}
+a bool to check if the function return true and works, 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_render_system}{I\+Render\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+System/Draw\+Entity\+System.\+hpp\item 
+source/ecs/\+System/Draw\+Entity\+System.\+cpp\end{DoxyCompactItemize}

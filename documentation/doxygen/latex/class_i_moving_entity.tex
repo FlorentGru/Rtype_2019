@@ -1,0 +1,93 @@
+\hypertarget{class_i_moving_entity}{}\doxysection{I\+Moving\+Entity Class Reference}
+\label{class_i_moving_entity}\index{IMovingEntity@{IMovingEntity}}
+
+
+{\ttfamily \#include $<$I\+Moving\+Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for I\+Moving\+Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_i_moving_entity__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}{move}} (float x, float y, float z)=0
+\item 
+virtual \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} \mbox{\hyperlink{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}{serialize}} ()=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_hitbox}{Hitbox}} $>$ \mbox{\hyperlink{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}{get\+Hitbox}} () const =0
+\item 
+\mbox{\Hypertarget{class_i_moving_entity_ab291123b93b14d1805fd8e1d57915032}\label{class_i_moving_entity_ab291123b93b14d1805fd8e1d57915032}} 
+virtual int {\bfseries get\+Pv} () const =0
+\item 
+\mbox{\Hypertarget{class_i_moving_entity_a3e71016453f08e633e7ab211ea1ba7b4}\label{class_i_moving_entity_a3e71016453f08e633e7ab211ea1ba7b4}} 
+virtual void {\bfseries set\+Pv} (int pv)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Entity type thats is influenced 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}\label{class_i_moving_entity_ab5d0e73bd1bbab7e9c234972aeb128e3}} 
+\index{IMovingEntity@{IMovingEntity}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!IMovingEntity@{IMovingEntity}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_hitbox}{Hitbox}}$>$ I\+Moving\+Entity\+::get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+a pointer on the hitbox of the entity 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fire_a2119dec4792c2f1771637af88f13ca00}{Fire}}, \mbox{\hyperlink{class_enemy_a8475c9c8df13c1963d0bfb3a53556106}{Enemy}}, and \mbox{\hyperlink{class_player_af1eb3e67feac9055e237e9da3c29543c}{Player}}.
+
+\mbox{\Hypertarget{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}\label{class_i_moving_entity_a356452828a529a2d0fa3c00475b5c2c3}} 
+\index{IMovingEntity@{IMovingEntity}!move@{move}}
+\index{move@{move}!IMovingEntity@{IMovingEntity}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void I\+Moving\+Entity\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Update the position of an entity
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position on x axis \\
+\hline
+{\em y} & position on y axis \\
+\hline
+{\em z} & position on z axis \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_fire_a02347cd8b14e33e2b6436c9501545542}{Fire}}, \mbox{\hyperlink{class_enemy_ad4aa4596b08fe82644b0ac6e7252b375}{Enemy}}, and \mbox{\hyperlink{class_player_a29919900bc1f2b04272e8d8a0d01ec76}{Player}}.
+
+\mbox{\Hypertarget{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}\label{class_i_moving_entity_ad756de4fa78833c6766c5b03292fcbb2}} 
+\index{IMovingEntity@{IMovingEntity}!serialize@{serialize}}
+\index{serialize@{serialize}!IMovingEntity@{IMovingEntity}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} I\+Moving\+Entity\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Constructs a serialized entity
+
+\begin{DoxyReturn}{Returns}
+the entity serialized 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_fire_a133cae65b4e14c05cc0c9ca88165df41}{Fire}}, \mbox{\hyperlink{class_enemy_aadb22d8b5097b1ba567e06ab37e6b60c}{Enemy}}, and \mbox{\hyperlink{class_player_a1d77063455b89383cedc652051a39206}{Player}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/ecs/\+Entity/\+Server/I\+Moving\+Entity.\+hpp\end{DoxyCompactItemize}

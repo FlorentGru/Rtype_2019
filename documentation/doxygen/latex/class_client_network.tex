@@ -1,0 +1,85 @@
+\hypertarget{class_client_network}{}\doxysection{Client\+Network Class Reference}
+\label{class_client_network}\index{ClientNetwork@{ClientNetwork}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_client_network_a7287de2a4a8eb4f9b4798cd6a502689b}{Client\+Network}} ()
+\item 
+bool \mbox{\hyperlink{class_client_network_a2e031ba9dcd50ef8642f37aac1adba86}{connect}} (const std\+::string \&host, const std\+::string \&port)
+\item 
+bool \mbox{\hyperlink{class_client_network_a345abc83426359f29886e7e53259cb51}{disconnect}} ()
+\item 
+bool \mbox{\hyperlink{class_client_network_acc996e1be45023106b6ce7d92d3fa58c}{send\+Events}} (const \mbox{\hyperlink{class_events}{Events}} \&events)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ \mbox{\hyperlink{class_client_network_a7390fea179d016001cb60cf96b7f17a7}{get\+Entities}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_client_network_a7287de2a4a8eb4f9b4798cd6a502689b}\label{class_client_network_a7287de2a4a8eb4f9b4798cd6a502689b}} 
+\index{ClientNetwork@{ClientNetwork}!ClientNetwork@{ClientNetwork}}
+\index{ClientNetwork@{ClientNetwork}!ClientNetwork@{ClientNetwork}}
+\doxysubsubsection{\texorpdfstring{ClientNetwork()}{ClientNetwork()}}
+{\footnotesize\ttfamily Client\+Network\+::\+Client\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialise the connection by calling the abstract network class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_network_a2e031ba9dcd50ef8642f37aac1adba86}\label{class_client_network_a2e031ba9dcd50ef8642f37aac1adba86}} 
+\index{ClientNetwork@{ClientNetwork}!connect@{connect}}
+\index{connect@{connect}!ClientNetwork@{ClientNetwork}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Client\+Network\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{const std\+::string \&}]{port }\end{DoxyParamCaption})}
+
+Connection to the server 
+\begin{DoxyParams}{Parameters}
+{\em host} & is the server address \\
+\hline
+{\em port} & is the opened server port \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_network_a345abc83426359f29886e7e53259cb51}\label{class_client_network_a345abc83426359f29886e7e53259cb51}} 
+\index{ClientNetwork@{ClientNetwork}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!ClientNetwork@{ClientNetwork}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily bool Client\+Network\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_client}{Client}} disconnection \begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_network_a7390fea179d016001cb60cf96b7f17a7}\label{class_client_network_a7390fea179d016001cb60cf96b7f17a7}} 
+\index{ClientNetwork@{ClientNetwork}!getEntities@{getEntities}}
+\index{getEntities@{getEntities}!ClientNetwork@{ClientNetwork}}
+\doxysubsubsection{\texorpdfstring{getEntities()}{getEntities()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_serialized_entity}{Serialized\+Entity}} $>$ Client\+Network\+::get\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get entities list \begin{DoxyReturn}{Returns}
+a list of entities to display 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_network_acc996e1be45023106b6ce7d92d3fa58c}\label{class_client_network_acc996e1be45023106b6ce7d92d3fa58c}} 
+\index{ClientNetwork@{ClientNetwork}!sendEvents@{sendEvents}}
+\index{sendEvents@{sendEvents}!ClientNetwork@{ClientNetwork}}
+\doxysubsubsection{\texorpdfstring{sendEvents()}{sendEvents()}}
+{\footnotesize\ttfamily bool Client\+Network\+::send\+Events (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_events}{Events}} \&}]{events }\end{DoxyParamCaption})}
+
+send \mbox{\hyperlink{class_events}{Events}} to the server 
+\begin{DoxyParams}{Parameters}
+{\em events} & is a binary packet filled by events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true return false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/client/Client\+Network.\+hpp\item 
+source/client/Client\+Network.\+cpp\end{DoxyCompactItemize}

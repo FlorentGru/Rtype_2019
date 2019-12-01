@@ -1,0 +1,174 @@
+\hypertarget{class_boost_udp_client}{}\doxysection{Boost\+Udp\+Client Class Reference}
+\label{class_boost_udp_client}\index{BoostUdpClient@{BoostUdpClient}}
+
+
+{\ttfamily \#include $<$Boost\+Udp\+Client.\+hpp$>$}
+
+
+
+Inheritance diagram for Boost\+Udp\+Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_boost_udp_client__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_boost_udp_client_a63298f8a4e3184d002ce80d8a10a77ec}{do\+Connect}} (const std\+::string \&address, const std\+::string \&port) override
+\item 
+void \mbox{\hyperlink{class_boost_udp_client_a6f9061a512583e1f5866a1e343899ceb}{start\+Listening}} () override
+\item 
+bool \mbox{\hyperlink{class_boost_udp_client_ae53641a3e6302e1694e70be3445d2e48}{send\+Data}} (const char $\ast$data, size\+\_\+t size) override
+\item 
+bool \mbox{\hyperlink{class_boost_udp_client_a3f1008f9f441ee3f49899c3cb7b76323}{send\+And\+Receive\+Next}} (const char $\ast$data, size\+\_\+t size) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ \mbox{\hyperlink{class_boost_udp_client_a7798d9c450939f9e85c1e92c18ff7df0}{receive\+All}} () override
+\item 
+\mbox{\hyperlink{struct_raw_data}{Raw\+Data}} \mbox{\hyperlink{class_boost_udp_client_a3309000bba296039f91b1292011f9117}{receive\+Next}} () override
+\item 
+bool \mbox{\hyperlink{class_boost_udp_client_ab032d88c47e2dd0b188e33b910f0deee}{disconnect}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Boost implementation of Udp\+Client 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_boost_udp_client_ab032d88c47e2dd0b188e33b910f0deee}\label{class_boost_udp_client_ab032d88c47e2dd0b188e33b910f0deee}} 
+\index{BoostUdpClient@{BoostUdpClient}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily bool Boost\+Udp\+Client\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Disconnect client from the server, sends disconnect command
+
+\begin{DoxyReturn}{Returns}
+returns true for success 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_a57decde1082bdfb8892c0d8d18c84d1b}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_a63298f8a4e3184d002ce80d8a10a77ec}\label{class_boost_udp_client_a63298f8a4e3184d002ce80d8a10a77ec}} 
+\index{BoostUdpClient@{BoostUdpClient}!doConnect@{doConnect}}
+\index{doConnect@{doConnect}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{doConnect()}{doConnect()}}
+{\footnotesize\ttfamily bool Boost\+Udp\+Client\+::do\+Connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{address,  }\item[{const std\+::string \&}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Connects to the server, performs handshake
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & I\+Pv4 address of the server in plain text \\
+\hline
+{\em port} & port of the server in plain text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true for success 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_a850f3f0c52878ababe2d8e9e1d557282}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_a7798d9c450939f9e85c1e92c18ff7df0}\label{class_boost_udp_client_a7798d9c450939f9e85c1e92c18ff7df0}} 
+\index{BoostUdpClient@{BoostUdpClient}!receiveAll@{receiveAll}}
+\index{receiveAll@{receiveAll}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{receiveAll()}{receiveAll()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} $>$ Boost\+Udp\+Client\+::receive\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Receive the packets sent by the server
+
+\begin{DoxyReturn}{Returns}
+List of packets packet in raw data with size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_a2c1b6e43c7476841d132ac35d4e315e3}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_a3309000bba296039f91b1292011f9117}\label{class_boost_udp_client_a3309000bba296039f91b1292011f9117}} 
+\index{BoostUdpClient@{BoostUdpClient}!receiveNext@{receiveNext}}
+\index{receiveNext@{receiveNext}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{receiveNext()}{receiveNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_raw_data}{Raw\+Data}} Boost\+Udp\+Client\+::receive\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends a packet asynchronously to the server
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & raw data for the packet \\
+\hline
+{\em size} & size of the packet in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+packet in raw data with size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_adf171bea534eccdd1fe4b4bb594bd7fd}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_a3f1008f9f441ee3f49899c3cb7b76323}\label{class_boost_udp_client_a3f1008f9f441ee3f49899c3cb7b76323}} 
+\index{BoostUdpClient@{BoostUdpClient}!sendAndReceiveNext@{sendAndReceiveNext}}
+\index{sendAndReceiveNext@{sendAndReceiveNext}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{sendAndReceiveNext()}{sendAndReceiveNext()}}
+{\footnotesize\ttfamily bool Boost\+Udp\+Client\+::send\+And\+Receive\+Next (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends a packet then waits for the server answer and treat the packet
+
+Used to sends commands
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & raw data for the packet \\
+\hline
+{\em size} & size of the packet in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true for success 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_a22e425208ab2e992a957b24de2d9bd60}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_ae53641a3e6302e1694e70be3445d2e48}\label{class_boost_udp_client_ae53641a3e6302e1694e70be3445d2e48}} 
+\index{BoostUdpClient@{BoostUdpClient}!sendData@{sendData}}
+\index{sendData@{sendData}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}}
+{\footnotesize\ttfamily bool Boost\+Udp\+Client\+::send\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sends a packet asynchronously to the server
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & raw data for the packet \\
+\hline
+{\em size} & size of the packet in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true for success 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_udp_client_afb36e1bf1132998facab773b52f5a6e9}{I\+Udp\+Client}}.
+
+\mbox{\Hypertarget{class_boost_udp_client_a6f9061a512583e1f5866a1e343899ceb}\label{class_boost_udp_client_a6f9061a512583e1f5866a1e343899ceb}} 
+\index{BoostUdpClient@{BoostUdpClient}!startListening@{startListening}}
+\index{startListening@{startListening}!BoostUdpClient@{BoostUdpClient}}
+\doxysubsubsection{\texorpdfstring{startListening()}{startListening()}}
+{\footnotesize\ttfamily void Boost\+Udp\+Client\+::start\+Listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start thread to receive the server packets asynchronously 
+
+Implements \mbox{\hyperlink{class_i_udp_client_a1919d3ad5101be3516c72c4613a2b539}{I\+Udp\+Client}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/network/Boost\+Udp\+Client.\+hpp\item 
+source/network/Boost\+Udp\+Client.\+cpp\end{DoxyCompactItemize}
