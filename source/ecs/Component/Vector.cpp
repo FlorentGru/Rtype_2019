@@ -4,7 +4,7 @@
 
 #include "Vector.hpp"
 
-Vector::Vector(double x, double y, double z)
+Vector::Vector(float x, float y, float z)
 {
     _x = x;
     _y = y;
@@ -18,32 +18,32 @@ Vector::Vector()
     _z = 0;
 }
 
-double Vector::getX() const
+float Vector::getX() const
 {
     return _x;
 }
 
-double Vector::getY() const
+float Vector::getY() const
 {
     return _y;
 }
 
-double Vector::getZ() const
+float Vector::getZ() const
 {
     return _z;
 }
 
-void Vector::setX(double x)
+void Vector::setX(float x)
 {
     _x = x;
 }
 
-void Vector::setY(double y)
+void Vector::setY(float y)
 {
     _y = y;
 }
 
-void Vector::setZ(double z)
+void Vector::setZ(float z)
 {
     _z = z;
 }

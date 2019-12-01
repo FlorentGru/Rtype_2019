@@ -19,7 +19,7 @@ private:
 public:
     Fire(int id, std::shared_ptr<Position> position, bool isPlayer);
     std::shared_ptr<Position> getPosition() override;
-    void move(double x, double y, double z) override;
+    void move(float x, float y, float z) override;
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;

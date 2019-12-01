@@ -12,7 +12,7 @@
 class IMovingEntity : public IEntity
 {
 public:
-    virtual void move(double x, double y, double z) = 0;
+    virtual void move(float x, float y, float z) = 0;
 
     virtual SerializedEntity serialize() = 0;
 

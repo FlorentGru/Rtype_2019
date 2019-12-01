@@ -30,7 +30,7 @@ int Enemy::getId()
     return _id;
 }
 
-void Enemy::move(double x, double y, double z)
+void Enemy::move(float x, float y, float z)
 {
     size_t i = 0;
 

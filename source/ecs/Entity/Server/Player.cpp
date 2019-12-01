@@ -33,7 +33,7 @@ int Player::getId()
     return  _id;
 }
 
-void Player::move(double x, double y, double z)
+void Player::move(float x, float y, float z)
 {
     size_t i = 0;
 

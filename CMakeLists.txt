@@ -82,7 +82,7 @@ add_executable(r-type_client
         source/client/Menu.cpp
         source/network/RawData.cpp
         source/ecs/System/DrawEntitySystem.cpp
-        )
+        source/ecs/Entity/Client/RenderEnemy.cpp source/ecs/Entity/Client/RenderEnemy.hpp)
 
 target_link_libraries(r-type_client ${CONAN_LIBS})
 set_target_properties(r-type_client PROPERTIES LINKER_LANGUAGE CXX)

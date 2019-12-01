@@ -27,7 +27,7 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
 
 }
 
-void Fire::move(double x, double y, double z)
+void Fire::move(float x, float y, float z)
 {
     size_t i = 0;
 

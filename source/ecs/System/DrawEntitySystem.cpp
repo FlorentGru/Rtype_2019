@@ -5,6 +5,7 @@
 ** DrawEntitySystem.cpp
 */
 
+#include <Entity/Client/RenderEnemy.hpp>
 #include "DrawEntitySystem.hpp"
 
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
@@ -106,7 +107,7 @@ bool DrawEntitySystem::draw(std::shared_ptr<IRenderEntity> renderEntity)
     if (renderEntity->getType() == IEntity::FIRE)
         drawFire(std::dynamic_pointer_cast<RenderFire> (renderEntity));
     if (renderEntity->getType() == IEntity::ENEMY)
-        drawEnemy(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
+        drawEnemy(std::dynamic_pointer_cast<RenderEnemy> (renderEntity));
     if (renderEntity->getType() == IEntity::DESTRUCTIBLE)
         drawDestructible(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
 
@@ -143,16 +144,16 @@ void    DrawEntitySystem::drawFire(std::shared_ptr<RenderFire> renderFire)
     }
 }
 
-void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderPlayer> renderPlayer)
+void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderEnemy> renderEnemy)
 {
     sf::Texture playerT;
     sf::Sprite playerS;
 
-    if (!playerT.loadFromFile(renderPlayer->getTexture()))
+    if (!playerT.loadFromFile(renderEnemy->getTexture()))
         _isSucceed = false;
     else {
         playerS.setTexture(playerT);
-        playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        playerS.setPosition(renderEnemy->getPosition()->getX(), renderEnemy->getPosition()->getY());
         _window.draw(playerS);
     }
 
