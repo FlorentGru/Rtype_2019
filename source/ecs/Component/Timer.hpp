@@ -15,12 +15,26 @@ private:
     std::map<std::string, std::clock_t> _clock;
 
 public:
+    /**
+     * clear the clock
+     */
     Timer();
     ~Timer();
 
+    /**
+     * Create a new clock
+     * @param key is the id clock
+     */
     void create_clock(const std::string &);
 
-    bool restart(const std::string &, double);
+    /**
+     * Re-create a new clock
+     * @param key is the id clock
+     * @param timeInSecond is the setting time for the timer
+     * @return true
+     * @return false
+     */
+    bool restart(const std::string &, float);
 
     std::type_index getId() override;
 };

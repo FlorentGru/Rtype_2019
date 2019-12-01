@@ -20,9 +20,13 @@ shared_ptr<IEntity> ClientEngine::deserializedEntity(SerializedEntity entities)
     Position pos(entities.getX(), entities.getY(), entities.getZ());
     shared_ptr<Position> position = std::make_shared<Position>(pos);
 
-    if (entities.getType() == IEntity::PLAYER)
+    if (entities.getType() == IEntity::PLAYER) {
         return std::make_shared<RenderPlayer>(RenderPlayer(3, entities.getId(), position));
 
+    }
+    if (entities.getType() == IEntity::ENEMY) {
+        return std::make_shared<RenderEnemy>(RenderEnemy(entities.getId(), position));
+    }
     return std::make_shared<RenderFire>(RenderFire(entities.getId(), position));
 }
 

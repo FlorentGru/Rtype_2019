@@ -14,6 +14,11 @@
 class Session : public ISession
 {
 public:
+
+    /**
+     * Create a Session for a new client
+     * @param pseudo is the player name
+     */
     Session(std::string pseudo);
     std::vector<RawData> getPacketData() override;
     bool addEventPacket(RawData entity) override;

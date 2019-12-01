@@ -27,7 +27,7 @@ public:
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;
-    void move(double x, double y, double z) override;
+    void move(float x, float y, float z) override;
     SerializedEntity serialize() override;
     std::shared_ptr<Position> getPosition() override;
     std::shared_ptr<Hitbox> getHitbox() const override;

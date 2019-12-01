@@ -10,7 +10,7 @@
 class Velocity : public Vector
 {
 public:
-    Velocity(double x, double y, double z = 0);
+    Velocity(float x, float y, float z = 0);
     std::type_index getId() override;
 };
 

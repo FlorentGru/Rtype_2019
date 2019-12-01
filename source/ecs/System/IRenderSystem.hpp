@@ -9,6 +9,10 @@
 #include "IRenderEntity.hpp"
 #include "ISystem.hpp"
 
+/**
+ * The IRenderSystem is the interface for the graphic system
+ */
+
 class IRenderSystem : public ISystem
 {
 public:

@@ -10,21 +10,56 @@
 class Vector : public IComponent
 {
 private:
-    double _z;
-    double _y;
-    double _x;
+    float _z;
+    float _y;
+    float _x;
 
 public:
-    Vector(double x, double y, double z = 0);
+
+    /**
+     * Initialize the vector
+     * @param x is horizontal argument
+     * @param y is vertical argument
+     * @param z is depth argument
+     */
+    Vector(float x, float y, float z = 0);
     Vector();
 
-    void setX(double);
-    void setY(double);
-    void setZ(double);
+    /**
+     * Set x argument
+     * @param x
+     */
+    void setX(float);
 
-    double getX() const;
-    double getY() const;
-    double getZ() const;
+    /**
+     * Set y argument
+     * @param y
+     */
+    void setY(float);
+
+    /**
+     * Set z argument
+     * @param z
+     */
+    void setZ(float);
+
+    /**
+     * Get x argument
+     * @return horizontal argument
+     */
+    float getX() const;
+
+    /**
+     * Get y argument
+     * @return the vertical argument
+     */
+    float getY() const;
+
+    /**
+     * Get z argument
+     * @return the depth argument
+     */
+    float getZ() const;
 };
 
 #endif //CPP_RTYPE_2019_VECTOR_HPP

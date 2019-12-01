@@ -5,6 +5,10 @@
 #ifndef RTYPE_EVENTS_HPP
 #define RTYPE_EVENTS_HPP
 
+/**
+ * Class Events who contain all setter and getter for the events management
+ */
+
 class Events
 {
 public:

@@ -5,11 +5,13 @@
 #include "Fire.hpp"
 #include "Timer.hpp"
 
-Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
+Fire::Fire(int id, int playerId, std::shared_ptr<Position> position, bool isPlayer = false)
 {
     _id = id;
+    _pv = 1;
+    _playerId = playerId;
     Timer timer;
-    Hitbox hitbox(100, 50);
+    Hitbox hitbox(90, 90);
     _isPlayer = isPlayer;
     _component.clear();
     _component.push_back(position);
@@ -27,7 +29,7 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
 
 }
 
-void Fire::move(double x, double y, double z)
+void Fire::move(float x, float y, float z)
 {
     size_t i = 0;
 
@@ -99,4 +101,9 @@ int Fire::getPv() const
 void Fire::setPv(int pv)
 {
     _pv = pv;
+}
+
+int Fire::getPlayerId() const
+{
+    return _playerId;
 }

@@ -7,14 +7,26 @@
 
 #include "ISystem.hpp"
 
+/**
+ * Class collideSystem to create the collision in all the game
+ */
+
 class CollideSystem : public ISystem
 {
 public:
+    /** The function assembles of the function to chekc if a collide is do and need to call the good one function
+         * 
+         * @Param entities: took all the entities to call the collide function for all the entities
+         *        events: unsed cause the override need to be here
+         * 
+         * @return a bool to check if the function return true and works, 
+         */
     bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
-    void collide(std::shared_ptr<IMovingEntity> collide, std::vector<std::shared_ptr<IEntity>> &entities);
-    void destroyEntity(std::vector<std::shared_ptr<IMovingEntity>> &entities);
+    void collide(std::vector<std::shared_ptr<IEntity>> &entities, size_t);
+    void destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities);
+    bool isInRect(std::shared_ptr<IMovingEntity> first, std::shared_ptr<IMovingEntity> snd);
 };
 
 #endif //RTYPE_COLLIDESYSTEM_HPP

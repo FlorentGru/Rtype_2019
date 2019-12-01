@@ -15,6 +15,7 @@
 class IMovingEntity : public IEntity
 {
 public:
+<<<<<<< HEAD
     /**
     * Update the position of an entity
     *
@@ -22,7 +23,8 @@ public:
     * @param y position on y axis
     * @param z position on z axis
     */
-    virtual void move(double x, double y, double z) = 0;
+
+    virtual void move(float x, float y, float z) = 0;
 
     /**
     * Constructs a serialized entity

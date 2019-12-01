@@ -9,19 +9,30 @@
 #define DRAWENTITYSYSTEM_HPP
 
 #include <memory>
-#include <iostream>
 #include <map>
 #include "RenderPlayer.hpp"
 #include "RenderFire.hpp"
 #include "IRenderSystem.hpp"
+#include "RenderEnemy.hpp"
 #include "Timer.hpp"
 #include <SFML/Graphics.hpp>
 
+/**
+ *  Class who include the most bigest part of SFML who draw all the entities and the window/Background
+ */
 
 class DrawEntitySystem : public IRenderSystem
 {
     public:
+        /** The function run who start and create all of the graphical creation
+         * 
+         * @Param entities: took all the entities to call the system for draw the entities
+         *        events: Take the events for the getEvents who fill all the events do
+         * 
+         * @return a bool to check if the function return true and works, 
+         */
         bool run(vector<shared_ptr<IEntity>> &entities, Events &events) override;
+        /** Constructor of the class, set the windowSize and the frame and create the clock for the background */
         DrawEntitySystem();
     
     private:
@@ -30,7 +41,7 @@ class DrawEntitySystem : public IRenderSystem
         bool draw(std::shared_ptr<IRenderEntity> renderEntity) override;
         void drawPlayer(std::shared_ptr<RenderPlayer>);
         void drawFire(std::shared_ptr<RenderFire>);
-        void drawEnemy(std::shared_ptr<RenderPlayer>);
+        void drawEnemy(std::shared_ptr<RenderEnemy>);
         void drawDestructible(std::shared_ptr<RenderPlayer>);
         void initBackground();
         void move(sf::Vector2f &font, float speed);

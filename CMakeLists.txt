@@ -103,6 +103,7 @@ add_executable(r-type_client
         source/network/BoostUdpClient.cpp
         source/network/RawData.cpp
         source/ecs/System/DrawEntitySystem.cpp
+        source/ecs/Entity/Client/RenderEnemy.cpp
         )
 
 target_link_libraries(r-type_client ${CONAN_LIBS})

@@ -6,14 +6,31 @@
 #define CPP_RTYPE_2019_UPDATEENTITYSYSTEM_HPP
 
 #include <memory>
+#include <iostream>
 #include "ISystem.hpp"
 #include "Player.hpp"
 #include "Fire.hpp"
 #include "Timer.hpp"
 
+/**
+ * Class UpdateEntitySystem inherited the ISystem. Move and update all the entities in the ecs
+ */
+
 class UpdateEntitySystem : public ISystem {
 public:
+    /**
+    * Constructor of the class who create the clock "fire" and the window lenght, height
+    */
     UpdateEntitySystem();
+
+    /**
+    * Funtion run call all the function to move and update the player or the fire
+    * 
+    * @Param entities: Took all the entities to know what to update or create
+    *        events: Took the event to know in wich direction the player need to move
+    * 
+    * @return a bool to return if the function work well and return true
+    */
     bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
@@ -27,7 +44,7 @@ private:
 
     bool _isSucceed = true;
 
-    std::shared_ptr<Fire> createFire(std::shared_ptr<Player> &player, bool isPlayer);
+    std::shared_ptr<Fire> createFire(std::shared_ptr<Player> &player, bool isPlayer, std::vector<std::shared_ptr<IEntity>> &entities);
 
     void move(std::shared_ptr<IMovingEntity>, Direction direction);
 
@@ -35,8 +52,8 @@ private:
 
     void destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities);
 
-    size_t _windowLength;
-    size_t _windowHeight;
+    float _windowLength;
+    float _windowHeight;
     Timer _timer;
 };
 
