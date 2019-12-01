@@ -29,11 +29,11 @@ Fire::Fire(int id, std::shared_ptr<Position> position, bool isPlayer = false)
 
 void Fire::move(double x, double y, double z)
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Timer)); ++i);
-    if (std::dynamic_pointer_cast<Timer>(_component[i])->restart("moveClock", 0.033)) {
-        for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Timer)) && i < _component.size(); ++i);
+    if (std::dynamic_pointer_cast<Timer>(_component[i])->restart("moveClock", 0.02)) {
+        for (i = 0; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
         std::dynamic_pointer_cast<Position>(_component[i])->setX(x);
         std::dynamic_pointer_cast<Position>(_component[i])->setY(y);
         std::dynamic_pointer_cast<Position>(_component[i])->setZ(z);
@@ -85,9 +85,9 @@ bool Fire::isPlayer() const
 
 std::shared_ptr<Hitbox> Fire::getHitbox() const
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Hitbox)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Hitbox))&&  i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Hitbox>(_component[i]));
 }
 

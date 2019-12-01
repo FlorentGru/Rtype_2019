@@ -38,8 +38,8 @@ void Player::move(double x, double y, double z)
     size_t i = 0;
 
     for (; _component[i]->getId() != std::type_index(typeid(Timer)) && i < _component.size(); ++i);
-    if (std::dynamic_pointer_cast<Timer>(_component[i])->restart("moveClock", 0.033)) {
-        for (i = 0; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    if (std::dynamic_pointer_cast<Timer>(_component[i])->restart("moveClock", 0.02)) {
+        for (i = 0; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
         std::dynamic_pointer_cast<Position>(_component[i])->setX(x);
         std::dynamic_pointer_cast<Position>(_component[i])->setY(y);
         std::dynamic_pointer_cast<Position>(_component[i])->setZ(z);

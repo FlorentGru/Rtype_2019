@@ -22,8 +22,8 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
             std::shared_ptr<Player> player = std::dynamic_pointer_cast<Player>(mover);
             manageShip(player, events);
             if (events.isEnter()) {
-                Fire fire = createFire(player, true);
-                entities.push_back(std::make_shared<Fire>(fire));
+                std::shared_ptr<Fire> fire = createFire(player, true);
+                entities.push_back(fire);
             }
         }
         else if (mover->getType() == IEntity::FIRE)
@@ -37,23 +37,26 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
     return _isSucceed;
 }
 
-Fire UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer)
+std::shared_ptr<Fire> UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer)
 {
+    Position firePosition(player->getPosition()->getX(), player->getPosition()->getY());
+    firePosition.setX(firePosition.getX() + 100);
+    firePosition.setY(firePosition.getY() + 50);
 
-    Fire fire(player->getId(), player->getPosition(), isPlayer);
-    return fire;
+    Fire fire(player->getId(), std::make_shared<Position>(firePosition), isPlayer);
+    return std::make_shared<Fire>(fire);
 }
 
 void UpdateEntitySystem::move(std::shared_ptr<IMovingEntity> entity, Direction direction)
 {
     if (direction == LEFT && entity->getPosition()->getX() > 0)
-        entity->move(entity->getPosition()->getX() - 1, entity->getPosition()->getY(), entity->getPosition()->getZ());
-    if (direction == RIGHT && entity->getPosition()->getX() < _windowLength)
-        entity->move(entity->getPosition()->getX() + 1, entity->getPosition()->getY(), entity->getPosition()->getZ());
+        entity->move(entity->getPosition()->getX() - 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
+    if (direction == RIGHT && entity->getPosition()->getX() < _windowLength - 200)
+        entity->move(entity->getPosition()->getX() + 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
     if (direction == UP && entity->getPosition()->getY() > 0)
-        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() - 1, entity->getPosition()->getZ());
-    if (direction == DOWN && entity->getPosition()->getY() < _windowHeight)
-        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() + 1, entity->getPosition()->getZ());
+        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() - 7, entity->getPosition()->getZ());
+    if (direction == DOWN && entity->getPosition()->getY() < _windowHeight - 130)
+        entity->move(entity->getPosition()->getX(), entity->getPosition()->getY() + 7, entity->getPosition()->getZ());
 
 }
 
