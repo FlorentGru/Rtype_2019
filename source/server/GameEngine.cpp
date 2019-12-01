@@ -19,8 +19,8 @@ vector<SerializedEntity> GameEngine::run(Events &events)
 
 GameEngine::GameEngine()
 {
-    std::shared_ptr<Position> position = make_shared<Position>(500, 200);
-    std::shared_ptr<Position> posEnemy = make_shared<Position>(1300, 300);
+    std::shared_ptr<Position> position = make_shared<Position>(200, 500);
+    std::shared_ptr<Position> posEnemy = make_shared<Position>(2000, 300);
 
 
     this->ecs.addSystem(std::make_shared<UpdateEntitySystem>());
