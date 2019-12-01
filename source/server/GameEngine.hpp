@@ -12,9 +12,12 @@ using namespace std;
 class GameEngine
 {
 public:
+    GameEngine();
+
     vector<SerializedEntity> run(Events &events);
 private:
     ServerEcs ecs;
+    bool setScene();
 };
 
 

@@ -104,6 +104,12 @@ add_executable(rtype_client_test
         source/ecs/Entity/SerializedEntity.cpp
         source/client/Menu.cpp
         source/ecs/System/DrawEntitySystem.cpp
+        source/server/GameEngine.cpp
+        source/ecs/ServerEcs.cpp
+        source/ecs/Entity/Server/Player.cpp
+        source/ecs/Entity/Server/Fire.cpp
+        source/ecs/Component/Hitbox.cpp
+        source/ecs/System/UpdateEntitySystem.cpp
         source/main.cpp)
 
 target_link_libraries(rtype_client_test ${CONAN_LIBS})
