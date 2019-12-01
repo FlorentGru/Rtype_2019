@@ -15,15 +15,50 @@ private:
     float _x;
 
 public:
+
+    /**
+     * Initialize the vector
+     * @param x is horizontal argument
+     * @param y is vertical argument
+     * @param z is depth argument
+     */
     Vector(float x, float y, float z = 0);
     Vector();
 
+    /**
+     * Set x argument
+     * @param x
+     */
     void setX(float);
+
+    /**
+     * Set y argument
+     * @param y
+     */
     void setY(float);
+
+    /**
+     * Set z argument
+     * @param z
+     */
     void setZ(float);
 
+    /**
+     * Get x argument
+     * @return horizontal argument
+     */
     float getX() const;
+
+    /**
+     * Get y argument
+     * @return the vertical argument
+     */
     float getY() const;
+
+    /**
+     * Get z argument
+     * @return the depth argument
+     */
     float getZ() const;
 };
 

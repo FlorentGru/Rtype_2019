@@ -11,6 +11,10 @@
 class IRenderEntity : public IEntity
 {
 public:
+    /**
+     * Get entity texture
+     * @return the entity texture
+     */
     virtual std::string getTexture() = 0;
 };
 
