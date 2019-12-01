@@ -4,33 +4,41 @@
 
 #include "AbstractEcs.hpp"
 
-/*const vector<shared_ptr<IRenderEntity>> &AbstractEcs::getRenderEntities() {
-    return this->entities;
-}*/
-
 bool AbstractEcs::addEntity(shared_ptr<IEntity> entity) {
-    this->entities.emplace_back(entity);
+    this->_entities.emplace_back(entity);
     return true;
 }
 
 bool AbstractEcs::addEntities(const vector<shared_ptr<IEntity>> &entities_) {
 
     for (auto &entity : entities_) {
-        this->entities.emplace_back(entity);
+        this->_entities.emplace_back(entity);
     }
     return true;
 }
 
 bool AbstractEcs::removeAllEntities() {
-    this->entities.clear();
+    this->_entities.clear();
     return true;
 }
 
-bool AbstractEcs::addSystem(shared_ptr<ISystem> system) {
-    this->systems.emplace_back(system);
+bool AbstractEcs::addSystem(shared_ptr<ISystem> system)
+{
+    this->_systems.emplace_back(system);
     return true;
 }
 
-bool AbstractEcs::destroy() {
+bool AbstractEcs::destroy()
+{
     return false;
+}
+
+vector<SerializedEntity> AbstractEcs::getEntities()
+{
+    vector<SerializedEntity> res;
+
+    for (shared_ptr<IEntity> &entity : _entities) {
+        res.emplace_back(std::dynamic_pointer_cast<IMovingEntity>(entity)->serialize());
+    }
+    return res;
 }

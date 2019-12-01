@@ -6,16 +6,14 @@
 #define RTYPE_CLIENTECS_HPP
 
 #include "AbstractEcs.hpp"
+#include <iostream>
 
 class ClientEcs : public AbstractEcs
 {
 public:
-    bool run(Events _events) override ;
-
-    const Events &getEvents() const ;
+    bool run(Events &_events) override ;
 
 private:
-    Events events;
 };
 
 

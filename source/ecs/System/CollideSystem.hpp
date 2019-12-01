@@ -1,19 +1,20 @@
 //
-// Created by $0QU000-PL44DU4VI3C9 on 25/11/2019.
+// Created by $0QU000-PL44DU4VI3C9 on 30/11/2019.
 //
 
-#ifndef CPP_RTYPE_2019_COLLIDESYSTEM_HPP
-#define CPP_RTYPE_2019_COLLIDESYSTEM_HPP
+#ifndef RTYPE_COLLIDESYSTEM_HPP
+#define RTYPE_COLLIDESYSTEM_HPP
 
 #include "ISystem.hpp"
 
 class CollideSystem : public ISystem
 {
 public:
-    void run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events);
+    bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
-    bool isCollide(IEntity);
+    void collide(std::shared_ptr<IMovingEntity> collide, std::vector<std::shared_ptr<IEntity>> &entities);
+    void destroyEntity(std::vector<std::shared_ptr<IMovingEntity>> &entities);
 };
 
-#endif //CPP_RTYPE_2019_COLLIDESYSTEM_HPP
+#endif //RTYPE_COLLIDESYSTEM_HPP

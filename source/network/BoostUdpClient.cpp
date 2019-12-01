@@ -30,7 +30,6 @@ bool BoostUdpClient::sendData(const char *data, size_t size)
 {
     socket_.async_send_to(boost::asio::buffer(data, size), endpoint_,
                           boost::bind(&BoostUdpClient::handle_send, this));
-    std::cout << "sendData" << std::endl;
     return true;
 }
 
@@ -68,8 +67,6 @@ void BoostUdpClient::doReceive()
 
 void BoostUdpClient::handle_receive_from(const boost::system::error_code &error, size_t bytes_recvd) {
     RawData data = RawData();
-
-    std::cout << "received packet async of " << bytes_recvd << "bytes" << std::endl;
 
     if (!error || error == boost::asio::error::message_size) {
         if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {

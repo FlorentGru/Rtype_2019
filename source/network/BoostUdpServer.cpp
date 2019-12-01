@@ -39,13 +39,12 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
 {
     RawData data = RawData();
 
-    std::cout << "packet received" << std::endl;
     if (bytes_recvd <= Protocol::MAX_ENTITY_LENGTH) {
         memcpy(data.data, recv_buf.data(), bytes_recvd);
         data.size = bytes_recvd;
     }
 
-    Protocol::CMD packetType = packetManager.getType(data.data, data.size);
+    Protocol::CMD packetType = packetManager.getType(data.data);
 
     if (packetType == Protocol::HANDSHAKE) {
         if (packetManager.isValidHandshake(data.data, data.size, false, true)) {
@@ -83,7 +82,6 @@ void BoostUdpServer::handleReceive(const boost::system::error_code& error, size_
     } else if (packetType == Protocol::EVENTS) {
         if (this->clientList.find(remoteEndpoint_) != this->clientList.end()) {
             packetManager.setEvents(data.data, data.size);
-            std::cout << "received events" << std::endl;
             this->clientList[remoteEndpoint_]->addEventPacket(packetManager.getEvents());
         } else {
             data = packetManager.error(Protocol::ERROR, "User not connected");

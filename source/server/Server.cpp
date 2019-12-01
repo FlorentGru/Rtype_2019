@@ -27,8 +27,7 @@ bool Server::run()
     entities.emplace_back(SerializedEntity(IEntity::PLAYER, 1, 0, 0));
 
     std::cout << "thread success" << std::endl;
-    while (1) {
-        this->network.sendEntitiesToPlayer("Player 1", entities);
+    while (true) {
         events = this->network.getEvents("Player 1");
         if (events.isAKey()) {
             std::cout << "events: " << std::endl;
@@ -39,6 +38,8 @@ bool Server::run()
             std::cout << "    S: " << events.isSKey() << std::endl;
             std::cout << "    D: " << events.isDKey() << std::endl;
         }
+        entities = this->engine.run(events);
+        this->network.sendEntitiesToPlayer("Player 1", entities);
     }
 
     return true;

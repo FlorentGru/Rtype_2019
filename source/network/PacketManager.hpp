@@ -167,9 +167,9 @@ namespace Protocol
         void setEvents(const char *, std::size_t size);
         void setEntity(const char *, std::size_t size);
 
-        CMD getType(const char *, std::size_t size);
-        bool isSuccess(const char *, std::size_t size);
-        bool isValid(const char *, std::size_t, CMD tag);
+        CMD getType(const char *pck);
+        bool isSuccess(const char *pck);
+        bool isValid(const char *pck, CMD tag);
 
         bool isValidHandshake(const char *, std::size_t, bool serv, bool client);
         bool isValidDisconnection(const char *, std::size_t);

@@ -12,8 +12,8 @@ using namespace std;
 class ServerEcs : public AbstractEcs
 {
 public:
-    bool run(Events events) override;
+    ServerEcs() = default;
+    bool run(Events &events) override;
 };
-
 
 #endif //RTYPE_SERVERECS_HPP

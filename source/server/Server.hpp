@@ -9,6 +9,7 @@
 #define _SERVER_HPP_
 
 #include "ServerNetwork.hpp"
+#include "GameEngine.hpp"
 
 using boost::asio::ip::udp;
 
@@ -20,7 +21,7 @@ public:
 
 private:
     ServerNetwork network;
-    // GameEngine engine;
+    GameEngine engine;
 };
 
 #endif

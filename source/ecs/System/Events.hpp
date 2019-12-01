@@ -76,6 +76,10 @@ public:
 
     void setMKey(bool mKey);
 
+    bool isNKey() const;
+
+    void setNKey(bool nKey);
+
     bool isOKey() const;
 
     void setOKey(bool oKey);
@@ -128,6 +132,9 @@ public:
 
     void setEnter(bool enter);
 
+    void resetEvent();
+
+    bool thirtyOneConditions();
 private:
     bool enter = false;
 
@@ -149,6 +156,7 @@ private:
     bool kKey = false;
     bool lKey = false;
     bool mKey = false;
+    bool nKey = false;
     bool oKey = false;
     bool pKey = false;
     bool qKey = false;

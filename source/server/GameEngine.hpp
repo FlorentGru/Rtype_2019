@@ -5,16 +5,19 @@
 #ifndef RTYPE_GAMEENGINE_HPP
 #define RTYPE_GAMEENGINE_HPP
 
-#include "ServerEcs.hpp"
+#include "../ecs/ServerEcs.hpp"
 
 using namespace std;
 
 class GameEngine
 {
 public:
-    vector<shared_ptr<IRenderEntity>> run(Events events);
+    GameEngine();
+
+    vector<SerializedEntity> run(Events &events);
 private:
     ServerEcs ecs;
+    bool setScene();
 };
 
 

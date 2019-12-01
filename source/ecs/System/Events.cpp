@@ -140,6 +140,14 @@ void Events::setMKey(bool mKey_) {
     this->mKey = mKey_;
 }
 
+void Events::setNKey(bool nKey_) {
+    this->nKey = nKey_;
+}
+
+bool Events::isNKey() const {
+    return nKey;
+}
+
 bool Events::isOKey() const {
     return oKey;
 }
@@ -242,4 +250,79 @@ bool Events::isEnter() const {
 
 void Events::setEnter(bool enter_) {
     this->enter = enter_;
+}
+
+void Events::resetEvent()
+{
+     enter = false;
+
+     leftArrow = false;
+     rightArrow = false;
+     upArrow = false;
+     downArrow = false;
+
+     aKey = false;
+     bKey = false;
+     cKey = false;
+     dKey = false;
+     eKey = false;
+     fKey = false;
+     gKey = false;
+     hKey = false;
+     iKey = false;
+     jKey = false;
+     kKey = false;
+     lKey = false;
+     mKey = false;
+     nKey = false;
+     oKey = false;
+     pKey = false;
+     qKey = false;
+     rKey = false;
+     sKey = false;
+     tKey = false;
+     uKey = false;
+     vKey = false;
+     wKey = false;
+     xKey = false;
+     yKey = false;
+     zKey = false;
+}
+
+bool Events::thirtyOneConditions()
+{
+    if (enter) { return false; }
+
+    if (leftArrow) { return false; }
+    if (rightArrow) { return false; }
+    if (upArrow) { return false; }
+    if (downArrow) { return false; }
+
+    if (aKey) { return false; }
+    if (bKey) { return false; }
+    if (cKey) { return false; }
+    if (dKey) { return false; }
+    if (eKey) { return false; }
+    if (fKey) { return false; }
+    if (gKey) { return false; }
+    if (hKey) { return false; }
+    if (iKey) { return false; }
+    if (jKey) { return false; }
+    if (kKey) { return false; }
+    if (lKey) { return false; }
+    if (mKey) { return false; }
+    if (nKey) { return false; }
+    if (oKey) { return false; }
+    if (pKey) { return false; }
+    if (qKey) { return false; }
+    if (rKey) { return false; }
+    if (sKey) { return false; }
+    if (tKey) { return false; }
+    if (uKey) { return false; }
+    if (vKey) { return false; }
+    if (wKey) { return false; }
+    if (xKey) { return false; }
+    if (yKey) { return false; }
+    if (zKey) { return false; }
+    return true;
 }

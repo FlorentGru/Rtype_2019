@@ -34,7 +34,7 @@ bool ClientNetwork::connect(const std::string &host, const std::string &port) {
 
     packet = packets.back();
     print_packet(packet);
-    if (!packetManager.isValid(packet.data, packet.size, Protocol::HANDSHAKE)) {
+    if (!packetManager.isValid(packet.data, Protocol::HANDSHAKE)) {
         std::cout << "error 4" << std::endl;
         return false;
     }

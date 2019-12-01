@@ -4,19 +4,12 @@
 
 #include "ClientEcs.hpp"
 
-bool ClientEcs::run(Events _events)
+bool ClientEcs::run(Events &_events)
 {
-    this->events = _events;
-
-    for (auto &system : this->systems) {
-        if (!system->run(this->entities, events)) {
+    for (auto &system : this->_systems) {
+        if (!system->run(this->_entities, _events)) {
             return false;
         }
     }
     return true;
-}
-
-const Events& ClientEcs::getEvents() const
-{
-    return events;
 }

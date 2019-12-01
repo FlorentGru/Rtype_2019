@@ -26,7 +26,7 @@ private:
 
     bool _isSucceed = true;
 
-    Fire createFire(std::shared_ptr<Player> &player, bool isPlayer);
+    std::shared_ptr<Fire> createFire(std::shared_ptr<Player> &player, bool isPlayer);
 
     void move(std::shared_ptr<IMovingEntity>, Direction direction);
 

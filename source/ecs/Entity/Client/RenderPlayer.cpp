@@ -8,7 +8,7 @@
 
 RenderPlayer::RenderPlayer(size_t pv, int id, std::shared_ptr<Position> position)
 {
-    Rendering rendering("player.png", "", pv);
+    Rendering rendering("../../Resources/player.png", "", pv);
     _pv = pv;
     _component.clear();
     _component.push_back(std::make_shared<Rendering>(rendering));
@@ -28,17 +28,17 @@ std::vector<std::shared_ptr<IComponent>> RenderPlayer::getComponents()
 
 std::string RenderPlayer::getTexture()
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Rendering)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Rendering)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Rendering>(_component[i])->getTexture());
 }
 
 std::shared_ptr<Position> RenderPlayer::getPosition()
 {
-    int i = 0;
+    size_t i = 0;
 
-    for (; _component[i]->getId() == std::type_index(typeid(Position)); ++i);
+    for (; _component[i]->getId() != std::type_index(typeid(Position)) && i < _component.size(); ++i);
     return (std::dynamic_pointer_cast<Position>(_component[i]));
 }
 

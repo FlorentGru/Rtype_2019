@@ -82,7 +82,7 @@ RawData PacketManager::error(const Protocol::CMD cmd, const std::string &msg)
     return(RawData(_command.rawData, Protocol::MAX_COMMAND_LENGTH));
 }
 
-CMD PacketManager::getType(const char *pck, std::size_t size)
+CMD PacketManager::getType(const char *pck)
 {
     BasePacket packet;
 
@@ -92,7 +92,7 @@ CMD PacketManager::getType(const char *pck, std::size_t size)
     return (packet.data.tag);
 }
 
-bool PacketManager::isSuccess(const char *pck, std::size_t size)
+bool PacketManager::isSuccess(const char *pck)
 {
     BasePacket packet;
 
@@ -102,11 +102,11 @@ bool PacketManager::isSuccess(const char *pck, std::size_t size)
     return packet.data.res;
 }
 
-bool PacketManager::isValid(const char *data, std::size_t size, CMD tag)
+bool PacketManager::isValid(const char *data, CMD tag)
 {
-    CMD type = getType(data, size);
+    CMD type = getType(data);
 
-    if (!isSuccess(data, size)) {
+    if (!isSuccess(data)) {
         std::cout << "success" << std::endl;
         return false;
     }
@@ -180,7 +180,7 @@ bool PacketManager::isValidDisconnection(const char *data, std::size_t size)
 
 bool PacketManager::isValidEvents(const char *data, std::size_t size)
 {
-    if (!isValid(data, size, Protocol::EVENTS)) {
+    if (!isValid(data, Protocol::EVENTS)) {
         return false;
     }
     if (size != MAX_EVENT_LENGTH)
@@ -233,7 +233,7 @@ const PacketManager::EventsPacket &PacketManager::getEventPacket() const {
 }
 
 bool PacketManager::isValidEntity(const char *data, std::size_t size) {
-    if (!isValid(data, size, Protocol::ENTITY)) {
+    if (!isValid(data, Protocol::ENTITY)) {
         return false;
     }
 
@@ -241,7 +241,6 @@ bool PacketManager::isValidEntity(const char *data, std::size_t size) {
     if (_entity.data.entityNbr > 10 || _entity.data.entityNbr < 0) {
         return false;
     }
-    std::cout << "entity is valid" << std::endl;
 
     return true;
 }
