@@ -26,13 +26,13 @@ void Timer::create_clock(const std::string &key)
     _clock.emplace(key, news);
 }
 
-bool Timer::restart(const std::string &key, double timeInSecond)
+bool Timer::restart(const std::string &key, float timeInSecond)
 {
     std::clock_t actualTime;
-    double duration;
+    float duration;
 
     actualTime = std::clock();
-    duration = (actualTime - _clock[key]) / (double) CLOCKS_PER_SEC;
+    duration = (actualTime - (float)_clock[key]) / (float) CLOCKS_PER_SEC;
     if (duration > timeInSecond) {
         _clock[key] = std::clock();
         return true;

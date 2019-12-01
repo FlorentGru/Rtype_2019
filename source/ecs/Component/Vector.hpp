@@ -10,21 +10,21 @@
 class Vector : public IComponent
 {
 private:
-    double _z;
-    double _y;
-    double _x;
+    float _z;
+    float _y;
+    float _x;
 
 public:
-    Vector(double x, double y, double z = 0);
+    Vector(float x, float y, float z = 0);
     Vector();
 
-    void setX(double);
-    void setY(double);
-    void setZ(double);
+    void setX(float);
+    void setY(float);
+    void setZ(float);
 
-    double getX() const;
-    double getY() const;
-    double getZ() const;
+    float getX() const;
+    float getY() const;
+    float getZ() const;
 };
 
 #endif //CPP_RTYPE_2019_VECTOR_HPP

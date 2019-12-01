@@ -13,8 +13,9 @@ public:
     bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:
-    void collide(std::shared_ptr<IMovingEntity> collide, std::vector<std::shared_ptr<IEntity>> &entities);
-    void destroyEntity(std::vector<std::shared_ptr<IMovingEntity>> &entities);
+    void collide(std::vector<std::shared_ptr<IEntity>> &entities, size_t);
+    void destroyEntity(std::vector<std::shared_ptr<IEntity>> &entities);
+    bool isInRect(std::shared_ptr<IMovingEntity> first, std::shared_ptr<IMovingEntity> snd);
 };
 
 #endif //RTYPE_COLLIDESYSTEM_HPP

@@ -13,13 +13,15 @@ class Fire : public IMovingEntity
 private:
     std::vector<std::shared_ptr<IComponent>> _component;
     int _id;
+    int _playerId;
     bool _isPlayer;
     int _pv;
 
 public:
-    Fire(int id, std::shared_ptr<Position> position, bool isPlayer);
+    Fire(int id, int playerId, std::shared_ptr<Position> position, bool isPlayer);
     std::shared_ptr<Position> getPosition() override;
-    void move(double x, double y, double z) override;
+    int getPlayerId() const;
+    void move(float x, float y, float z) override;
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;
     int getId() override;

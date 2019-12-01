@@ -4,6 +4,7 @@
 
 #include "UpdateEntitySystem.hpp"
 #include "Events.hpp"
+#include "Timer.hpp"
 
 
 UpdateEntitySystem::UpdateEntitySystem()
@@ -15,8 +16,10 @@ UpdateEntitySystem::UpdateEntitySystem()
 
 bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events)
 {
+    Timer time;
     std::vector<std::shared_ptr<IMovingEntity>> moving;
     moving.clear();
+    time.create_clock("fire");
     for (auto & entity : entities)
         moving.push_back(std::dynamic_pointer_cast<IMovingEntity>(entity));
     for (auto & mover : moving) {
@@ -24,7 +27,7 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
             std::shared_ptr<Player> player = std::dynamic_pointer_cast<Player>(mover);
             manageShip(player, events);
             if (events.isEnter() && _timer.restart("fire", 1)) {
-                std::shared_ptr<Fire> fire = createFire(player, true);
+                std::shared_ptr<Fire> fire = createFire(player, true, entities);
                 entities.push_back(fire);
             }
         }
@@ -40,13 +43,14 @@ bool UpdateEntitySystem::run(std::vector<std::shared_ptr<IEntity>> &entities, Ev
     return _isSucceed;
 }
 
-std::shared_ptr<Fire> UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer)
+std::shared_ptr<Fire> UpdateEntitySystem::createFire(std::shared_ptr<Player> &player, bool isPlayer, std::vector<std::shared_ptr<IEntity>> &entities)
 {
     Position firePosition(player->getPosition()->getX(), player->getPosition()->getY());
     firePosition.setX(firePosition.getX() + 100);
     firePosition.setY(firePosition.getY() + 50);
 
-    Fire fire(player->getId() * 77, std::make_shared<Position>(firePosition), isPlayer);
+
+    Fire fire(entities.size() + 15 , player->getId(), std::make_shared<Position>(firePosition), isPlayer);
     return std::make_shared<Fire>(fire);
 }
 
@@ -80,9 +84,11 @@ void UpdateEntitySystem::destroyEntity(std::vector<std::shared_ptr<IEntity>> &en
     for (size_t i = 0; i < entities.size(); ++i) {
         if (entities[i]->getType() == IEntity::FIRE
         && (entities[i]->getPosition()->getX() >= _windowLength - 300
-        || entities[i]->getPosition()->getX() <= 0))
+        || entities[i]->getPosition()->getX() <= 0)) {
             entities.erase(entities.begin() + i);
-        if (!(entities[i]->getType() == IEntity::PLAYER)
+            continue;
+        }
+        if ((entities[i]->getType() != IEntity::PLAYER)
         && entities[i]->getPosition()->getX() <= 50)
             entities.erase(entities.begin() + 1);
     }

@@ -33,7 +33,6 @@ DrawEntitySystem::DrawEntitySystem()
     _windowSize = windowSize;
     frame = 32;
     _timer.create_clock("background");
-    std::cout << "test" << std::endl;
 }
 
 void DrawEntitySystem::createWindow()
@@ -103,10 +102,13 @@ bool DrawEntitySystem::draw(std::shared_ptr<IRenderEntity> renderEntity)
 {
     if (renderEntity->getType() == IEntity::PLAYER)
         drawPlayer(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
+
     if (renderEntity->getType() == IEntity::FIRE)
         drawFire(std::dynamic_pointer_cast<RenderFire> (renderEntity));
+
     if (renderEntity->getType() == IEntity::ENEMY)
-        drawEnemy(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
+        drawEnemy(std::dynamic_pointer_cast<RenderEnemy> (renderEntity));
+
     if (renderEntity->getType() == IEntity::DESTRUCTIBLE)
         drawDestructible(std::dynamic_pointer_cast<RenderPlayer> (renderEntity));
 
@@ -144,16 +146,18 @@ void    DrawEntitySystem::drawFire(std::shared_ptr<RenderFire> renderFire)
     }
 }
 
-void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderPlayer> renderPlayer)
+void    DrawEntitySystem::drawEnemy(std::shared_ptr<RenderEnemy> renderEnemy)
 {
     sf::Texture playerT;
     sf::Sprite playerS;
 
-    if (!playerT.loadFromFile(renderPlayer->getTexture()))
+    if (!playerT.loadFromFile(renderEnemy->getTexture()))
         _isSucceed = false;
     else {
         playerS.setTexture(playerT);
-        playerS.setPosition(renderPlayer->getPosition()->getX(), renderPlayer->getPosition()->getY());
+        playerS.setPosition(renderEnemy->getPosition()->getX(), renderEnemy->getPosition()->getY());
+        playerS.setTextureRect(sf::IntRect(0, 0, 67, 40));
+        playerS.setScale(-2, 2);
         _window.draw(playerS);
     }
 
@@ -177,6 +181,16 @@ bool DrawEntitySystem::getEvents(Events &events)
 {
     sf::Event event;
 
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+        events.setZKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        events.setQKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        events.setSKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        events.setDKey(true);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+        events.setEnter(true);
     while (_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             _window.close();
@@ -192,9 +206,6 @@ bool DrawEntitySystem::getEvents(Events &events)
                 break;
             case sf::Keyboard::C:
                 events.setCKey(true);
-                break;
-            case sf::Keyboard::D:
-                events.setDKey(true);
                 break;
             case sf::Keyboard::E:
                 events.setEKey(true);
@@ -232,14 +243,8 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::P:
                 events.setPKey(true);
                 break;
-            case sf::Keyboard::Q:
-                events.setQKey(true);
-                break;
             case sf::Keyboard::R:
                 events.setRKey(true);
-                break;
-            case sf::Keyboard::S:
-                events.setSKey(true);
                 break;
             case sf::Keyboard::T:
                 events.setTKey(true);
@@ -259,9 +264,7 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::Y:
                 events.setYKey(true);
                 break;
-            case sf::Keyboard::Z:
-                events.setZKey(true);
-                break;
+
             case sf::Keyboard::Left:
                 events.setLeftArrow(true);
                 break;
@@ -274,8 +277,6 @@ bool DrawEntitySystem::getEvents(Events &events)
             case sf::Keyboard::Down:
                 events.setDownArrow(true);
                 break;
-            case sf::Keyboard::Enter:
-                events.setEnter(true);
             default:
                 break;
             }

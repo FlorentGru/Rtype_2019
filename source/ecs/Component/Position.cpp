@@ -4,7 +4,7 @@
 
 #include "Position.hpp"
 
-Position::Position(double x, double y, double z): Vector(x, y, z)
+Position::Position(float x, float y, float z): Vector(x, y, z)
 {}
 
 std::type_index Position::getId()

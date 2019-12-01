@@ -20,7 +20,7 @@ public:
 
     void create_clock(const std::string &);
 
-    bool restart(const std::string &, double);
+    bool restart(const std::string &, float);
 
     std::type_index getId() override;
 };

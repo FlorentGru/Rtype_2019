@@ -14,9 +14,9 @@
 #include "RenderPlayer.hpp"
 #include "RenderFire.hpp"
 #include "IRenderSystem.hpp"
+#include "RenderEnemy.hpp"
 #include "Timer.hpp"
 #include <SFML/Graphics.hpp>
-
 
 class DrawEntitySystem : public IRenderSystem
 {
@@ -30,7 +30,7 @@ class DrawEntitySystem : public IRenderSystem
         bool draw(std::shared_ptr<IRenderEntity> renderEntity) override;
         void drawPlayer(std::shared_ptr<RenderPlayer>);
         void drawFire(std::shared_ptr<RenderFire>);
-        void drawEnemy(std::shared_ptr<RenderPlayer>);
+        void drawEnemy(std::shared_ptr<RenderEnemy>);
         void drawDestructible(std::shared_ptr<RenderPlayer>);
         void initBackground();
         void move(sf::Vector2f &font, float speed);
