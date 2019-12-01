@@ -108,34 +108,3 @@ add_executable(r-type_client
 
 target_link_libraries(r-type_client ${CONAN_LIBS})
 set_target_properties(r-type_client PROPERTIES LINKER_LANGUAGE CXX)
-
-add_executable(rtype_client_test
-        source/ecs/System/Events.cpp
-        source/ecs/AbstractEcs.cpp
-        source/ecs/Component/Acceleration.cpp
-        source/ecs/Component/Vector.cpp
-        source/ecs/Component/Position.cpp
-        source/ecs/Component/Rendering.cpp
-        source/ecs/Component/Timer.cpp
-        source/ecs/Component/Velocity.cpp
-        source/ecs/ClientEcs.cpp
-        source/ecs/System/IRenderSystem.hpp
-        source/client/ClientEngine.cpp
-        source/ecs/Entity/Client/RenderPlayer.cpp
-        source/ecs/Entity/Client/RenderFire.cpp
-        source/ecs/Entity/SerializedEntity.cpp
-        source/ecs/System/DrawEntitySystem.cpp
-        source/server/GameEngine.cpp
-        source/ecs/ServerEcs.cpp
-        source/ecs/Entity/Server/Player.cpp
-        source/ecs/Entity/Server/Fire.cpp
-        source/ecs/Component/Hitbox.cpp
-        source/ecs/System/UpdateEntitySystem.cpp
-        source/ecs/Entity/Client/RenderEnemy.cpp
-        source/ecs/Entity/Server/Enemy.cpp
-        source/ecs/System/CollideSystem.cpp
-        source/main.cpp
-        )
-
-target_link_libraries(rtype_client_test ${CONAN_LIBS} ${CMAKE_DL_LIBS})
-set_target_properties(rtype_client_test PROPERTIES LINKER_LANGUAGE CXX)

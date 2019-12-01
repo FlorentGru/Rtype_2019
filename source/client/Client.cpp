@@ -23,7 +23,6 @@ bool Client::run(const std::string &host, const std::string &port)
         events.resetEvent();
 
         entities = this->network.getEntities();
-
         if (!this->engine.run(entities, events)) {
             break;
         }

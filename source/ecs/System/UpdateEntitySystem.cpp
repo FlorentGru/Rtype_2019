@@ -57,7 +57,7 @@ std::shared_ptr<Fire> UpdateEntitySystem::createFire(std::shared_ptr<Player> &pl
 void UpdateEntitySystem::move(std::shared_ptr<IMovingEntity> entity, Direction direction)
 {
     if (direction == LEFT && entity->getPosition()->getX() > 0)
-        entity->move(entity->getPosition()->getX() - 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
+        entity->move(entity->getPosition()->getX() - 5, entity->getPosition()->getY(), entity->getPosition()->getZ());
     if (direction == RIGHT && entity->getPosition()->getX() < _windowLength - 300)
         entity->move(entity->getPosition()->getX() + 10, entity->getPosition()->getY(), entity->getPosition()->getZ());
     if (direction == UP && entity->getPosition()->getY() > 0)

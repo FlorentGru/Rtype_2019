@@ -24,7 +24,6 @@ bool Server::run()
         return false;
     }
 
-    entities.emplace_back(SerializedEntity(IEntity::PLAYER, 1, 0, 0));
 
     while (true) {
         events = this->network.getEvents("Player 1");
