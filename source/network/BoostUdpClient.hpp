@@ -39,7 +39,10 @@ private:
     void handle_receive_sync(size_t _recvd);
     void handle_send();
 
+    boost::mutex mtx;
+
     boost::array<char, Protocol::MAX_ENTITY_LENGTH> recv_buf;
+    boost::array<char, Protocol::MAX_COMMAND_LENGTH> cmd_recv_buf;
     std::vector<RawData> packets;
 
     boost::asio::io_context io_context_;

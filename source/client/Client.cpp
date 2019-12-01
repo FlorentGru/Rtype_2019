@@ -13,7 +13,7 @@ bool Client::run(const std::string &host, const std::string &port)
     }
     events.setAKey(true);
     std::cout << "connection success" << std::endl;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10000; i++) {
         this->network.sendEvents(events);
         auto entities = this->network.getEntities();
 

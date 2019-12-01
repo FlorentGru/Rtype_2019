@@ -83,8 +83,8 @@ std::vector<SerializedEntity> ClientNetwork::getEntities()
     }*/
 
     std::vector<int> alreadyAdd;
-    if (!entityPackets.empty() == true) {
-        for (auto it = entityPackets.end(); it != entityPackets.begin(); it--) {
+    if (!entityPackets.empty()) {
+        for (auto it = entityPackets.rbegin(); it != entityPackets.rend(); ++it) {
             for (int i = 0; i < it->data.entityNbr; i++) {
                 if (!findIdExist(it->data.entities[i].id, alreadyAdd)) {
                     entities.push_back(entityPacketToSerialized(it->data.entities[i]));
