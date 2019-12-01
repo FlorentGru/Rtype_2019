@@ -14,6 +14,7 @@
 #include "RenderPlayer.hpp"
 #include "RenderFire.hpp"
 #include "IRenderSystem.hpp"
+#include "RenderEnemy.hpp"
 #include "Timer.hpp"
 #include <SFML/Graphics.hpp>
 

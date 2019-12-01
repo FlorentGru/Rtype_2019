@@ -80,8 +80,10 @@ void UpdateEntitySystem::destroyEntity(std::vector<std::shared_ptr<IEntity>> &en
     for (size_t i = 0; i < entities.size(); ++i) {
         if (entities[i]->getType() == IEntity::FIRE
         && (entities[i]->getPosition()->getX() >= _windowLength - 300
-        || entities[i]->getPosition()->getX() <= 0))
+        || entities[i]->getPosition()->getX() <= 0)) {
             entities.erase(entities.begin() + i);
+            continue;
+        }
         if (!(entities[i]->getType() == IEntity::PLAYER)
         && entities[i]->getPosition()->getX() <= 50)
             entities.erase(entities.begin() + 1);

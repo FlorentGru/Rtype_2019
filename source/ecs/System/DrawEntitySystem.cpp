@@ -5,7 +5,6 @@
 ** DrawEntitySystem.cpp
 */
 
-#include <Entity/Client/RenderEnemy.hpp>
 #include "DrawEntitySystem.hpp"
 
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
