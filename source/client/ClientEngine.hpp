@@ -33,7 +33,7 @@ public:
     * The run function who remove all the entities but mostly add them after deserialized
     * 
     * @Param entities: Took all the entities to serialized them
-    *        events: just here cause the function is in the interface and need to get it
+    * @Param events: just here cause the function is in the interface and need to get it
     * 
     * @return a bool to return if the function work well and return true at the end or false if ecs equals false
     */

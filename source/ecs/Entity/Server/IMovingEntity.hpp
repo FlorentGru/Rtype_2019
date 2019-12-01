@@ -15,7 +15,6 @@
 class IMovingEntity : public IEntity
 {
 public:
-<<<<<<< HEAD
     /**
     * Update the position of an entity
     *

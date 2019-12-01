@@ -27,7 +27,7 @@ class DrawEntitySystem : public IRenderSystem
         /** The function run who start and create all of the graphical creation
          * 
          * @Param entities: took all the entities to call the system for draw the entities
-         *        events: Take the events for the getEvents who fill all the events do
+         * @Param events: Take the events for the getEvents who fill all the events do
          * 
          * @return a bool to check if the function return true and works, 
          */

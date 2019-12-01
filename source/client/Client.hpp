@@ -18,7 +18,7 @@ public:
     /** The function run do the connect with the server and set the scene like GAME or MENU and send the events
          * 
          * @Param host : the ip adrdress of the server
-         *        port: the port of the server
+         * @Param port: the port of the server
          * 
          * @return a bool to check if the server disconnect or not and if an error arrivec 
          */

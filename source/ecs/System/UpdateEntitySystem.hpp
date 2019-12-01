@@ -27,7 +27,7 @@ public:
     * Funtion run call all the function to move and update the player or the fire
     * 
     * @Param entities: Took all the entities to know what to update or create
-    *        events: Took the event to know in wich direction the player need to move
+    * @Param events: Took the event to know in wich direction the player need to move
     * 
     * @return a bool to return if the function work well and return true
     */
