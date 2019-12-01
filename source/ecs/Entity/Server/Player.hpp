@@ -15,6 +15,13 @@ private:
     int _id;
 
 public:
+    /**
+    * Constructs a player entity
+    *
+    * @param pv entity pv
+    * @param id entity id
+    * @param position entity position
+    */
     Player(size_t pv, int id,std::shared_ptr<Position> position);
     std::vector<std::shared_ptr<IComponent>> getComponents() override;
     Type getType() override;

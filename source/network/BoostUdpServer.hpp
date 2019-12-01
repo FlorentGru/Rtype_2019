@@ -17,9 +17,13 @@
 
 using boost::asio::ip::udp;
 
+/**
+ * Boost implementation of UdpServer
+ */
 class BoostUdpServer : public IUdpServer
 {
 public:
+
     BoostUdpServer(short port);
 
     void openServer() override;

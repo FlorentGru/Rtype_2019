@@ -8,9 +8,22 @@
 #include "Position.hpp"
 #include "IEntity.hpp"
 
+/**
+ * Simplified form of any entity so it can be sent into a UDP packet, then interpreted by the
+*/
 class SerializedEntity
 {
 public:
+
+    /**
+     * Constructs a serialized entity
+     *
+     * @param type entity type
+     * @param id entity id
+     * @param x position on x axis
+     * @param y position on y axis
+     * @param z position on z axis
+     */
     SerializedEntity(IEntity::Type type, int id, float x, float y, float z = 0);
 
     IEntity::Type getType() const;

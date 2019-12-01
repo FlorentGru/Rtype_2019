@@ -15,6 +15,9 @@
 
 using boost::asio::ip::udp;
 
+/**
+ * Boost implementation of UdpClient
+ */
 class BoostUdpClient : public IUdpClient
 {
 public:

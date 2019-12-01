@@ -17,6 +17,13 @@ private:
     int _pv;
 
 public:
+    /**
+    * Constructs a fire entity
+    *
+    * @param id entity id
+    * @param position entity position
+    * @param isPlayer to know if the fire is link with a player
+    */
     Fire(int id, std::shared_ptr<Position> position, bool isPlayer);
     std::shared_ptr<Position> getPosition() override;
     void move(double x, double y, double z) override;

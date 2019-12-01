@@ -9,14 +9,35 @@
 #include "SerializedEntity.hpp"
 #include "Hitbox.hpp"
 
+/**
+ * Entity type thats is influenced
+*/
 class IMovingEntity : public IEntity
 {
 public:
+    /**
+    * Update the position of an entity
+    *
+    * @param x position on x axis
+    * @param y position on y axis
+    * @param z position on z axis
+    */
     virtual void move(double x, double y, double z) = 0;
 
+    /**
+    * Constructs a serialized entity
+    *
+    * @return the entity serialized
+    */
     virtual SerializedEntity serialize() = 0;
 
+    /**
+    * Constructs a serialized entity
+    *
+    * @return a pointer on the hitbox of the entity
+    */
     virtual std::shared_ptr<Hitbox> getHitbox() const = 0;
+
 
     virtual int getPv() const = 0;
 
