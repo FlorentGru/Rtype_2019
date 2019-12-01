@@ -4,7 +4,10 @@
 
 #include "Acceleration.hpp"
 
-type_index Acceleration::getId()
+Acceleration::Acceleration(double x, double y, double z): Vector(x, y, z)
+{}
+
+std::type_index Acceleration::getId()
 {
     return (std::type_index(typeid(Acceleration)));
 }

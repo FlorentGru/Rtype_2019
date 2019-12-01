@@ -4,7 +4,10 @@
 
 #include "Velocity.hpp"
 
-type_index Velocity::getId()
+Velocity::Velocity(double x, double y, double z): Vector(x, y, z)
+{}
+
+std::type_index Velocity::getId()
 {
     return (std::type_index(typeid(Velocity)));
 }

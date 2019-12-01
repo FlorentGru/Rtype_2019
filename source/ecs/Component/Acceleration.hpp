@@ -5,11 +5,13 @@
 #ifndef CPP_RTYPE_2019_ACCELERATION_HPP
 #define CPP_RTYPE_2019_ACCELERATION_HPP
 
-#include "AVector.hpp"
+#include "Vector.hpp"
 
-class Acceleration : public AVector
+class Acceleration : public Vector
 {
-    type_index getId();
+public:
+    Acceleration(double x, double y, double z = 0);
+    std::type_index getId() override;
 };
 
 #endif //CPP_RTYPE_2019_ACCELERATION_HPP

@@ -5,11 +5,13 @@
 #ifndef CPP_RTYPE_2019_VELOCITY_HPP
 #define CPP_RTYPE_2019_VELOCITY_HPP
 
-#include "AVector.hpp"
+#include "Vector.hpp"
 
-class Velocity : public AVector
+class Velocity : public Vector
 {
-    type_index getId();
+public:
+    Velocity(double x, double y, double z = 0);
+    std::type_index getId() override;
 };
 
 

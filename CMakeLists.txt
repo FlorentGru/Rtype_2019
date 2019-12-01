@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(rtype LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 if (UNIX)
-    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code")
+    add_definitions("-fPIC -Wall -Wextra -Wshadow -Wuninitialized -Wunreachable-code -g")
 endif (UNIX)
 
 include(CTest)
@@ -15,19 +15,74 @@ include(build/conanbuildinfo.cmake)
 conan_basic_setup()
 
 include(CPack)
-include_directories(server/includes client/includes)
+
+include_directories(source/server
+        source/client
+        source/client/background
+        source/client/window
+        source/ecs
+        source/ecs/System
+        source/network
+        source/ecs/Component
+        source/ecs/Entity
+        source/ecs/Entity/Client
+        source/ecs/Entity/Server
+        )
 
 add_executable(r-type_server
         source/server/main.cpp
-        source/server/server.cpp
-        source/server/server.hpp
-    server/sources/main.cpp
-    server/includes/server.hpp
-        source/network/AUdpSocket.hpp source/network/RawData.hpp)
+        source/server/Server.cpp
+        source/server/ServerNetwork.cpp
+        source/server/Session.cpp
+        source/ecs/System/Events.cpp
+        source/ecs/AbstractEcs.cpp
+        source/ecs/ClientEcs.cpp
+        source/ecs/ServerEcs.cpp
+        source/server/GameEngine.cpp
+        source/ecs/Component/Acceleration.cpp
+        source/ecs/Component/Vector.cpp
+        source/ecs/Component/Position.cpp
+        source/ecs/Component/Rendering.cpp
+        source/ecs/Component/Timer.cpp
+        source/ecs/Component/Velocity.cpp
+        source/ecs/Entity/Server/Player.cpp
+        source/ecs/System/UpdateEntitySystem.cpp
+        source/ecs/Entity/Server/Fire.cpp
+        source/ecs/Entity/SerializedEntity.cpp
+        source/network/PacketManager.cpp
+        source/network/RawData.cpp
+        source/network/BoostUdpServer.cpp
+        source/ecs/Component/Hitbox.cpp
+        source/ecs/System/CollideSystem.cpp
+        source/ecs/Entity/Server/Enemy.cpp source/ecs/Entity/Server/Enemy.hpp)
+
 target_link_libraries(r-type_server ${CONAN_LIBS})
+set_target_properties(r-type_server PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(r-type_client
-    client/sources/main.cpp
-    client/includes/client.hpp
-        source/network/Packet.hpp source/network/AUdpSocket.hpp source/network/RawData.hpp)
+        source/client/main.cpp
+        source/client/Client.cpp
+        source/ecs/AbstractEcs.cpp
+        source/ecs/Component/Acceleration.cpp
+        source/ecs/Component/Vector.cpp
+        source/ecs/Component/Position.cpp
+        source/ecs/Component/Rendering.cpp
+        source/ecs/Component/Timer.cpp
+        source/ecs/Component/Velocity.cpp
+        source/ecs/System/Events.cpp
+        source/ecs/ClientEcs.cpp
+        source/ecs/System/IRenderSystem.hpp
+        source/client/ClientEngine.cpp
+        source/ecs/Entity/Client/RenderPlayer.cpp
+        source/ecs/Entity/Client/RenderFire.cpp
+        source/ecs/Entity/SerializedEntity.cpp
+        source/network/PacketManager.cpp
+        source/client/ClientNetwork.cpp
+        source/network/BoostUdpClient.cpp
+        source/client/Menu.cpp
+        source/network/RawData.cpp
+        source/ecs/System/DrawEntitySystem.cpp
+        )
+
 target_link_libraries(r-type_client ${CONAN_LIBS})
+set_target_properties(r-type_client PROPERTIES LINKER_LANGUAGE CXX)

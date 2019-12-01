@@ -10,7 +10,8 @@
 
 class IComponent
 {
-    virtual type_index getId() = 0;
+public:
+    virtual std::type_index getId() = 0;
 };
 
 #endif //CPP_RTYPE_2019_ICOMPONENT_HPP
