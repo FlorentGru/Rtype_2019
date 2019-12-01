@@ -12,9 +12,25 @@
 #include "Fire.hpp"
 #include "Timer.hpp"
 
+/**
+ * Class UpdateEntitySystem inherited the ISystem. Move and update all the entities in the ecs
+ */
+
 class UpdateEntitySystem : public ISystem {
 public:
+    /**
+    * Constructor of the class who create the clock "fire" and the window lenght, height
+    */
     UpdateEntitySystem();
+
+    /**
+    * Funtion run call all the function to move and update the player or the fire
+    * 
+    * @Param entities: Took all the entities to know what to update or create
+    *        events: Took the event to know in wich direction the player need to move
+    * 
+    * @return a bool to return if the function work well and return true
+    */
     bool run(std::vector<std::shared_ptr<IEntity>> &entities, Events &events) override;
 
 private:

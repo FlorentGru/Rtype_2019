@@ -12,6 +12,10 @@
 
 using namespace std;
 
+/**
+ * Interface ISystem to override the funtion run for all the system
+ */
+
 class ISystem {
 
 public:

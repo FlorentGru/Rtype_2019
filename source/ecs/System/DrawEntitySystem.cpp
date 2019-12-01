@@ -50,13 +50,11 @@ void DrawEntitySystem::initBackground()
     
     if (!text.loadFromFile("../../Resources/backgroundSpace.png")) {
         _isSucceed = false;
-        std::cout << _isSucceed << std::endl;
         return;
     }
     _backText.emplace("back", text);
     if (!text.loadFromFile("../../Resources/front.png")) {
         _isSucceed = false;
-        std::cout << _isSucceed << std::endl;
         return;
     }
     _backText.emplace("front", text);

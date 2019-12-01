@@ -101,7 +101,6 @@ add_executable(r-type_client
         source/network/PacketManager.cpp
         source/client/ClientNetwork.cpp
         source/network/BoostUdpClient.cpp
-        source/client/Menu.cpp
         source/network/RawData.cpp
         source/ecs/System/DrawEntitySystem.cpp
         source/ecs/Entity/Client/RenderEnemy.cpp
@@ -125,7 +124,6 @@ add_executable(rtype_client_test
         source/ecs/Entity/Client/RenderPlayer.cpp
         source/ecs/Entity/Client/RenderFire.cpp
         source/ecs/Entity/SerializedEntity.cpp
-        source/client/Menu.cpp
         source/ecs/System/DrawEntitySystem.cpp
         source/server/GameEngine.cpp
         source/ecs/ServerEcs.cpp
