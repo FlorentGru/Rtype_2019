@@ -10,7 +10,7 @@
 bool DrawEntitySystem::run(vector<shared_ptr<IEntity>> &entities, Events &events)
 {
     if (!_window.isOpen() && _isSucceed) {
-        CreateWindow();
+        createWindow();
     }
     initBackground();
     if (!_isSucceed)
@@ -36,7 +36,7 @@ DrawEntitySystem::DrawEntitySystem()
     std::cout << "test" << std::endl;
 }
 
-void DrawEntitySystem::CreateWindow()
+void DrawEntitySystem::createWindow()
 {
     _window.create(sf::VideoMode(_windowSize.x, _windowSize.y, frame), "R-Type");
 }
