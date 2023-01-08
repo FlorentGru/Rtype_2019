@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="rtype"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="r-type_client">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/r-type_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 r-type_client"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="r-type_client/fast">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/r-type_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 r-type_client/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 package"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="r-type_server">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/r-type_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 r-type_server"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="r-type_server/fast">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/r-type_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 r-type_server/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rtype_client_test">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/rtype_client_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 rtype_client_test"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rtype_client_test/fast">
+				<Option output="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin/rtype_client_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fgru/.conan/data/boost/1.71.0/conan/stable/package/f419497daccab81a781a793e5fffd7f228cf234e/include"/>
+					<Add directory="/home/fgru/.conan/data/sfml/2.5.1/bincrafters/stable/package/a35d758ea6de66bbc1be4a40251fcca6cda21aa0/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"/>
+					<Add directory="/home/fgru/.conan/data/freetype/2.9.0/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"/>
+					<Add directory="/home/fgru/.conan/data/stb/20180214/conan/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include"/>
+					<Add directory="/home/fgru/.conan/data/openal/1.19.0/bincrafters/stable/package/c11116884528df1ba975497cfb51ec76618e3577/include/AL"/>
+					<Add directory="/home/fgru/.conan/data/flac/1.3.2/bincrafters/stable/package/6f925861b8452442b91da6c8e1df92b6b878b79c/include"/>
+					<Add directory="/home/fgru/.conan/data/vorbis/1.3.6/bincrafters/stable/package/08be371161ce02373155daf22f8fa5959548a7d1/include"/>
+					<Add directory="/home/fgru/.conan/data/bzip2/1.0.8/conan/stable/package/a5875aed3fc7ae8dd0488f7e5e99acbc480d721d/include"/>
+					<Add directory="/home/fgru/.conan/data/libpng/1.6.34/bincrafters/stable/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"/>
+					<Add directory="/home/fgru/.conan/data/libalsa/1.1.5/conan/stable/package/7cf43daaf95399d6202b2fd6fab7eab428e8d639/include"/>
+					<Add directory="/home/fgru/.conan/data/ogg/1.3.3/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/.conan/data/zlib/1.2.11/conan/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/background"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/window"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client"/>
+					<Add directory="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 rtype_client_test/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Continuous">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 Continuous"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Experimental">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 Experimental"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 package_source"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Nightly">
+				<Option working_dir="/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 Nightly"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/fgru/TEK3/R-Type/CPP_rtype_2019/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/Client.cpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/Client.hpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/ClientEngine.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/ClientEngine.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/ClientNetwork.cpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/ClientNetwork.hpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/Menu.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/Menu.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/client/main.cpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/AbstractEcs.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/AbstractEcs.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/ClientEcs.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/ClientEcs.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Acceleration.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Acceleration.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Hitbox.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Hitbox.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Position.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Position.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Rendering.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Rendering.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Timer.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Timer.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Vector.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Vector.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Velocity.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Component/Velocity.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderEnemy.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderEnemy.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderFire.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderFire.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderPlayer.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Client/RenderPlayer.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/SerializedEntity.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/SerializedEntity.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Enemy.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Enemy.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Fire.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Fire.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Player.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/Entity/Server/Player.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/ServerEcs.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/ServerEcs.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/CollideSystem.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/CollideSystem.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/DrawEntitySystem.cpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/DrawEntitySystem.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/Events.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/Events.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/IRenderSystem.hpp">
+			<Option target="r-type_client"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/UpdateEntitySystem.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/ecs/System/UpdateEntitySystem.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/main.cpp">
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/BoostUdpClient.cpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/BoostUdpClient.hpp">
+			<Option target="r-type_client"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/BoostUdpServer.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/BoostUdpServer.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/PacketManager.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/PacketManager.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/RawData.cpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/network/RawData.hpp">
+			<Option target="r-type_client"/>
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/GameEngine.cpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/GameEngine.hpp">
+			<Option target="r-type_server"/>
+			<Option target="rtype_client_test"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/Server.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/Server.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/ServerNetwork.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/ServerNetwork.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/Session.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/Session.hpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/source/server/main.cpp">
+			<Option target="r-type_server"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/fgru/TEK3/R-Type/CPP_rtype_2019/build/conanbuildinfo.cmake">
+			<Option virtualFolder="CMake Files\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
